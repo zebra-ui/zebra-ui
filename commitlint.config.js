@@ -47,40 +47,63 @@ module.exports = {
       confirmCommit: '是否提交或修改commit ?'
     },
     types: [
-      { value: 'feat: 特性', name: '特性:   🚀  新增功能', emoji: '🚀' },
-      { value: 'fix: 修复', name: '修复:   🧩  修复缺陷', emoji: '🧩' },
-      { value: 'docs: 文档', name: '文档:   📚  文档变更', emoji: '📚' },
       {
-        value: 'style: 格式',
+        value: 'feat: A new feature',
+        name: '特性:   🚀  新增功能',
+        emoji: '🚀'
+      },
+      { value: 'fix: A bug fix', name: '修复:   🧩  修复缺陷', emoji: '🧩' },
+      {
+        value: 'docs: Documentation only changes',
+        name: '文档:   📚  文档变更',
+        emoji: '📚'
+      },
+      {
+        value: 'style: Changes that do not affect the meaning of the code',
         name: '格式:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）',
         emoji: '🎨'
       },
       {
-        value: 'refactor: 重构',
+        value:
+          'refactor: A code change that neither fixes a bug nor adds a feature',
         name: '重构:   ♻️  代码重构（不包括 bug 修复、功能新增）',
         emoji: '♻️'
       },
-      { value: 'perf: 性能', name: '性能:   ⚡️  性能优化', emoji: '⚡️' },
       {
-        value: 'test: 测试',
+        value: 'perf: A code change that improves performance',
+        name: '性能:   ⚡️  性能优化',
+        emoji: '⚡️'
+      },
+      {
+        value: 'test: Adding missing tests or correcting existing tests',
         name: '测试:   ✅  添加疏漏测试或已有测试改动',
         emoji: '✅'
       },
       {
-        value: 'chore: 构建',
+        value: 'chore: Other changes that do not modify src or test files',
         name: '构建:   📦️  构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）',
         emoji: '📦️'
       },
       {
-        value: 'ci: 集成',
+        value: 'ci: Changes to our CI configuration files and scripts',
         name: '集成:   🎡  修改 CI 配置、脚本',
         emoji: '🎡'
       },
-      { value: 'revert: 回退', name: '回退:   ⏪️  回滚 commit', emoji: '⏪️' },
-      { value: 'build: 打包', name: '打包:   🔨  项目打包发布', emoji: '🔨' }
+      {
+        value: 'revert: Revert to a commit',
+        name: '回退:   ⏪️  回滚 commit',
+        emoji: '⏪️'
+      },
+      {
+        value:
+          'build: Changes that affect the build system or external dependencies',
+        name: '打包:   🔨  项目打包发布',
+        emoji: '🔨'
+      }
     ],
     useEmoji: true,
     themeColorCode: '',
+    useAI: true,
     scopes: [],
     allowCustomScopes: true,
     allowEmptyScopes: true,
