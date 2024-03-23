@@ -1,80 +1,44 @@
 {
-  "id": "zebra-ui",
-  "displayName": "zebra-ui",
+  "name": "zebra-ui",
   "version": "1.0.0",
-  "description": "zebra-ui",
-  "keywords": [
-    "zebra-ui"
-],
-  "repository": "",
-  "engines": {
-    "HBuilderX": "^3.1.0"
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"**/*.{vue,js,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write  \"**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
+    "lint:styles": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:styles",
+    "commit": "git status && git add . && git-cz"
   },
-  "dcloudext": {
-    "category": [
-        "前端组件",
-        "通用组件"
-    ],
-    "sale": {
-      "regular": {
-        "price": "0.00"
-      },
-      "sourcecode": {
-        "price": "0.00"
-      }
-    },
-    "contact": {
-      "qq": ""
-    },
-    "declaration": {
-      "ads": "",
-      "data": "",
-      "permissions": ""
-    },
-    "npmurl": ""
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.9.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^5.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-prettier": "^5.0.0"
   },
-  "uni_modules": {
-    "dependencies": [],
-    "encrypt": [],
-    "platforms": {
-      "cloud": {
-        "tcb": "u",
-        "aliyun": "u"
-      },
-      "client": {
-        "Vue": {
-          "vue2": "u",
-          "vue3": "u"
-        },
-        "App": {
-          "app-vue": "u",
-          "app-nvue": "u"
-        },
-        "H5-mobile": {
-          "Safari": "u",
-          "Android Browser": "u",
-          "微信浏览器(Android)": "u",
-          "QQ浏览器(Android)": "u"
-        },
-        "H5-pc": {
-          "Chrome": "u",
-          "IE": "u",
-          "Edge": "u",
-          "Firefox": "u",
-          "Safari": "u"
-        },
-        "小程序": {
-          "微信": "u",
-          "阿里": "u",
-          "百度": "u",
-          "字节跳动": "u",
-          "QQ": "u"
-        },
-        "快应用": {
-          "华为": "u",
-          "联盟": "u"
-        }
-      }
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
     }
   }
 }
