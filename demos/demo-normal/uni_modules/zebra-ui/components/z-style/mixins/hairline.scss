@@ -1,0 +1,34 @@
+@mixin hairline-common() {
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  content: ' ';
+}
+
+@mixin hairline($color: var(--z-border-color)) {
+  @include hairline-common;
+
+  inset: -50%;
+  border: 0 solid $color;
+  transform: scale(0.5);
+}
+
+@mixin hairline-top($color: var(--z-border-color), $left: 0, $right: 0) {
+  @include hairline-common;
+
+  top: 0;
+  right: $right;
+  left: $left;
+  border-top: 1px solid $color;
+  transform: scaleY(0.5);
+}
+
+@mixin hairline-bottom($color: var(--z-border-color), $left: 0, $right: 0) {
+  @include hairline-common;
+
+  right: $right;
+  bottom: 0;
+  left: $left;
+  border-bottom: 1px solid $color;
+  transform: scaleY(0.5);
+}

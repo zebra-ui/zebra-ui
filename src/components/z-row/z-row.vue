@@ -1,0 +1,147 @@
+<template>
+  <view
+    :class="
+      bem({
+        [`align-${align}`]: align,
+        [`justify-${justify}`]: justify,
+        nowrap: !wrap
+      })
+    "
+  >
+    <slot></slot>
+  </view>
+</template>
+
+<script lang="ts" setup>
+import { computed, type PropType } from 'vue'
+import { createNamespace, truthProp, useChildren } from '../../libs/utils'
+
+type RowAlign = 'top' | 'center' | 'bottom'
+type RowJustify = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
+
+const [name, bem] = createNamespace('row')
+const props = defineProps({
+  wrap: truthProp,
+  align: String as PropType<RowAlign>,
+  gutter: {
+    type: [String, Number, Array] as PropType<
+      string | number | (string | number)[]
+    >,
+    default: 0
+  },
+  justify: String as PropType<RowJustify>
+})
+const { children, linkChildren } = useChildren(name)
+
+const groups = computed(() => {
+  const groups: number[][] = [[]]
+
+  let totalSpan = 0
+  children.forEach((child: any, index: number) => {
+    totalSpan += Number(child.span)
+
+    if (totalSpan > 24) {
+      groups.push([index])
+      totalSpan -= 24
+    } else {
+      groups[groups.length - 1].push(index)
+    }
+  })
+
+  return groups
+})
+
+const spaces = computed(() => {
+  let gutter = 0
+  if (Array.isArray(props.gutter)) {
+    gutter = Number(props.gutter[0]) || 0
+  } else {
+    gutter = Number(props.gutter)
+  }
+  const spaces: any = []
+
+  if (!gutter) {
+    return spaces
+  }
+
+  groups.value.forEach((group) => {
+    const averagePadding = (gutter * (group.length - 1)) / group.length
+
+    group.forEach((item, index) => {
+      if (index === 0) {
+        spaces.push({ right: averagePadding })
+      } else {
+        const left = gutter - spaces[item - 1].right
+        const right = averagePadding - left
+        spaces.push({ left, right })
+      }
+    })
+  })
+
+  return spaces
+})
+
+const verticalSpaces = computed(() => {
+  const { gutter } = props
+  const spaces: any = []
+  if (Array.isArray(gutter) && gutter.length > 1) {
+    const bottom = Number(gutter[1]) || 0
+    if (bottom <= 0) {
+      return spaces
+    }
+    groups.value.forEach((group, index) => {
+      if (index === groups.value.length - 1) return
+      group.forEach(() => {
+        spaces.push({ bottom })
+      })
+    })
+  }
+  return spaces
+})
+
+linkChildren({ spaces, verticalSpaces })
+</script>
+
+<script lang="ts">
+export default {
+  name: 'ZRow',
+  options: {
+    virtualHost: true
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.z-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-bottom {
+    align-items: flex-end;
+  }
+}
+</style>

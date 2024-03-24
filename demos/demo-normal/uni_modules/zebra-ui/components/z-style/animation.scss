@@ -1,0 +1,127 @@
+@keyframes z-slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes z-slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes z-slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes z-slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes z-slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes z-slide-left-leave {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes z-slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes z-slide-right-leave {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes z-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes z-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes z-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.z-fade {
+  &-enter-active {
+    animation: z-fade-in var(--z-duration-base) both var(--z-ease-out);
+  }
+
+  &-leave-active {
+    animation: z-fade-out var(--z-duration-base) both var(--z-ease-in);
+  }
+}
+
+.z-slide-up {
+  &-enter-active {
+    animation: z-slide-up-enter var(--z-duration-base) both var(--z-ease-out);
+  }
+
+  &-leave-active {
+    animation: z-slide-up-leave var(--z-duration-base) both var(--z-ease-in);
+  }
+}
+
+.z-slide-down {
+  &-enter-active {
+    animation: z-slide-down-enter var(--z-duration-base) both var(--z-ease-out);
+  }
+
+  &-leave-active {
+    animation: z-slide-down-leave var(--z-duration-base) both var(--z-ease-in);
+  }
+}
+
+.z-slide-left {
+  &-enter-active {
+    animation: z-slide-left-enter var(--z-duration-base) both var(--z-ease-out);
+  }
+
+  &-leave-active {
+    animation: z-slide-left-leave var(--z-duration-base) both var(--z-ease-in);
+  }
+}
+
+.z-slide-right {
+  &-enter-active {
+    animation: z-slide-right-enter var(--z-duration-base) both var(--z-ease-out);
+  }
+
+  &-leave-active {
+    animation: z-slide-right-leave var(--z-duration-base) both var(--z-ease-in);
+  }
+}

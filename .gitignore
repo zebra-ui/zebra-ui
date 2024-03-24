@@ -4,6 +4,7 @@ unpackage
 dist
 package-lock.json
 .eslintcache
+zebra-swiper
 
 # local env files
 .env.local

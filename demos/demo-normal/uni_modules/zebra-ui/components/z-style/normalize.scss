@@ -1,0 +1,28 @@
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: var(--z-base-font);
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+button,
+textarea,
+[class*='z-'] {
+  &:focus {
+    outline: none;
+  }
+}
+
+// uni-button::after,button::after{
+// 	border: none;
+// }

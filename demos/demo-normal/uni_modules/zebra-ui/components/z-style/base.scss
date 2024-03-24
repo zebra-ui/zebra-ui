@@ -1,0 +1,89 @@
+@import './css-variables';
+@import './normalize';
+@import './animation';
+@import './mixins/clearfix';
+@import './mixins/ellipsis';
+@import './mixins/hairline';
+
+.z-clearfix {
+  @include clearfix;
+}
+
+.z-ellipsis {
+  @include ellipsis;
+}
+
+.z-multi-ellipsis--l2 {
+  @include multi-ellipsis(2);
+}
+
+.z-multi-ellipsis--l3 {
+  @include multi-ellipsis(3);
+}
+
+.z-safe-area-top {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+.z-safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.z-haptics-feedback {
+  cursor: pointer;
+
+  &:active {
+    opacity: var(--z-active-opacity);
+  }
+}
+
+[class*='z-hairline'] {
+  &::after {
+    @include hairline;
+  }
+}
+
+.z-hairline {
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--surround,
+  &--top-bottom {
+    position: relative;
+  }
+
+  &--top::after {
+    border-top-width: var(--z-border-width);
+  }
+
+  &--left::after {
+    border-left-width: var(--z-border-width);
+  }
+
+  &--right::after {
+    border-right-width: var(--z-border-width);
+  }
+
+  &--bottom::after {
+    border-bottom-width: var(--z-border-width);
+  }
+
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: var(--z-border-width) 0;
+    }
+  }
+
+  &--surround::after {
+    border-width: var(--z-border-width);
+  }
+
+  &--orgin::after {
+    transform-origin: 50% 50%;
+  }
+}

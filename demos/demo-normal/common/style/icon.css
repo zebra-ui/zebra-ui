@@ -1,0 +1,323 @@
+@font-face {
+  font-family: 'zebra-icon';
+  /* Project id 4475347 */
+  src:
+    url('https://at.alicdn.com/t/c/font_4475347_8vf1nif45lx.woff2?t=1710943881998')
+      format('woff2'),
+    url('https://at.alicdn.com/t/c/font_4475347_8vf1nif45lx?t=1710943881998')
+      format('woff'),
+    url('https://at.alicdn.com/t/c/font_4475347_8vf1nif45lx?t=1710943881998')
+      format('truetype');
+}
+
+.zebra-icon {
+  font-family: 'zebra-icon' !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zebra-icon-show-a:before {
+  content: '\e663';
+}
+
+.zebra-icon-navigation-a:before {
+  content: '\e662';
+}
+
+.zebra-icon-show:before {
+  content: '\e660';
+}
+
+.zebra-icon-feedback-a:before {
+  content: '\e661';
+}
+
+.zebra-icon-feedback:before {
+  content: '\e65e';
+}
+
+.zebra-icon-form-a:before {
+  content: '\e65d';
+}
+
+.zebra-icon-form-i:before {
+  content: '\e65c';
+}
+
+.zebra-icon-base-a:before {
+  content: '\e65b';
+}
+
+.zebra-icon-base:before {
+  content: '\e65a';
+}
+
+.zebra-icon-navigation:before {
+  content: '\e659';
+}
+
+.zebra-icon-style:before {
+  content: '\e600';
+}
+
+.zebra-icon-configProvider:before {
+  content: '\e615';
+}
+
+.zebra-icon-popup:before {
+  content: '\e916';
+}
+
+.zebra-icon-tag:before {
+  content: '\e620';
+}
+
+.zebra-icon-calendar:before {
+  content: '\e65f';
+}
+
+.zebra-icon-list:before {
+  content: '\e605';
+}
+
+.zebra-icon-collapse:before {
+  content: '\e6a0';
+}
+
+.zebra-icon-barrage:before {
+  content: '\e624';
+}
+
+.zebra-icon-card:before {
+  content: '\eb95';
+}
+
+.zebra-icon-noticeBar:before {
+  content: '\e6b4';
+}
+
+.zebra-icon-highlight:before {
+  content: '\e617';
+}
+
+.zebra-icon-form:before {
+  content: '\ec4e';
+}
+
+.zebra-icon-radio:before {
+  content: '\e650';
+}
+
+.zebra-icon-circle:before {
+  content: '\e70a';
+}
+
+.zebra-icon-transition:before {
+  content: '\e6b5';
+}
+
+.zebra-icon-checkbox:before {
+  content: '\e669';
+}
+
+.zebra-icon-notify:before {
+  content: '\e842';
+}
+
+.zebra-icon-uploader:before {
+  content: '\e69c';
+}
+
+.zebra-icon-popover:before {
+  content: '\e601';
+}
+
+.zebra-icon-loading:before {
+  content: '\e7b6';
+}
+
+.zebra-icon-image:before {
+  content: '\e8ba';
+}
+
+.zebra-icon-rate:before {
+  content: '\e651';
+}
+
+.zebra-icon-field:before {
+  content: '\e608';
+}
+
+.zebra-icon-shareSheet:before {
+  content: '\e60b';
+}
+
+.zebra-icon-icon:before {
+  content: '\e61f';
+}
+
+.zebra-icon-rollingText:before {
+  content: '\e6d7';
+}
+
+.zebra-icon-layout:before {
+  content: '\e6a2';
+}
+
+.zebra-icon-badge:before {
+  content: '\e69e';
+}
+
+.zebra-icon-switch:before {
+  content: '\e6b6';
+}
+
+.zebra-icon-grid:before {
+  content: '\e7ca';
+}
+
+.zebra-icon-sticky:before {
+  content: '\e6e3';
+}
+
+.zebra-icon-empty:before {
+  content: '\e8d8';
+}
+
+.zebra-icon-button:before {
+  content: '\e7cf';
+}
+
+.zebra-icon-pullRefresh:before {
+  content: '\e7d0';
+}
+
+.zebra-icon-signature:before {
+  content: '\e7d9';
+}
+
+.zebra-icon-floatingBubble:before {
+  content: '\e705';
+}
+
+.zebra-icon-numberKeyboard:before {
+  content: '\ef44';
+}
+
+.zebra-icon-area:before {
+  content: '\e653';
+}
+
+.zebra-icon-floatingPanel:before {
+  content: '\e834';
+}
+
+.zebra-icon-tabbar:before {
+  content: '\e602';
+}
+
+.zebra-icon-overlay:before {
+  content: '\e64c';
+}
+
+.zebra-icon-divider:before {
+  content: '\e63b';
+}
+
+.zebra-icon-cascader:before {
+  content: '\e6f8';
+}
+
+.zebra-icon-timePicker:before {
+  content: '\e610';
+}
+
+.zebra-icon-datePicker:before {
+  content: '\e679';
+}
+
+.zebra-icon-actionSheet:before {
+  content: '\e688';
+}
+
+.zebra-icon-slider:before {
+  content: '\e66b';
+}
+
+.zebra-icon-navbar:before {
+  content: '\e64b';
+}
+
+.zebra-icon-toast:before {
+  content: '\e777';
+}
+
+.zebra-icon-stepper:before {
+  content: '\e632';
+}
+
+.zebra-icon-countDown:before {
+  content: '\e6db';
+}
+
+.zebra-icon-steps:before {
+  content: '\e8c8';
+}
+
+.zebra-icon-skeleton:before {
+  content: '\e741';
+}
+
+.zebra-icon-dialog:before {
+  content: '\e73f';
+}
+
+.zebra-icon-picker:before {
+  content: '\e68f';
+}
+
+.zebra-icon-pickerGroup:before {
+  content: '\e690';
+}
+
+.zebra-icon-cell:before {
+  content: '\e633';
+}
+
+.zebra-icon-passwordInput:before {
+  content: '\e60e';
+}
+
+.zebra-icon-progress:before {
+  content: '\e66f';
+}
+
+.zebra-icon-tab:before {
+  content: '\e64d';
+}
+
+.zebra-icon-swipeCell:before {
+  content: '\e93e';
+}
+
+.zebra-icon-dropdownMenu:before {
+  content: '\e93f';
+}
+
+.zebra-icon-search:before {
+  content: '\e60f';
+}
+
+.zebra-icon-swipe:before {
+  content: '\e75e';
+}
+
+.zebra-icon-textEllipsis:before {
+  content: '\e765';
+}
+
+.zebra-icon-watermark:before {
+  content: '\e6cd';
+}

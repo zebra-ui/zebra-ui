@@ -1,4 +1,11 @@
 module.exports = {
+  globals: {
+    getApp: false,
+    getCurrentPages: false,
+    App: false,
+    wx: false,
+    uni: false
+  },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
@@ -24,6 +31,7 @@ module.exports = {
 
   rules: {
     'prefer-destructuring': ['error', { object: true, array: false }],
+    'vue/no-template-shadow': ['error', { allow: ['index', 'i'] }],
     // eslint-plugin-vue
     'vue/no-v-html': 'off',
     'vue/attributes-order': 'off',

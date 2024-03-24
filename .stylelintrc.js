@@ -22,6 +22,8 @@ module.exports = {
     }
   ],
   rules: {
+    'no-descending-specificity': null,
+    'selector-class-pattern': '^([-_a-z0-9]+)+$',
     'selector-pseudo-element-no-unknown': [
       true,
       {
@@ -32,6 +34,12 @@ module.exports = {
       'always',
       {
         ignore: ['after-comment', 'first-nested']
+      }
+    ],
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignoreTypes: ['page']
       }
     ],
     'at-rule-no-unknown': [
@@ -48,7 +56,9 @@ module.exports = {
           'each',
           'include',
           'mixin',
-          'use'
+          'use',
+          'while',
+          'page'
         ]
       }
     ],
