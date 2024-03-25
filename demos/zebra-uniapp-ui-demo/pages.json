@@ -1,0 +1,261 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "zebra-ui"
+			}
+		},
+		{
+			"path": "pages/button/index",
+			"style": {
+				"navigationBarTitleText": "Button",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/col/index",
+			"style": {
+				"navigationBarTitleText": "Layout",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/image/index",
+			"style": {
+				"navigationBarTitleText": "Image",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/cell/index",
+			"style": {
+				"navigationBarTitleText": "Cell",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/transition/index",
+			"style": {
+				"navigationBarTitleText": "Transition",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/overlay/index",
+			"style": {
+				"navigationBarTitleText": "Overlay",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/popup/index",
+			"style": {
+				"navigationBarTitleText": "Popup",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/calendar/index",
+			"style": {
+				"navigationBarTitleText": "Calendar",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/picker/index",
+			"style": {
+				"navigationBarTitleText": "Picker",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/datetime-picker/index",
+			"style": {
+				"navigationBarTitleText": "Datetime-picker",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/checkbox/index",
+			"style": {
+				"navigationBarTitleText": "Checkbox",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/tag/index",
+			"style": {
+				"navigationBarTitleText": "Tag",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/radio/index",
+			"style": {
+				"navigationBarTitleText": "Radio",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/color/index",
+			"style": {
+				"navigationBarTitleText": "Color",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/toast/index",
+			"style": {
+				"navigationBarTitleText": "Toast",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/loading/index",
+			"style": {
+				"navigationBarTitleText": "Loading",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/sticky/index",
+			"style": {
+				"navigationBarTitleText": "Sticky",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/tab/index",
+			"style": {
+				"navigationBarTitleText": "Tab",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/icon/index",
+			"style": {
+				"navigationBarTitleText": "Icon",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/dialog/index",
+			"style": {
+				"navigationBarTitleText": "Dialog",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/line/index",
+			"style": {
+				"navigationBarTitleText": "Line",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/field/index",
+			"style": {
+				"navigationBarTitleText": "Field",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/number-board/index",
+			"style": {
+				"navigationBarTitleText": "NumberBoard",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/password-input/index",
+			"style": {
+				"navigationBarTitleText": "PasswordInput",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/rate/index",
+			"style": {
+				"navigationBarTitleText": "Rate",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "Search",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/slider/index",
+			"style": {
+				"navigationBarTitleText": "Slider",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/stepper/index",
+			"style": {
+				"navigationBarTitleText": "Stepper",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/switch/index",
+			"style": {
+				"navigationBarTitleText": "Switch",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/uploader/index",
+			"style": {
+				"navigationBarTitleText": "Uploader",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/form/index",
+			"style": {
+				"navigationBarTitleText": "Form",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/area/index",
+			"style": {
+				"navigationBarTitleText": "Area",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/cascader/index",
+			"style": {
+				"navigationBarTitleText": "Cascader",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/badge/index",
+			"style": {
+				"navigationBarTitleText": "Badge",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/swipe-cell/index",
+			"style": {
+				"navigationBarTitleText": "SwipeCell",
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#eaeaea",
+		"backgroundColor": "#eaeaea"
+	}
+}

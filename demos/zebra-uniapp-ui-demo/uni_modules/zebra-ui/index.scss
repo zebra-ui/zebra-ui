@@ -1,0 +1,188 @@
+.zebra-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.zebra-ellipsis--2 {
+  -webkit-line-clamp: 2
+}
+
+.zebra-ellipsis--3 {
+  -webkit-line-clamp: 3
+}
+
+.zebra-ellipsis--2,
+.zebra-ellipsis--3 {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.zebra-clearfix:after {
+  clear: both;
+  content: "";
+  display: table
+}
+
+
+// flex布局
+.zebra-flex {
+    display: flex;
+}
+
+.zebra-basis-xs {
+    flex-basis: 20%;
+}
+
+.zebra-basis-sm {
+    flex-basis: 40%;
+}
+
+.zebra-basis-df {
+    flex-basis: 50%;
+}
+
+.zebra-basis-lg {
+    flex-basis: 60%;
+}
+
+.zebra-basis-xl {
+    flex-basis: 80%;
+}
+
+.zebra-flex-sub {
+    flex: 1;
+}
+
+.zebra-flex-twice {
+    flex: 2;
+}
+
+.zebra-flex-treble {
+    flex: 3;
+}
+
+.zebra-flex-direction {
+    flex-direction: column;
+}
+
+.zebra-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.zebra-align-start {
+    align-items: flex-start;
+}
+
+.zebra-align-end {
+    align-items: flex-end;
+}
+
+.zebra-align-center {
+    align-items: center;
+}
+
+.zebra-align-stretch {
+    align-items: stretch;
+}
+
+.zebra-align-baseline {
+    align-items: baseline;
+}
+
+.zebra-self-start {
+    align-self: flex-start;
+}
+
+.zebra-self-center {
+    align-self: center;
+}
+
+.zebra-self-end {
+    align-self: flex-end;
+}
+
+.zebra-self-stretch {
+    align-self: stretch;
+}
+
+.zebra-align-stretch {
+    align-items: stretch;
+}
+
+.zebra-justify-start {
+    justify-content: flex-start;
+}
+
+.zebra-justify-end {
+    justify-content: flex-end;
+}
+
+.zebra-justify-center {
+    justify-content: center;
+}
+
+.zebra-justify-between {
+    justify-content: space-between;
+}
+
+.zebra-justify-around {
+    justify-content: space-around;
+}
+
+
+.zebra-hairline,
+.zebra-hairline--bottom,
+.zebra-hairline--left,
+.zebra-hairline--right,
+.zebra-hairline--surround,
+.zebra-hairline--top,
+.zebra-hairline--top-bottom {
+  position: relative
+}
+
+.zebra-hairline--bottom:after,
+.zebra-hairline--left:after,
+.zebra-hairline--right:after,
+.zebra-hairline--surround:after,
+.zebra-hairline--top-bottom:after,
+.zebra-hairline--top:after,
+.zebra-hairline:after {
+  border: 0 solid #ebedf0;
+  bottom: -50%;
+  box-sizing: border-box;
+  content: " ";
+  left: -50%;
+  pointer-events: none;
+  position: absolute;
+  right: -50%;
+  top: -50%;
+  transform: scale(.5);
+  transform-origin: center
+}
+
+.zebra-hairline--top:after {
+  border-top-width: 1px
+}
+
+.zebra-hairline--left:after {
+  border-left-width: 1px
+}
+
+.zebra-hairline--right:after {
+  border-right-width: 1px
+}
+
+.zebra-hairline--bottom:after {
+  border-bottom-width: 1px
+}
+
+.zebra-hairline--top-bottom:after {
+  border-width: 1px 0
+}
+
+.zebra-hairline--surround:after {
+  border-width: 1px
+}
