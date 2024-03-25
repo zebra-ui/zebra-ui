@@ -11,7 +11,7 @@
     "lint:styles": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:styles",
-    "commit": "git status && git add -A && git-cz"
+    "commit": "git status && git add . && git-cz"
   },
   "keywords": [],
   "author": "",
