@@ -62,7 +62,6 @@ const show = ref(false)
       flex-shrink: 0;
       width: 100rpx;
       height: 100rpx;
-      margin-right: var(--van-padding-md);
     }
   }
 
