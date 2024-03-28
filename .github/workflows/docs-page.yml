@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Change directory to docs/zebra-ui-docs
-        run: cd docs/zebra-ui-docs
       - name: Enable Corepack
         run: corepack enable
       - uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
       - name: Install dependencies
         run: npm install
+        working-directory: docs/zebra-ui-docs
       - name: Build Nuxt project
         run: npx nuxt build --preset github_pages
+        working-directory: docs/zebra-ui-docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
