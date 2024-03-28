@@ -295,7 +295,7 @@ const onChangeAsync = ({ value }: any) => {
   .current-level {
     padding: 32rpx 32rpx 0;
     font-size: 28rpx;
-    color: var(--van-gray-6);
+    color: var(--z-gray-6);
   }
 }
 </style>

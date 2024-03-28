@@ -74,12 +74,12 @@ const fileListRe = ref([
 
 const fileListStatus = ref([
   {
-    url: 'https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
+    url: 'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
     status: 'uploading',
     message: '上传中...'
   },
   {
-    url: 'https://fastly.jsdelivr.net/npm/@vant/assets/tree.jpeg',
+    url: 'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
     status: 'failed',
     message: '上传失败'
   }

@@ -1,0 +1,150 @@
+:root,
+:host {
+  // colors
+  --zebra-doc-black: #000;
+  --zebra-doc-white: #fff;
+  --zebra-doc-gray-1: #f7f8fa;
+  --zebra-doc-gray-2: #f2f3f5;
+  --zebra-doc-gray-3: #ebedf0;
+  --zebra-doc-gray-4: #dcdee0;
+  --zebra-doc-gray-5: #c8c9cc;
+  --zebra-doc-gray-6: #969799;
+  --zebra-doc-gray-7: #646566;
+  --zebra-doc-gray-8: #323233;
+  --zebra-doc-blue: #1989fa;
+  --zebra-doc-green: #07c160;
+  --zebra-doc-purple: #8e69d3;
+
+  // sizes
+  --zebra-doc-padding: 32px;
+  --zebra-doc-row-max-width: 1680px;
+  --zebra-doc-nav-width: 230px;
+  --zebra-doc-border-radius: 20px;
+  --zebra-doc-simulator-width: 360px;
+  --zebra-doc-simulator-height: 620px;
+  --zebra-doc-header-top-height: 64px;
+
+  // fonts
+  --zebra-doc-code-font-family: 'Menlo', 'Source Code Pro', 'Monaco',
+    'Inconsolata', monospace;
+}
+
+.zebra-doc-theme-light {
+  // text
+  --zebra-doc-text-color-1: var(--zebra-doc-black);
+  --zebra-doc-text-color-2: var(--zebra-doc-gray-8);
+  --zebra-doc-text-color-3: #34495e;
+  --zebra-doc-text-color-4: var(--zebra-doc-gray-6);
+  --zebra-doc-link-color: var(--zebra-doc-blue);
+
+  // background
+  --zebra-doc-background: #eff2f5;
+  --zebra-doc-background-2: var(--zebra-doc-white);
+  --zebra-doc-background-3: var(--zebra-doc-white);
+  --zebra-doc-header-background: #011f3c;
+  --zebra-doc-border-color: var(--zebra-doc-gray-2);
+
+  // code
+  --zebra-doc-code-color: #58727e;
+  --zebra-doc-code-comment-color: var(--zebra-doc-gray-6);
+  --zebra-doc-code-background: var(--zebra-doc-gray-1);
+
+  // blockquote
+  --zebra-doc-blockquote-color: #2f85da;
+  --zebra-doc-blockquote-background: #ecf9ff;
+}
+
+.zebra-doc-theme-dark {
+  // text
+  --zebra-doc-text-color-1: var(--zebra-doc-white);
+  --zebra-doc-text-color-2: rgba(255, 255, 255, 0.9);
+  --zebra-doc-text-color-3: rgba(255, 255, 255, 0.75);
+  --zebra-doc-text-color-4: rgba(255, 255, 255, 0.6);
+  --zebra-doc-link-color: #1bb5fe;
+
+  // background
+  --zebra-doc-background: #202124;
+  --zebra-doc-background-2: rgba(255, 255, 255, 0.06);
+  --zebra-doc-background-3: rgba(255, 255, 255, 0.1);
+  --zebra-doc-header-background: rgba(1, 31, 60, 0.3);
+  --zebra-doc-border-color: #3a3a3c;
+
+  // code
+  --zebra-doc-code-color: rgba(200, 200, 200, 0.85);
+  --zebra-doc-code-comment-color: var(--zebra-doc-gray-7);
+  --zebra-doc-code-background: rgba(0, 0, 0, 0.24);
+
+  // blockquote
+  --zebra-doc-blockquote-color: #bae6fd;
+  --zebra-doc-blockquote-background: rgba(7, 89, 133, 0.25);
+}
+
+// neumorphism
+.zebra-doc-theme-light-n {
+  --light-bg-dark-shadow: #bec8e4;
+  --light-bg-light-shadow: #ffffff;
+  --box-shadow: 3px 3px 6px var(--light-bg-dark-shadow),
+    -3px -3px 6px var(--light-bg-light-shadow);
+  --box-shadow-inset: inset -2px -2px 5px var(--light-bg-light-shadow),
+    inset 2px 2px 5px var(--light-bg-dark-shadow);
+  --neumorphism-border-radius: 6px;
+  // shadow
+  --zebra-doc-neumorphism-shadown: var(--box-shadow);
+  // text
+  --zebra-doc-text-color-1: var(--zebra-doc-black);
+  --zebra-doc-text-color-2: var(--zebra-doc-gray-8);
+  --zebra-doc-text-color-3: #34495e;
+  --zebra-doc-text-color-4: var(--zebra-doc-gray-6);
+  --zebra-doc-link-color: var(--zebra-doc-blue);
+
+  // background
+  --zebra-doc-background: #e4ebf5;
+  --zebra-doc-background-2: var(--zebra-doc-white);
+  --zebra-doc-background-3: var(--zebra-doc-white);
+  --zebra-doc-header-background: #e4ebf5;
+  --zebra-doc-border-color: var(--zebra-doc-gray-2);
+
+  // code
+  --zebra-doc-code-color: #58727e;
+  --zebra-doc-code-comment-color: var(--zebra-doc-gray-6);
+  --zebra-doc-code-background: var(--zebra-doc-gray-1);
+
+  // blockquote
+  --zebra-doc-blockquote-color: #2f85da;
+  --zebra-doc-blockquote-background: #ecf9ff;
+}
+
+.zebra-doc-theme-dark-n {
+  --dark-bg-dark-shadow: #0d0d0e;
+  --dark-bg-light-shadow: #33353a;
+  --box-shadow: 3px 3px 6px var(--dark-bg-dark-shadow),
+    -3px -3px 6px var(--dark-bg-light-shadow);
+  --box-shadow-inset: inset -2px -2px 5px var(--dark-bg-light-shadow),
+    inset 2px 2px 5px var(--dark-bg-dark-shadow);
+  --neumorphism-border-radius: 6px;
+  // shadow
+  --zebra-doc-neumorphism-shadown: var(--box-shadow);
+
+  // text
+  --zebra-doc-text-color-1: var(--zebra-doc-white);
+  --zebra-doc-text-color-2: rgba(255, 255, 255, 0.9);
+  --zebra-doc-text-color-3: rgba(255, 255, 255, 0.75);
+  --zebra-doc-text-color-4: rgba(255, 255, 255, 0.6);
+  --zebra-doc-link-color: #1bb5fe;
+
+  // background
+  --zebra-doc-background: #202124;
+  --zebra-doc-background-2: rgba(255, 255, 255, 0.06);
+  --zebra-doc-background-3: rgba(255, 255, 255, 0.1);
+  --zebra-doc-header-background: rgba(1, 31, 60, 0.3);
+  --zebra-doc-border-color: #3a3a3c;
+
+  // code
+  --zebra-doc-code-color: rgba(200, 200, 200, 0.85);
+  --zebra-doc-code-comment-color: var(--zebra-doc-gray-7);
+  --zebra-doc-code-background: rgba(0, 0, 0, 0.24);
+
+  // blockquote
+  --zebra-doc-blockquote-color: #bae6fd;
+  --zebra-doc-blockquote-background: rgba(7, 89, 133, 0.25);
+}

@@ -1,6 +1,6 @@
 <template>
   <view
-    :class="[bem(), { 'van-safe-area-bottom': safeAreaInsetBottom }]"
+    :class="[bem(), { 'z-safe-area-bottom': safeAreaInsetBottom }]"
     :style="rootStyle"
     data-id="root"
     @touchstart.passive="onTouchstart"

@@ -29,9 +29,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 // @ts-ignore
 import { useThemeStore } from '../../store'
+// #ifdef H5
+import { useCurrentTheme, syncThemeToParent } from '../../common/js/iframe-sync'
+useCurrentTheme()
+// #endif
 const store = useThemeStore()
 const checked = ref(store.theme == 'dark' ? true : false)
 const props = defineProps({
@@ -52,7 +56,16 @@ const props = defineProps({
 })
 const switchChange = (value: string) => {
   store.setTheme(value ? 'dark' : 'light')
+  // #ifdef H5
+  syncThemeToParent()
+  // #endif
 }
+watch(
+  () => store.theme,
+  (value) => {
+    checked.value = value == 'dark' ? true : false
+  }
+)
 </script>
 
 <style scoped lang="scss">

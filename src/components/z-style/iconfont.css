@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: normal normal normal 28rpx / 1 var(--van-icon-font-family, 'z-icon');
+  font: normal normal normal 28rpx / 1 var(--z-icon-font-family, 'z-icon');
   font-size: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
