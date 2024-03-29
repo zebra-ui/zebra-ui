@@ -25,9 +25,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+        working-directory: docs/zebra-ui-docs
 
       - name: Build Site
         run: pnpm run build
+        working-directory: docs/zebra-ui-docs
 
       - name: Upload File via SCP
         uses: appleboy/scp-action@master
