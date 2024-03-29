@@ -48,3 +48,7 @@ jobs:
           pass: ${{ secrets.PASSWORD }}
           last_ssh: |
             cd /www/wwwroot/zebraui-docs/docs/zebra-ui-docs
+            docker stop zebra-ui-docs-docker
+            docker rm -f zebra-ui-docs-docker
+            docker build -t zebra-ui-docs-docker .
+            docker run --name zebra-ui-docs-docker -d -p 3000:3000 zebra-ui-docs-docker
