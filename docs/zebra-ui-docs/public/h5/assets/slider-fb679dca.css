@@ -1,0 +1,12 @@
+.demo-slider .demo-slider-item[data-v-ba5a53e4] {
+  padding: 0.9375rem;
+}
+.demo-slider .custom-button[data-v-ba5a53e4] {
+  width: 1.625rem;
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+  color: #fff;
+  text-align: center;
+  background-color: var(--z-primary-color);
+  border-radius: 6.25rem;
+}

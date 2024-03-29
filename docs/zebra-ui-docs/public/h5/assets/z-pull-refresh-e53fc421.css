@@ -1,0 +1,22 @@
+.z-pull-refresh[data-v-3c97effe] {
+  overflow: hidden;
+}
+.z-pull-refresh__track[data-v-3c97effe] {
+  position: relative;
+  height: 100%;
+  transition-property: transform;
+}
+.z-pull-refresh__head[data-v-3c97effe] {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--z-pull-refresh-head-height);
+  overflow: hidden;
+  font-size: var(--z-pull-refresh-head-font-size);
+  line-height: var(--z-pull-refresh-head-height);
+  color: var(--z-pull-refresh-head-text-color);
+  transform: translateY(-100%);
+}

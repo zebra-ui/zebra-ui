@@ -1,0 +1,12 @@
+.z-checkbox[data-v-7416e96f] {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.z-checkbox-group--horizontal[data-v-9e62570f] {
+  display: flex;
+  flex-wrap: wrap;
+}

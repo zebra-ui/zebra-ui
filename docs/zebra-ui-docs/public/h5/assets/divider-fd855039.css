@@ -1,0 +1,70 @@
+.z-divider[data-v-579f48d1] {
+  display: flex;
+  align-items: center;
+  margin: var(--z-divider-margin);
+  font-size: var(--z-divider-font-size);
+  line-height: var(--z-divider-line-height);
+  color: var(--z-divider-text-color);
+  border-color: var(--z-divider-border-color);
+  border-style: solid;
+  border-width: 0;
+}
+.z-divider[data-v-579f48d1]:before,
+.z-divider[data-v-579f48d1]:after {
+  box-sizing: border-box;
+  display: block;
+  flex: 1;
+  height: 0.0625rem;
+  border-color: inherit;
+  border-style: inherit;
+  border-width: var(--z-border-width) 0 0;
+}
+.z-divider[data-v-579f48d1]:before {
+  content: '';
+}
+.z-divider--hairline[data-v-579f48d1]:before,
+.z-divider--hairline[data-v-579f48d1]:after {
+  transform: scaleY(0.5);
+}
+.z-divider--dashed[data-v-579f48d1] {
+  border-style: dashed;
+}
+.z-divider--content-center[data-v-579f48d1]:before,
+.z-divider--content-left[data-v-579f48d1]:before,
+.z-divider--content-right[data-v-579f48d1]:before {
+  margin-right: var(--z-divider-content-padding);
+}
+.z-divider--content-center[data-v-579f48d1]:after,
+.z-divider--content-left[data-v-579f48d1]:after,
+.z-divider--content-right[data-v-579f48d1]:after {
+  margin-left: var(--z-divider-content-padding);
+  content: '';
+}
+.z-divider--content-left[data-v-579f48d1]:before {
+  max-width: var(--z-divider-content-left-width);
+}
+.z-divider--content-right[data-v-579f48d1]:after {
+  max-width: var(--z-divider-content-right-width);
+}
+.z-divider--vertical[data-v-579f48d1] {
+  display: inline-block;
+  width: var(--z-border-width);
+  height: 1em;
+  margin: var(--z-divider-vertical-margin);
+  vertical-align: middle;
+}
+.z-divider--vertical[data-v-579f48d1]:before {
+  height: 100%;
+  border-width: 0 0 0 var(--z-border-width);
+}
+.z-divider--vertical[data-v-579f48d1]:after {
+  display: none;
+}
+.z-divider--vertical.z-divider--hairline[data-v-579f48d1]:before {
+  transform: scaleX(0.5);
+}
+.demo-divider .content[data-v-4efe50ac] {
+  padding: 0 var(--z-padding-md);
+  font-size: var(--z-font-size-md);
+  color: var(--z-text-color-2);
+}

@@ -1,0 +1,11 @@
+.demo-uploader .preview-cover[data-v-13d66f7f] {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+}

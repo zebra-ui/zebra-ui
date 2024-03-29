@@ -1,0 +1,36 @@
+name: Upload Files to Server
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - docs/zebra-ui-docs/**
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install SSH Pass
+        run: sudo apt-get install -y sshpass
+
+      - name: Clear Server Directory
+        run: |
+          sshpass -p ${{ secrets.PASSWORD }} ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /www/wwwroot/zebraui-docs/*"
+        env:
+          SERVER_USERNAME: ${{ secrets.USERNAME }}
+          SERVER_HOST: ${{ secrets.HOST }}
+          SERVER_PASSWORD: ${{ secrets.PASSWORD }}
+
+      - name: Upload File via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          source: 'docs/zebra-ui-docs'
+          target: '/www/wwwroot/zebraui-docs/'

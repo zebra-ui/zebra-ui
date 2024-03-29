@@ -1,0 +1,21 @@
+.z-signature[data-v-347c493c] {
+  padding: var(--z-signature-padding);
+}
+.z-signature__content[data-v-347c493c] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--z-signature-content-height);
+  overflow: hidden;
+  background-color: var(--z-signature-content-background);
+  border: var(--z-signature-content-border);
+  border-radius: var(--z-radius-lg);
+}
+.z-signature__content uni-canvas[data-v-347c493c] {
+  width: 100%;
+  height: 100%;
+}
+.z-signature__footer[data-v-347c493c] {
+  display: flex;
+  justify-content: flex-end;
+}

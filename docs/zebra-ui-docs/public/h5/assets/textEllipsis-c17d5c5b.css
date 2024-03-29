@@ -1,0 +1,16 @@
+.z-text-ellipsis[data-v-05b97d28] {
+  line-height: var(--z-text-ellipsis-line-height);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+.z-text-ellipsis__action[data-v-05b97d28] {
+  display: inline-block;
+  color: var(--z-text-ellipsis-action-color);
+  cursor: pointer;
+}
+.z-text-ellipsis__action[data-v-05b97d28]:active {
+  opacity: var(--z-active-opacity);
+}
+.demo-text-ellipsis[data-v-df153dc8] {
+  color: var(--z-text-color);
+}
