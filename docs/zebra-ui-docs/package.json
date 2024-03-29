@@ -15,7 +15,6 @@
     "pinia": "^2.1.7"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "^8.2.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "sass": "^1.72.0"
   }
