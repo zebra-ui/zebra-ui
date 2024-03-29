@@ -1,6 +1,6 @@
 <div class="zebra-doc-card">
   <div class="zebra-doc-intro">
-    <img class="zebra-doc-intro__logo" style="width: 180px; height: 180px;" src="https://cdn.zebraui.com/zebra-ui/images/logo.png">
+    <img class="zebra-doc-intro__logo" style="width: 180px; height: 180px;" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/logo.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">zebra-ui</h2>
     <p>基于uniapp，使用vue3 + ts + setup 的多端兼容组件库。</p>
   </div>
