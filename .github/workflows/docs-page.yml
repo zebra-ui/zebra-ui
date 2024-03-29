@@ -23,7 +23,7 @@ jobs:
       - name: Build Nuxt project
         run: npx nuxt build --preset github_pages
         working-directory: docs/zebra-ui-docs
-      - name: Deploy for Gitee 🚀
+      - name: Deploy for Github 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages

@@ -15,6 +15,10 @@
           class="zebra-doc-nav__item"
         >
           <zebra-doc-nav-link :item="item" :base="base" />
+          <a
+            style="display: none"
+            :href="baseEn + (item.path == 'home' ? '' : item.path)"
+          />
         </div>
       </template>
     </div>
@@ -46,6 +50,10 @@ export default {
     base() {
       return this.lang != 'zh' ? `/${this.lang}/` : '/'
       // return '/'
+    },
+    // 预渲染锚点
+    baseEn() {
+      return '/en/'
     }
   },
 
