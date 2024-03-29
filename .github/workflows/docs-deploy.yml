@@ -18,13 +18,13 @@ jobs:
       - name: Install SSH Pass
         run: sudo apt-get install -y sshpass
 
-      - name: Clear Server Directory
-        run: |
-          sshpass -p ${{ secrets.PASSWORD }} ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /www/wwwroot/zebraui-docs/*"
-        env:
-          SERVER_USERNAME: ${{ secrets.USERNAME }}
-          SERVER_HOST: ${{ secrets.HOST }}
-          SERVER_PASSWORD: ${{ secrets.PASSWORD }}
+      #   - name: Clear Server Directory
+      #     run: |
+      #       sshpass -p ${{ secrets.PASSWORD }} ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /www/wwwroot/zebraui-docs/*"
+      #     env:
+      #       SERVER_USERNAME: ${{ secrets.USERNAME }}
+      #       SERVER_HOST: ${{ secrets.HOST }}
+      #       SERVER_PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Upload File via SCP
         uses: appleboy/scp-action@master
