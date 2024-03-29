@@ -1,0 +1,145 @@
+.z-calendar__day[data-v-c9eec7d4],
+.z-calendar__selected-day[data-v-c9eec7d4] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.z-calendar__day[data-v-c9eec7d4] {
+  position: relative;
+  width: 14.285%;
+  height: var(--z-calendar-day-height);
+  margin-bottom: var(--z-calendar-day-margin-bottom);
+  font-size: var(--z-calendar-day-font-size);
+  color: var(--z-text-color);
+}
+.z-calendar__day--end[data-v-c9eec7d4],
+.z-calendar__day--start[data-v-c9eec7d4],
+.z-calendar__day--start-end[data-v-c9eec7d4],
+.z-calendar__day--multiple-middle[data-v-c9eec7d4],
+.z-calendar__day--multiple-selected[data-v-c9eec7d4] {
+  color: var(--z-calendar-range-edge-color);
+  background: var(--z-calendar-range-edge-background);
+}
+.z-calendar__day--start[data-v-c9eec7d4] {
+  border-radius: var(--z-radius-md) 0 0 var(--z-radius-md);
+}
+.z-calendar__day--end[data-v-c9eec7d4] {
+  border-radius: 0 var(--z-radius-md) var(--z-radius-md) 0;
+}
+.z-calendar__day--start-end[data-v-c9eec7d4],
+.z-calendar__day--multiple-selected[data-v-c9eec7d4] {
+  border-radius: var(--z-radius-md);
+}
+.z-calendar__day--middle[data-v-c9eec7d4] {
+  color: var(--z-calendar-range-middle-color);
+}
+.z-calendar__day--middle[data-v-c9eec7d4]:after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background-color: currentcolor;
+  opacity: var(--z-calendar-range-middle-background-opacity);
+}
+.z-calendar__day--disabled[data-v-c9eec7d4] {
+  color: var(--z-calendar-day-disabled-color);
+  cursor: default;
+}
+.z-calendar__selected-day[data-v-c9eec7d4] {
+  width: var(--z-calendar-selected-day-size);
+  height: var(--z-calendar-selected-day-size);
+  color: var(--z-calendar-selected-day-color);
+  background: var(--z-calendar-selected-day-background);
+  border-radius: var(--z-radius-md);
+}
+.z-calendar__top-info[data-v-c9eec7d4],
+.z-calendar__bottom-info[data-v-c9eec7d4] {
+  position: absolute;
+  right: 0;
+  left: 0;
+  font-size: var(--z-calendar-info-font-size);
+  line-height: var(--z-calendar-info-line-height);
+}
+@media (width <= 700rpx) {
+  .z-calendar__top-info[data-v-c9eec7d4],
+  .z-calendar__bottom-info[data-v-c9eec7d4] {
+    font-size: 0.5625rem;
+  }
+}
+.z-calendar__top-info[data-v-c9eec7d4] {
+  top: 0.375rem;
+}
+.z-calendar__bottom-info[data-v-c9eec7d4] {
+  bottom: 0.375rem;
+}
+.z-calendar__month-title[data-v-f7bd9a37] {
+  height: var(--z-calendar-header-title-height);
+  font-weight: var(--z-font-bold);
+  line-height: var(--z-calendar-header-title-height);
+  color: var(--z-text-color);
+  text-align: center;
+}
+.z-calendar_month-title[data-v-f7bd9a37] {
+  font-size: var(--z-calendar-month-title-font-size);
+}
+.z-calendar__days[data-v-f7bd9a37] {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.z-calendar__month-mark[data-v-f7bd9a37] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  font-size: var(--z-calendar-month-mark-font-size);
+  color: var(--z-calendar-month-mark-color);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.z-calendar__header[data-v-b591cb6c] {
+  flex-shrink: 0;
+  box-shadow: var(--z-calendar-header-shadow);
+}
+.z-calendar__header-title[data-v-b591cb6c],
+.z-calendar__header-subtitle[data-v-b591cb6c] {
+  height: var(--z-calendar-header-title-height);
+  font-weight: var(--z-font-bold);
+  line-height: var(--z-calendar-header-title-height);
+  color: var(--z-text-color);
+  text-align: center;
+}
+.z-calendar__header-title[data-v-b591cb6c] {
+  font-size: var(--z-calendar-header-title-font-size);
+}
+.z-calendar__header-subtitle[data-v-b591cb6c] {
+  font-size: var(--z-calendar-header-subtitle-font-size);
+}
+.z-calendar__weekdays[data-v-b591cb6c] {
+  display: flex;
+}
+.z-calendar__weekday[data-v-b591cb6c] {
+  flex: 1;
+  font-size: var(--z-calendar-weekdays-font-size);
+  line-height: var(--z-calendar-weekdays-height);
+  color: var(--z-text-color);
+  text-align: center;
+}
+.z-calendar[data-v-a2bd0449] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--z-calendar-background);
+}
+.z-calendar__body[data-v-a2bd0449] {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+.z-calendar__footer[data-v-a2bd0449] {
+  flex-shrink: 0;
+  padding-right: var(--z-padding-md);
+  padding-left: var(--z-padding-md);
+}

@@ -1,0 +1,48 @@
+.z-image[data-v-79e659dc] {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.z-image--round[data-v-79e659dc] {
+  overflow: hidden;
+  border-radius: var(--z-radius-max);
+}
+.z-image--round .z-image__img[data-v-79e659dc] {
+  border-radius: inherit;
+}
+.z-image--block[data-v-79e659dc] {
+  display: block;
+}
+.z-image__content[data-v-79e659dc] {
+  width: 100%;
+  height: 100%;
+}
+.z-image__img[data-v-79e659dc],
+.z-image__error[data-v-79e659dc],
+.z-image__loading[data-v-79e659dc] {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.z-image__error[data-v-79e659dc],
+.z-image__loading[data-v-79e659dc] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--z-image-placeholder-font-size);
+  color: var(--z-image-placeholder-text-color);
+  background: var(--z-image-placeholder-background);
+}
+.z-image__loading-icon[data-v-79e659dc] {
+  font-size: var(--z-image-loading-icon-size);
+  color: var(--z-image-loading-icon-color);
+}
+.z-image__error-icon[data-v-79e659dc] {
+  font-size: var(--z-image-error-icon-size);
+  color: var(--z-image-error-icon-color);
+}

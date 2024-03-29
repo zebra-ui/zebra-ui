@@ -1,0 +1,17 @@
+.z-list__loading[data-v-909f7343],
+.z-list__finished-text[data-v-909f7343],
+.z-list__error-text[data-v-909f7343] {
+  font-size: var(--z-list-text-font-size);
+  line-height: var(--z-list-text-line-height);
+  color: var(--z-list-text-color);
+  text-align: center;
+}
+.z-list__loading[data-v-909f7343] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.z-list__placeholder[data-v-909f7343] {
+  height: 0;
+  pointer-events: none;
+}

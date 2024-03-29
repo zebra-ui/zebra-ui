@@ -1,0 +1,14 @@
+.demo-layout[data-v-8e820fe6] .z-col {
+  margin-bottom: 0.625rem;
+  font-size: 0.8125rem;
+  line-height: 1.875rem;
+  color: var(--z-white);
+  text-align: center;
+  background-clip: content-box;
+}
+.demo-layout[data-v-8e820fe6] .z-col:nth-child(odd) {
+  background-color: #39a9ed;
+}
+.demo-layout[data-v-8e820fe6] .z-col:nth-child(even) {
+  background-color: #66c6f2;
+}

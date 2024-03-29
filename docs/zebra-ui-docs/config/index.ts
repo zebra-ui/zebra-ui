@@ -10,7 +10,7 @@ export default {
       seed: '841f20e6334a41191d899e2cab61bf9f'
     },
     simulator: {
-      url: 'http://localhost:5173/#/'
+      url: '/h5'
     },
     locales: {
       zh: {
@@ -21,7 +21,7 @@ export default {
         links: [
           {
             logo: 'h5',
-            url: 'https://zebraui.com/h5'
+            url: '/h5'
           },
           {
             logo: 'uni',

@@ -1,0 +1,11 @@
+.demo-overlay .wrapper[data-v-1a3ebe46] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.demo-overlay .block[data-v-1a3ebe46] {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: #fff;
+}

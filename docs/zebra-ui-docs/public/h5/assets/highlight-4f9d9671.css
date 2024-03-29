@@ -1,0 +1,11 @@
+.z-highlight__tag[data-v-9550dab9] {
+  color: var(--z-highlight-tag-color);
+}
+.demo-highlight .text-content[data-v-f5bf69ef] {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--zebra-text-color);
+}
+[data-v-f5bf69ef] .demo-highlight .text-content-custom {
+  font-weight: 700;
+}
