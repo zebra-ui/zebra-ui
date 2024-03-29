@@ -15,16 +15,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install SSH Pass
-        run: sudo apt-get install -y sshpass
+      - name: Install pnpm
+        run: corepack enable
 
-      #   - name: Clear Server Directory
-      #     run: |
-      #       sshpass -p ${{ secrets.PASSWORD }} ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /www/wwwroot/zebraui-docs/*"
-      #     env:
-      #       SERVER_USERNAME: ${{ secrets.USERNAME }}
-      #       SERVER_HOST: ${{ secrets.HOST }}
-      #       SERVER_PASSWORD: ${{ secrets.PASSWORD }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Site
+        run: pnpm run build
 
       - name: Upload File via SCP
         uses: appleboy/scp-action@master
@@ -32,5 +35,12 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: 'docs/zebra-ui-docs'
+          source: 'docs/zebra-ui-docs/.output'
           target: '/www/wwwroot/zebraui-docs/'
+
+      - name: Install SSH Pass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy with Docker
+        run: |
+          sshpass -p ${{ secrets.PASSWORD }} ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /www/wwwroot/zebraui-docs/docs/zebra-ui-docs"
