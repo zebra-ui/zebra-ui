@@ -37,12 +37,14 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: 'docs/zebra-ui-docs/.output'
+          source: 'docs/zebra-ui-docs/.output,docs/zebra-ui-docs/Dockerfile'
           target: '/www/wwwroot/zebraui-docs/'
 
-      - name: Install SSH Pass
-        run: sudo apt-get install -y sshpass
-
-      - name: Deploy with Docker
-        run: |
-          sshpass -p ${{ secrets.PASSWORD }} ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /www/wwwroot/zebraui-docs/docs/zebra-ui-docs"
+      - name: ssh pipelines
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USERNAME }}
+          pass: ${{ secrets.PASSWORD }}
+          last_ssh: |
+            cd /www/wwwroot/zebraui-docs/docs/zebra-ui-docs
