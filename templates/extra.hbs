@@ -1,0 +1,13 @@
+{{#each releases}}
+### [{{title}}]({{href}})
+
+{{! List commits with `Breaking change: ` somewhere in the message }}
+{{#commit-list commits heading='### Breaking Changes' message='Breaking change: '}}
+- {{subject}} [`{{shorthash}}`]({{href}})
+{{/commit-list}}
+
+{{! List commits that add new features, but not those already listed above }}
+{{#commit-list commits heading='### New Features' message='feat: ' exclude='Breaking change: '}}
+- {{subject}} [`{{shorthash}}`]({{href}})
+{{/commit-list}}
+{{/each}}
