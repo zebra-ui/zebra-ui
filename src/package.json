@@ -1,7 +1,7 @@
 {
   "name": "@zebra-ui/uniapp",
   "displayName": "zebra-ui",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "基于uniapp并实现多端兼容。",
   "keywords": [
     "zebra-ui",
