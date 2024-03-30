@@ -12,6 +12,7 @@
     "versionArgs": ["--allow-same-version"]
   },
   "git": {
+    "commitMessage": "build: ${version}",
     "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --template ./templates/changelog-compact.hbs"
   },
   "hooks": {
