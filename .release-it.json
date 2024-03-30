@@ -1,0 +1,86 @@
+{
+  "github": {
+    "release": true,
+    "comments": {
+      "submit": false,
+      "issue": ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
+      "pr": ":rocket: _This pull request is included in v${version}. See [${releaseName}](${releaseUrl}) for release notes._"
+    }
+  },
+  "npm": {
+    "publishPath": "./src",
+    "versionArgs": ["--allow-same-version"]
+  },
+  "git": {
+    "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --template ./templates/changelog-compact.hbs"
+  },
+  "hooks": {
+    "after:bump": "npx auto-changelog -p"
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "in": "version.json",
+      "out": ["package.json", "src/package.json"]
+    },
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOGAUTO.md",
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "perf",
+            "section": "Performance Improvements"
+          },
+          {
+            "type": "revert",
+            "section": "Reverts"
+          },
+          {
+            "type": "docs",
+            "section": "Documentation"
+          },
+          {
+            "type": "style",
+            "section": "Styles"
+          },
+          {
+            "type": "refactor",
+            "section": "Code Refactoring"
+          },
+          {
+            "type": "test",
+            "section": "Tests"
+          },
+          {
+            "type": "build",
+            "section": "Build System"
+          },
+          {
+            "type": "ci",
+            "section": "Continuous Integration"
+          },
+          {
+            "type": "chore",
+            "section": "Chores"
+          },
+          {
+            "type": "other",
+            "hidden": true
+          }
+        ]
+      }
+    },
+    "@release-it/keep-a-changelog": {
+      "filename": "CHANGELOG.md",
+      "addUnreleased": true
+    }
+  }
+}

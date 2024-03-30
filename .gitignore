@@ -5,6 +5,7 @@ dist
 package-lock.json
 .eslintcache
 zebra-swiper
+HISTORY.md
 
 # local env files
 .env.local

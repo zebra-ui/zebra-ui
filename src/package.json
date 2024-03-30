@@ -1,12 +1,24 @@
 {
-  "id": "zebra-ui",
+  "id": "@zebra-ui/uniapp",
   "displayName": "zebra-ui",
   "version": "1.0.0",
-  "description": "zebra-ui",
+  "description": "基于uniapp并实现多端兼容。",
   "keywords": [
-    "zebra-ui"
+    "zebra-ui",
+    "zebra",
+    "uniapp",
+    "zebra-swiper"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zebra-ui/zebra-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zebra-ui/zebra-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "HBuilderX": "^3.1.0"
   },
