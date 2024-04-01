@@ -1,3 +1,13 @@
+## [2.0.0-alpha.4](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.3...2.0.0-alpha.4) (2024-04-01)
+
+### Bug Fixes
+
+- 🧩 refactor import statements to use TypeScript type syntax ([e9e9809](https://github.com/zebra-ui/zebra-ui/commit/e9e98095adaf44e08648dd3d3a8001f9240f65fa))
+
+### Build System
+
+- 🔨 update version.json to 2.0.0-alpha.3 ([b9ad69d](https://github.com/zebra-ui/zebra-ui/commit/b9ad69dd06f8f337bcc1b7a815026eb3006e45eb))
+
 ## [2.0.0-alpha.3](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.2...2.0.0-alpha.3) (2024-04-01)
 
 ### Chores
