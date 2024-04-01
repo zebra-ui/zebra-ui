@@ -1,7 +1,7 @@
 import {
   truthProp,
   unknownProp,
-  Interceptor,
+  type Interceptor,
   numericProp
 } from '../../libs/utils'
 import type { PropType } from 'vue'

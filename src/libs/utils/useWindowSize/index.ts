@@ -1,4 +1,4 @@
-import { ref, Ref } from 'vue'
+import { ref, type Ref } from 'vue'
 
 let width: Ref<number>
 let height: Ref<number>

@@ -34,7 +34,7 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { CSSProperties, computed, getCurrentInstance } from 'vue'
+import { type CSSProperties, computed, getCurrentInstance } from 'vue'
 import {
   addUnit,
   truthProp,

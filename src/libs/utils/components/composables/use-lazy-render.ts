@@ -1,4 +1,4 @@
-import { ref, watch, WatchSource } from 'vue'
+import { ref, watch, type WatchSource } from 'vue'
 export function useLazyRender(show: WatchSource<boolean | undefined>) {
   const inited = ref(false)
   watch(

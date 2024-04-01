@@ -27,7 +27,7 @@
 <script lang="ts" setup>
 import { type PropType, getCurrentInstance, computed } from 'vue'
 import {
-  Numeric,
+  type Numeric,
   getSizeStyle,
   makeStringProp,
   createNamespace,

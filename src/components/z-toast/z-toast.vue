@@ -72,7 +72,7 @@ import {
   getCurrentInstance,
   inject,
   reactive,
-  CSSProperties
+  type CSSProperties
 } from 'vue'
 import {
   isDef,

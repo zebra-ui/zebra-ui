@@ -1,4 +1,4 @@
-import { ref, Ref, onBeforeUpdate } from 'vue'
+import { ref, type Ref, onBeforeUpdate } from 'vue'
 import { useWindowSize } from '../../useWindowSize'
 export function useRefs<T = Element>() {
   const refs = ref([]) as Ref<T[]>

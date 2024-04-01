@@ -22,7 +22,7 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { getCurrentInstance, computed, CSSProperties } from 'vue'
+import { getCurrentInstance, computed, type CSSProperties } from 'vue'
 import {
   addUnit,
   numericProp,

@@ -36,7 +36,7 @@ import {
   numericProp,
   makeStringProp,
   createNamespace,
-  Numeric,
+  type Numeric,
   truthProp,
   useComponentName
 } from '../../libs/utils'

@@ -108,7 +108,12 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { computed, type PropType, getCurrentInstance, CSSProperties } from 'vue'
+import {
+  computed,
+  type PropType,
+  getCurrentInstance,
+  type CSSProperties
+} from 'vue'
 import {
   addUnit,
   truthProp,
