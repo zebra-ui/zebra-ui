@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": "@zebra-ui/uniapp",
+  "version": "2.0.0-alpha.2",
+  "main": "src/index.ts",
   "scripts": {
     "prepare": "husky",
     "async": "node scripts/async",
@@ -53,6 +55,5 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
-  },
-  "version": "2.0.0-alpha.2"
+  }
 }
