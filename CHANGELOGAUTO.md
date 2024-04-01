@@ -1,3 +1,10 @@
+## [2.0.0-alpha.3](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.2...2.0.0-alpha.3) (2024-04-01)
+
+### Chores
+
+- 📦️ update package.json dependencies for @zebra-ui/uniapp and pinia ([befecaa](https://github.com/zebra-ui/zebra-ui/commit/befecaab883a5f075ee3931734abd41572c4c6ac))
+- 📦️ update release configuration and package versions ([b9ad8e5](https://github.com/zebra-ui/zebra-ui/commit/b9ad8e59803b7a2a9273d6f823f58eb8ee38516a))
+
 ## [2.0.0-alpha.2](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.1...2.0.0-alpha.2) (2024-04-01)
 
 ### Tests
