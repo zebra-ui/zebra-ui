@@ -71,6 +71,7 @@ import {
   raf,
   useComponentName
 } from '../../libs/utils'
+import zLoading from '../z-loading/z-loading.vue'
 
 type ListDirection = 'up' | 'down'
 

@@ -98,6 +98,10 @@ import {
 } from '../../libs/utils'
 import { popupSharedProps } from '../z-popup/shared'
 
+import zPopup from '../z-popup/z-popup.vue'
+import zIcon from '../z-icon/z-icon.vue'
+import zLoading from '../z-loading/z-loading.vue'
+
 type ActionSheetAction = {
   name?: string
   color?: string

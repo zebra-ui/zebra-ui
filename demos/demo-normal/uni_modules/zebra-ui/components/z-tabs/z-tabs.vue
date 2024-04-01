@@ -246,8 +246,11 @@ import {
   doubleRaf,
   useTouch,
   raf,
-  useComponentName
+  useComponentName,
+  makeNumberProp
 } from '../../libs/utils'
+import zSticky from '../z-sticky/z-sticky.vue'
+import zBadge from '../z-badge/z-badge.vue'
 
 let stickyContainer: any
 let lockScroll: boolean
@@ -277,7 +280,7 @@ const props = defineProps({
   ellipsis: truthProp,
   swipeable: Boolean,
   scrollspy: Boolean,
-  offsetTop: makeNumericProp(0),
+  offsetTop: makeNumberProp(0),
   background: String,
   lazyRender: truthProp,
   showHeader: truthProp,

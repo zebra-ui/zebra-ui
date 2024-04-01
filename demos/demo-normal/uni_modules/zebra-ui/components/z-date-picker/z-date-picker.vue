@@ -54,6 +54,7 @@ import {
   getMonthEndDay,
   formatValueRange
 } from './utils'
+import zPicker from '../z-picker/z-picker.vue'
 const [name] = createNamespace('date-picker')
 useComponentName(name)
 const instance = getCurrentInstance()!

@@ -69,6 +69,7 @@ import {
   useComponentName,
   useParent
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
 const [name, bem] = createNamespace('step')
 useComponentName(name)
 // @ts-ignore

@@ -37,6 +37,7 @@ import {
   useExpose,
   useComponentName
 } from '../../libs/utils'
+import zChecker from '../z-checker/z-checker.vue'
 const [nameComponent, bem] = createNamespace('checkbox')
 useComponentName(nameComponent)
 type CheckerShape = 'square' | 'round'

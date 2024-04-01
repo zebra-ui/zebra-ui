@@ -49,6 +49,7 @@
 import { computed } from 'vue'
 import { bem } from './utils'
 import { createNamespace, useComponentName } from '../../libs/utils'
+import zButton from '../z-button/z-button.vue'
 const [name] = createNamespace('picker-toolbar')
 useComponentName(name)
 const props = defineProps({

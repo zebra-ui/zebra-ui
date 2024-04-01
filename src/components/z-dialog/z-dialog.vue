@@ -158,6 +158,8 @@ import type {
   DialogMessage,
   DialogMessageAlign
 } from './types'
+import zPopup from '../z-popup/z-popup.vue'
+import zButton from '../z-button/z-button.vue'
 const [name, bem] = createNamespace('dialog')
 useComponentName(name)
 const props = defineProps(

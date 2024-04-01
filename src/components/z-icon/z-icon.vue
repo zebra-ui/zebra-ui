@@ -40,6 +40,7 @@ import {
   truthProp,
   useComponentName
 } from '../../libs/utils'
+import zBadge from '../z-badge/z-badge.vue'
 
 const [componentName, bem] = createNamespace('icon')
 useComponentName(componentName)

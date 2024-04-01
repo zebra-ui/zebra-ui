@@ -63,6 +63,7 @@ import {
   useComponentName
 } from '../../libs/utils'
 import { NoticeBarMode } from './types'
+import zIcon from '../z-icon/z-icon.vue'
 
 const [name, bem] = createNamespace('notice-bar')
 useComponentName(name)

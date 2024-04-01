@@ -50,6 +50,7 @@ import {
   addUnit,
   useComponentName
 } from '../../libs/utils'
+import zLoading from '../z-loading/z-loading.vue'
 const [name, bem] = createNamespace('pull-refresh')
 useComponentName(name)
 const instance = getCurrentInstance()!

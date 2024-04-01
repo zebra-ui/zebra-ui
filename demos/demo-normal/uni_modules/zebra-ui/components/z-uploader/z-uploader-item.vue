@@ -74,6 +74,9 @@ import {
   type Interceptor
 } from '../../libs/utils'
 import type { UploaderFileListItem } from './types'
+import zImage from '../z-image/z-image.vue'
+import zIcon from '../z-icon/z-icon.vue'
+import zLoading from '../z-loading/z-loading.vue'
 
 const props = defineProps({
   name: numericProp,

@@ -48,6 +48,7 @@ import {
 } from '../../libs/utils'
 import { popupSharedProps } from '../z-popup/shared'
 import type { NotifyType, NotifyPosition } from './types'
+import zPopup from '../z-popup/z-popup.vue'
 const [name, bem] = createNamespace('notify')
 useComponentName(name)
 const props = defineProps(

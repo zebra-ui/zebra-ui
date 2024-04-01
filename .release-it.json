@@ -2,14 +2,13 @@
   "github": {
     "release": true,
     "comments": {
-      "submit": false,
+      "submit": true,
       "issue": ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
       "pr": ":rocket: _This pull request is included in v${version}. See [${releaseName}](${releaseUrl}) for release notes._"
     }
   },
   "npm": {
-    "publishPath": "./src",
-    "versionArgs": ["--allow-same-version"]
+    "publishPath": "./src"
   },
   "git": {
     "commitMessage": "build: ${version}",
@@ -19,10 +18,6 @@
     "after:bump": "npx auto-changelog -p"
   },
   "plugins": {
-    "@release-it/bumper": {
-      "in": "version.json",
-      "out": ["package.json", "src/package.json"]
-    },
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOGAUTO.md",
       "preset": {

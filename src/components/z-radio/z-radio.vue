@@ -32,6 +32,7 @@ import {
   useParent,
   useComponentName
 } from '../../libs/utils'
+import zChecker from '../z-checker/z-checker.vue'
 const [componentName, bem] = createNamespace('radio')
 useComponentName(componentName)
 const props = defineProps({

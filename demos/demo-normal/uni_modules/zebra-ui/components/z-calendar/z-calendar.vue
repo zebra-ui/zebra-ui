@@ -271,6 +271,8 @@ import { PopupPosition } from '../z-popup/types'
 import { showToast } from '../z-toast/z-toast'
 import zCalendarMonth from './z-calendar-month.vue'
 import zCalendarHeader from './z-calendar-header.vue'
+import zPopup from '../z-popup/z-popup.vue'
+import zButton from '../z-button/z-button.vue'
 import type { CalendarType, CalendarExpose, CalendarDayItem } from './types'
 const props = defineProps({
   show: Boolean,

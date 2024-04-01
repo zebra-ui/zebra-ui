@@ -117,6 +117,8 @@ import {
   makeRequiredProp,
   type Numeric
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
+
 type CheckerShape = 'square' | 'round'
 type CheckerDirection = 'horizontal' | 'vertical'
 type CheckerLabelPosition = 'left' | 'right'

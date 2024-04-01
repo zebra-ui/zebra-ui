@@ -86,6 +86,7 @@ import {
   raf,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
 
 const [name, bem] = createNamespace('nav-bar')
 useComponentName(name)

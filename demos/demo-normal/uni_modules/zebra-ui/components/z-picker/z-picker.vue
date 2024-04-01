@@ -106,6 +106,7 @@ import {
 } from 'vue'
 import zPickerToolbar from './z-picker-toolbar.vue'
 import zPickerColumn from './z-picker-column.vue'
+import zLoading from '../z-loading/z-loading.vue'
 import {
   extend,
   truthProp,

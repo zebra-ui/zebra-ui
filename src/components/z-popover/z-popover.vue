@@ -92,7 +92,6 @@ import {
 } from 'vue'
 import {
   truthProp,
-  numericProp,
   unknownProp,
   BORDER_RIGHT,
   BORDER_BOTTOM,
@@ -116,6 +115,9 @@ import {
   PopoverPlacement
 } from './types'
 
+import zPopup from '../z-popup/z-popup.vue'
+import zIcon from '../z-icon/z-icon.vue'
+
 interface PositionStyle {
   top?: string
   left?: string
@@ -135,7 +137,7 @@ const props = defineProps({
   actions: makeArrayProp<PopoverAction>(),
   actionsDirection: makeStringProp<PopoverActionsDirection>('vertical'),
   trigger: makeStringProp<PopoverTrigger>('click'),
-  duration: numericProp,
+  duration: Number,
   showArrow: truthProp,
   placement: makeStringProp<PopoverPlacement>('bottom'),
   iconPrefix: String,

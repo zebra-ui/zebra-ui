@@ -90,6 +90,7 @@ import {
   useExpose
 } from '../../libs/utils'
 import zUploaderItem from './z-uploader-item.vue'
+import zIcon from '../z-icon/z-icon.vue'
 import {
   bem,
   isOversize,

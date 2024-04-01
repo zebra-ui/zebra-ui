@@ -42,6 +42,8 @@ import { makeArrayProp, makeNumericProp, useExpose } from '../../libs/utils'
 
 import { formatDataForCascade } from './utils'
 
+import zPicker from '../z-picker/z-picker.vue'
+
 import type { PickerExpose } from '../z-picker/types'
 type AreaList = {
   city_list: Record<string, string>

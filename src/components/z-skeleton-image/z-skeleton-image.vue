@@ -12,6 +12,7 @@ import {
   createNamespace,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
 type SkeletonImageShape = 'square' | 'round'
 
 const props = defineProps({

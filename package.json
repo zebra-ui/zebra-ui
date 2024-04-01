@@ -1,7 +1,5 @@
 {
-  "name": "@zebra-ui/uniapp",
-  "version": "2.0.0-alpha.1",
-  "description": "",
+  "private": true,
   "scripts": {
     "prepare": "husky",
     "async": "node scripts/async",

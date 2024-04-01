@@ -3,7 +3,6 @@ node_modules
 unpackage
 zebra-swiper
 docs
-touch-emulator.js
 .nuxt
 .output
 docs/zebra-ui-docs/content

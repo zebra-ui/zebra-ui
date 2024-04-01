@@ -63,6 +63,8 @@ import {
   useComponentName
 } from '../../libs/utils'
 
+import zIcon from '../z-icon/z-icon.vue'
+
 import type { ImageFit, ImagePosition } from './types'
 
 const [name, bem] = createNamespace('image')

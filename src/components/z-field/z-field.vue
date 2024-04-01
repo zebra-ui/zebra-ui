@@ -294,6 +294,8 @@ import type {
   FieldFormSharedProps,
   FieldConfirmType
 } from './types'
+import zCell from '../z-cell/z-cell.vue'
+import zIcon from '../z-icon/z-icon.vue'
 
 import { cellSharedProps, fieldSharedProps } from './shared'
 const [name, bem] = createNamespace('field')

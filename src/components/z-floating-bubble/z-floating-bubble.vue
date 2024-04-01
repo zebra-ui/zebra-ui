@@ -47,6 +47,7 @@ import {
   FloatingBubbleOffset,
   FloatingBubbleBoundary
 } from './types'
+import zIcon from '../z-icon/z-icon.vue'
 const instance = getCurrentInstance()!
 const [name, bem] = createNamespace('floating-bubble')
 useComponentName(name)
