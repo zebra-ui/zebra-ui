@@ -51,6 +51,8 @@ import {
   useTouch,
   useComponentName
 } from '../../libs/utils'
+import ZLoading from '../z-loading/z-loading.vue'
+import ZIcon from '../z-icon/z-icon.vue'
 
 const [name, bem] = createNamespace('key')
 useComponentName(name)

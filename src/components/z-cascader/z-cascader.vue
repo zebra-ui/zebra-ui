@@ -109,6 +109,9 @@ import {
   type Numeric,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
+import zTabs from '../z-tabs/z-tabs.vue'
+import zTab from '../z-tab/z-tab.vue'
 import type { TabsClickTabEventParams } from '../z-tabs/types'
 import type { CascaderTab, CascaderOption, CascaderFieldNames } from './types'
 const [name, bem] = createNamespace('cascader')

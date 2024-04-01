@@ -78,8 +78,8 @@ import { ref } from 'vue'
 import {
   showDialog,
   showConfirmDialog
-} from '../../uni_modules/zebra-ui/components/z-dialog/z-dialog'
-import { showToast } from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+} from '@zebra-ui/uniapp/components/z-dialog/z-dialog'
+import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
 const beforeClose = (action: any) =>
   new Promise((resolve) => {
     setTimeout(() => {

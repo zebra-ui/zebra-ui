@@ -60,7 +60,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const title = ref('标题')
 const subtitle = ref('副标题')
 const description = ref('这是一段文字描述')

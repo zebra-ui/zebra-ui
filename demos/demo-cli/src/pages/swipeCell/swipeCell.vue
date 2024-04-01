@@ -49,7 +49,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 // @ts-ignore
-import { showConfirmDialog } from '../../uni_modules/zebra-ui'
+import { showConfirmDialog } from '@zebra-ui/uniapp'
 const cover = ref(
   'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg'
 )

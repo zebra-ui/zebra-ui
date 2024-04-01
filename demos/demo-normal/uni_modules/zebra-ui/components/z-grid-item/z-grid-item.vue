@@ -42,6 +42,8 @@ import {
   useParent,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
+import zBadge from '../z-badge/z-badge.vue'
 
 const [name, bem] = createNamespace('grid-item')
 useComponentName(name)

@@ -70,7 +70,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
 const value = ref(50)
 const valueMax = ref(0)
 const valueStep = ref(50)

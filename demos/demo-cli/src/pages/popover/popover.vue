@@ -134,7 +134,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
 const actions = ref([
   { text: '选项一' },
   { text: '选项二' },

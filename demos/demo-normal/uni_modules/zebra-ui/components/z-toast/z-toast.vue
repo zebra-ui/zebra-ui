@@ -83,6 +83,10 @@ import {
   extend,
   useComponentName
 } from '../../libs/utils'
+import zPopup from '../z-popup/z-popup.vue'
+import zIcon from '../z-icon/z-icon.vue'
+import zLoading from '../z-loading/z-loading.vue'
+
 import type { ToastType, ToastPosition, ToastWordBreak } from './types'
 interface ToastTextStyle {
   'margin-top'?: string | undefined

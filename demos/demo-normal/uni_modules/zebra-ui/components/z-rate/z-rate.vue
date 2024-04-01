@@ -49,6 +49,7 @@ import {
   useTouch,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
 
 const [name, bem] = createNamespace('rate')
 useComponentName(name)

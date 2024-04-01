@@ -124,6 +124,8 @@ import {
   useComponentName
 } from '../../libs/utils'
 import { popupSharedProps } from '../z-popup/shared'
+import zPopup from '../z-popup/z-popup.vue'
+import zIcon from '../z-icon/z-icon.vue'
 type ShareSheetOption = {
   name: string
   icon: string

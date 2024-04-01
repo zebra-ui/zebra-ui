@@ -1,4 +1,9 @@
 {
+  "easycom": {
+    "custom": {
+      "^z-(.*)": "@zebra-ui/uniapp/components/z-$1/z-$1.vue"
+    }
+  },
   "pages": [
     {
       "path": "pages/index/index",

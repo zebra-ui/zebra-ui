@@ -36,6 +36,8 @@ import {
   useParent,
   useComponentName
 } from '../../libs/utils'
+import zBadge from '../z-badge/z-badge.vue'
+import zIcon from '../z-icon/z-icon.vue'
 
 const [componentName, bem] = createNamespace('tabbar-item')
 useComponentName(componentName)

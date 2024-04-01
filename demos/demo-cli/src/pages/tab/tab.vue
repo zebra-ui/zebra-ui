@@ -163,7 +163,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const active = ref(0)
 const activeScroll = ref(0)
 const activeScrollspy = ref(0)

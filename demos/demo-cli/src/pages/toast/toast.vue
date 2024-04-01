@@ -114,7 +114,7 @@ import {
   showSuccessToast,
   showFailToast,
   closeToast
-} from '../../uni_modules/zebra-ui'
+} from '@zebra-ui/uniapp'
 const showToastTrends = () => {
   const toast = showLoadingToast({
     duration: 0,

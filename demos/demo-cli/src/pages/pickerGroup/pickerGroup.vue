@@ -150,7 +150,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
 const currentDate = ref(['2022', '06', '01'])
 const currentTime = ref(['12', '00'])
 const minDate = new Date(2020, 0, 1)

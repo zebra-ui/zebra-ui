@@ -4,6 +4,7 @@ export type ButtonType =
   | 'success'
   | 'warning'
   | 'danger'
+  | 'text'
 
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini'
 

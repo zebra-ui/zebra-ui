@@ -68,6 +68,9 @@ import {
   useComponentName
 } from '../../libs/utils'
 import type { PopupPosition, PopupCloseIconPosition } from './types'
+import zOverlay from '../z-overlay/z-overlay.vue'
+import zTransition from '../z-transition/z-transition.vue'
+import zIcon from '../z-icon/z-icon.vue'
 
 const props = defineProps(
   extend({}, popupSharedProps, {

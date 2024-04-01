@@ -41,6 +41,7 @@ import {
   useExpose,
   useComponentName
 } from '../../libs/utils'
+import zButton from '../z-button/z-button.vue'
 
 const [name, bem] = createNamespace('signature')
 useComponentName(name)

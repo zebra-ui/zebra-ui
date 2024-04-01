@@ -46,7 +46,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const showBasic = ref(false)
 const showCancel = ref(false)
 const showTitle = ref(false)

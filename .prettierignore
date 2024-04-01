@@ -1,0 +1,7 @@
+dist
+node_modules
+unpackage
+zebra-swiper
+.nuxt
+.output
+docs/zebra-ui-docs/content

@@ -54,6 +54,7 @@ import {
   makeNumericProp,
   useComponentName
 } from '../../libs/utils'
+import zPicker from '../z-picker/z-picker.vue'
 const [name] = createNamespace('time-picker')
 useComponentName(name)
 type TimePickerColumnType = 'hour' | 'minute' | 'second'

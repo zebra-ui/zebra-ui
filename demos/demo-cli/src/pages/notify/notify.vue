@@ -34,7 +34,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showNotify } from '../../uni_modules/zebra-ui'
+import { showNotify } from '@zebra-ui/uniapp'
 const show = ref(false)
 const showBasicNotify = () => {
   showNotify('通知内容')

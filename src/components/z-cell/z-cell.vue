@@ -87,6 +87,7 @@ import {
   isObject,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
 const emit = defineEmits(['click'])
 const instance = getCurrentInstance()
 const [name, bem] = createNamespace('cell')

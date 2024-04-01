@@ -44,7 +44,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 // @ts-ignore
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const showBasic = ref(false)
 const showWithDesc = ref(false)
 const showMultiLine = ref(false)

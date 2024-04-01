@@ -46,7 +46,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const image = ref('')
 const width = ref('')
 const height = ref('')

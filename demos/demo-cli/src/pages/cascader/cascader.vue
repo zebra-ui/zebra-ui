@@ -131,7 +131,7 @@ import { ref } from 'vue'
 import {
   showLoadingToast,
   closeToast
-} from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+} from '@zebra-ui/uniapp/components/z-toast/z-toast'
 import { useCascaderAreaData } from '../../common/js/area'
 const show = ref(false)
 const showColor = ref(false)

@@ -114,6 +114,8 @@ import {
   ButtonNativeType,
   ButtonIconPosition
 } from './types'
+import ZIcon from '../z-icon/z-icon.vue'
+import ZLoading from '../z-loading/z-loading.vue'
 const [name, bem] = createNamespace('button')
 useComponentName(name)
 const instance = getCurrentInstance()!

@@ -45,7 +45,7 @@ import { ref } from 'vue'
 import {
   closeToast,
   showLoadingToast
-} from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+} from '@zebra-ui/uniapp/components/z-toast/z-toast'
 const value = ref(1)
 const valueMax = ref(5)
 const valueInteger = ref(1)

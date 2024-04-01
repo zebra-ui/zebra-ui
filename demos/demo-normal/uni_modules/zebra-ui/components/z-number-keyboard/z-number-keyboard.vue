@@ -85,8 +85,11 @@ import {
   type Numeric,
   useComponentName
 } from '../../libs/utils'
+import type { PopupPosition } from '../z-popup/types'
 
 import zNumberKeyboardKey from './z-number-keyboard-key.vue'
+import zPopup from '../z-popup/z-popup.vue'
+import zButton from '../z-button/z-button.vue'
 
 type KeyType = '' | 'delete' | 'extra' | 'close'
 
@@ -108,10 +111,7 @@ const props = defineProps({
   show: Boolean,
   title: String,
   overlay: truthProp,
-  position: {
-    type: String,
-    default: 'bottom'
-  },
+  position: makeStringProp<PopupPosition>('bottom'),
   overlayBackground: {
     type: Boolean,
     default: false

@@ -60,11 +60,17 @@
   </DemoPage>
 </template>
 <script lang="ts" setup>
-const text1 = 'zebra-swiper 是基于uniapp开发的一款适配多端的移动端轮播组件。'
-const text2 =
+import { ref } from 'vue'
+const text1 = ref(
+  'zebra-swiper 是基于uniapp开发的一款适配多端的移动端轮播组件。'
+)
+const text2 = ref(
   'uniapp 的swiper组件存在很大的局限性，无法完成一些复杂的轮播效果。而zebra-swiper不仅可以实现一些3D轮播效果，还可以通过参数来定义你想要的效果。'
-const text3 =
+)
+
+const text3 = ref(
   'zebra-swiper 是基于uniapp开发的一款移动端轮播组件。uniapp 的swiper组件存在很大的局限性，无法完成一些复杂的轮播效果。而zebra-swiper不仅可以实现一些3D轮播效果，还可以通过参数来定义你想要的效果。我们正在全面向swiperjs (opens new window)看齐，并且在小程序中，依然可以实现炫酷的轮播效果。'
+)
 </script>
 <style lang="scss" scoped>
 .demo-text-ellipsis {

@@ -87,6 +87,7 @@ import {
   useComponentName
 } from '../../libs/utils'
 import { fieldSharedProps } from '../z-field/shared'
+import zField from '../z-field/z-field.vue'
 
 type SearchShape = 'square' | 'round'
 

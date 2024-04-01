@@ -24,6 +24,7 @@ import {
   getZIndexStyle,
   useComponentName
 } from '../../libs/utils'
+import zTransition from '../z-transition/z-transition.vue'
 
 const [name, bem] = createNamespace('overlay')
 

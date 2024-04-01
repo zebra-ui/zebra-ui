@@ -7,7 +7,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './uni_modules/zebra-ui/index';
+@import '@zebra-ui/uniapp/index';
 @import './common/style/var';
 @import './common/style/icon.css';
 

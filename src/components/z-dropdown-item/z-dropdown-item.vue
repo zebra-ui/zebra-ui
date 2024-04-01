@@ -55,6 +55,9 @@ import {
   useComponentName
 } from '../../libs/utils'
 import type { DropdownItemOption } from './types'
+import zPopup from '../z-popup/z-popup.vue'
+import zCell from '../z-cell/z-cell.vue'
+import zIcon from '../z-icon/z-icon.vue'
 
 const [name, bem] = createNamespace('dropdown-item')
 useComponentName(name)

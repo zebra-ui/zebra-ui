@@ -26,6 +26,8 @@ import {
   HAPTICS_FEEDBACK,
   useComponentName
 } from '../../libs/utils'
+import zIcon from '../z-icon/z-icon.vue'
+import zTransition from '../z-transition/z-transition.vue'
 import type { TagType, TagSize } from './types'
 const [name, bem] = createNamespace('tag')
 useComponentName(name)

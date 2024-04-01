@@ -80,6 +80,7 @@ import {
   getRect,
   useComponentName
 } from '../../libs/utils'
+import zCell from '../z-cell/z-cell.vue'
 
 type CellSize = 'normal' | 'large'
 type CellArrowDirection = 'up' | 'down' | 'left' | 'right'

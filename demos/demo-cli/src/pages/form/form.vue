@@ -198,7 +198,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { areaList } from '../../common/js/area'
-import { showLoadingToast, closeToast } from '../../uni_modules/zebra-ui'
+import { showLoadingToast, closeToast } from '@zebra-ui/uniapp'
 const formBasic = ref()
 const formRule = ref()
 const formItem = ref()

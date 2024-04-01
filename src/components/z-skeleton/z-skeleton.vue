@@ -42,6 +42,10 @@ import {
   type Numeric,
   useComponentName
 } from '../../libs/utils'
+import zSkeletonAvatar from '../z-skeleton-avatar/z-skeleton-avatar.vue'
+import zSkeletonTitle from '../z-skeleton-title/z-skeleton-title.vue'
+import zSkeletonParagraph from '../z-skeleton-paragraph/z-skeleton-paragraph.vue'
+type SkeletonAvatarShape = 'square' | 'round'
 const [name, bem] = createNamespace('skeleton')
 useComponentName(name)
 const DEFAULT_LAST_ROW_WIDTH = '60%'
@@ -53,7 +57,7 @@ const props = defineProps({
   titleWidth: numericProp,
   avatar: Boolean,
   avatarSize: numericProp,
-  avatarShape: makeStringProp('round'),
+  avatarShape: makeStringProp<SkeletonAvatarShape>('round'),
   loading: truthProp,
   animate: truthProp,
   rowWidth: {

@@ -88,7 +88,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const show = ref(false)
 const showRight = ref(false)
 const showCard = ref(false)

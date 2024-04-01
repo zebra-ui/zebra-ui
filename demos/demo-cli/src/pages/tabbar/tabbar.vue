@@ -90,7 +90,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
 const active = ref(0)
 const active2 = ref(0)
 const active3 = ref(0)

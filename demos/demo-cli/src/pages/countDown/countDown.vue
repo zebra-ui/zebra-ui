@@ -46,7 +46,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 // @ts-ignore
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 const time = ref(30 * 60 * 60 * 1000)
 const countDown = ref()
 

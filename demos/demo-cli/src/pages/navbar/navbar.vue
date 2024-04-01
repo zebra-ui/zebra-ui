@@ -39,5 +39,5 @@
 </template>
 
 <script setup lang="ts">
-import { showToast } from '../../uni_modules/zebra-ui'
+import { showToast } from '@zebra-ui/uniapp'
 </script>

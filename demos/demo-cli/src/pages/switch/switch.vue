@@ -49,7 +49,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showConfirmDialog } from '../../uni_modules/zebra-ui/components/z-dialog/z-dialog'
+import { showConfirmDialog } from '@zebra-ui/uniapp/components/z-dialog/z-dialog'
 const checked = ref(true)
 const onUpdateValue = (newValue: any) => {
   showConfirmDialog({
