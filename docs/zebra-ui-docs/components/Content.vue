@@ -33,7 +33,7 @@ export default {
       if (from.path !== to.path) {
         setTimeout(() => {
           this.copyAction()
-        })
+        }, 100)
       }
     }
   },
@@ -75,26 +75,32 @@ export default {
     },
 
     copyAction() {
-      const codeBoxes = document?.querySelectorAll('.zebra-doc-card pre code')
+      if (process.client) {
+        nextTick(() => {
+          const codeBoxes = document?.querySelectorAll(
+            '.zebra-doc-card pre code'
+          )
 
-      if (!codeBoxes || !codeBoxes.length) {
-        return
-      }
+          if (!codeBoxes || !codeBoxes.length) {
+            return
+          }
 
-      for (let i = 0; i < codeBoxes.length; i++) {
-        const item = codeBoxes[i]
-        let timer = null
+          for (let i = 0; i < codeBoxes.length; i++) {
+            const item = codeBoxes[i]
+            let timer = null
 
-        item.addEventListener('click', () => {
-          if (timer) return
-          const content = item.innerText
-          copyToClipboard(content)
-          item.classList.add('code-copy-success')
+            item.addEventListener('click', () => {
+              if (timer) return
+              const content = item.innerText
+              copyToClipboard(content)
+              item.classList.add('code-copy-success')
 
-          timer = setTimeout(() => {
-            item.classList.remove('code-copy-success')
-            timer = null
-          }, 1400)
+              timer = setTimeout(() => {
+                item.classList.remove('code-copy-success')
+                timer = null
+              }, 1400)
+            })
+          }
         })
       }
     }

@@ -18,9 +18,10 @@ code {
 p {
   code {
     display: inline-flex;
+    align-items: center;
     padding: 4px 10px;
     border-radius: var(--neumorphism-border-radius);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-small);
     background-color: var(--zebra-doc-background);
   }
 }
