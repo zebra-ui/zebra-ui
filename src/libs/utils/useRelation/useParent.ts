@@ -4,9 +4,9 @@ import {
   computed,
   onUnmounted,
   getCurrentInstance,
-  ComponentInternalInstance,
-  ComponentPublicInstance,
-  InjectionKey
+  type ComponentInternalInstance,
+  type ComponentPublicInstance,
+  type InjectionKey
 } from 'vue'
 
 type ParentProvide<T> = T & {

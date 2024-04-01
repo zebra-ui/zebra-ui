@@ -42,7 +42,7 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { reactive, computed, CSSProperties } from 'vue'
+import { reactive, computed, type CSSProperties } from 'vue'
 import {
   truthProp,
   unknownProp,

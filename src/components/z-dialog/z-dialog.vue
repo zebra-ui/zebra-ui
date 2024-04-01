@@ -133,7 +133,7 @@ import {
   computed,
   inject,
   watch,
-  CSSProperties
+  type CSSProperties
 } from 'vue'
 import {
   extend,

@@ -1,4 +1,4 @@
-import { watch, inject, InjectionKey, Ref } from 'vue'
+import { watch, inject, type InjectionKey, type Ref } from 'vue'
 
 export type CustomFieldInjectionValue = {
   customValue: Ref<(() => unknown) | undefined>

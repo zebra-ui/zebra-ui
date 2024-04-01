@@ -65,7 +65,7 @@ import {
   nextTick,
   type PropType,
   getCurrentInstance,
-  CSSProperties
+  type CSSProperties
 } from 'vue'
 import {
   truthProp,

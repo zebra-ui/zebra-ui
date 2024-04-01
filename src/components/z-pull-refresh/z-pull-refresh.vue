@@ -38,7 +38,7 @@ import {
   onMounted,
   onUpdated,
   onBeforeUnmount,
-  CSSProperties
+  type CSSProperties
 } from 'vue'
 import {
   numericProp,
