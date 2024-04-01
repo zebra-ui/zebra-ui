@@ -85,6 +85,8 @@
   --light-bg-light-shadow: #ffffff;
   --box-shadow: 3px 3px 6px var(--light-bg-dark-shadow),
     -3px -3px 6px var(--light-bg-light-shadow);
+  --box-shadow-small: 2px 2px 3px var(--light-bg-dark-shadow),
+    -2px -2px 3px var(--light-bg-light-shadow);
   --box-shadow-inset: inset -2px -2px 5px var(--light-bg-light-shadow),
     inset 2px 2px 5px var(--light-bg-dark-shadow);
   --neumorphism-border-radius: 6px;
@@ -119,6 +121,8 @@
   --dark-bg-light-shadow: #33353a;
   --box-shadow: 3px 3px 6px var(--dark-bg-dark-shadow),
     -3px -3px 6px var(--dark-bg-light-shadow);
+  --box-shadow-small: 2px 2px 3px var(--dark-bg-dark-shadow),
+    -2px -2px 3px var(--dark-bg-light-shadow);
   --box-shadow-inset: inset -2px -2px 5px var(--dark-bg-light-shadow),
     inset 2px 2px 5px var(--dark-bg-dark-shadow);
   --neumorphism-border-radius: 6px;
