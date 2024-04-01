@@ -8,7 +8,8 @@
     }
   },
   "npm": {
-    "publishPath": "./src"
+    "publishPath": "./src",
+    "versionArgs": ["--allow-same-version"]
   },
   "git": {
     "commitMessage": "build: ${version}",
@@ -18,6 +19,10 @@
     "after:bump": "npx auto-changelog -p"
   },
   "plugins": {
+    "@release-it/bumper": {
+      "in": "version.json",
+      "out": ["package.json", "src/package.json"]
+    },
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOGAUTO.md",
       "preset": {

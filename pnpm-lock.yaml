@@ -141,7 +141,7 @@ importers:
         specifier: 3.0.0-4000720240327002
         version: 3.0.0-4000720240327002(postcss@8.4.38)(vue@3.3.11)
       '@zebra-ui/uniapp':
-        specifier: workspace:2.0.0-alpha.1
+        specifier: workspace:^
         version: link:../../src
       pinia:
         specifier: 2.0.36
