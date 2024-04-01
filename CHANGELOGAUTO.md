@@ -1,3 +1,13 @@
+## [2.0.0-alpha.2](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.1...2.0.0-alpha.2) (2024-04-01)
+
+### Tests
+
+- ✅ add initial project files and configurations for demo-cli ([292c3e3](https://github.com/zebra-ui/zebra-ui/commit/292c3e3b276f009e6568819db2df1cc558eea65f))
+
+### Chores
+
+- 📦️ update .eslintignore, .gitignore, .prettierignore, and .release-it.json files ([5107a9e](https://github.com/zebra-ui/zebra-ui/commit/5107a9e9b6480f7f0b862b7d5d52cf7492065e68))
+
 ## 2.0.0-alpha.1 (2024-03-30)
 
 ### Features
