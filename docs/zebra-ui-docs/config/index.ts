@@ -406,10 +406,6 @@ export default {
                 title: 'Contribution Guide'
               },
               {
-                path: 'design',
-                title: 'Design Resources'
-              },
-              {
                 path: 'international',
                 title: 'Internationalization'
               }

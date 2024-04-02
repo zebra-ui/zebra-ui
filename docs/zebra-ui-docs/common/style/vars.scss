@@ -85,8 +85,8 @@
   --light-bg-light-shadow: #ffffff;
   --box-shadow: 3px 3px 6px var(--light-bg-dark-shadow),
     -3px -3px 6px var(--light-bg-light-shadow);
-  --box-shadow-small: 2px 2px 3px var(--light-bg-dark-shadow),
-    -2px -2px 3px var(--light-bg-light-shadow);
+  --box-shadow-small: 1px 1px 2px var(--light-bg-dark-shadow),
+    -1px -1px 2px var(--light-bg-light-shadow);
   --box-shadow-inset: inset -2px -2px 5px var(--light-bg-light-shadow),
     inset 2px 2px 5px var(--light-bg-dark-shadow);
   --neumorphism-border-radius: 6px;
@@ -121,8 +121,8 @@
   --dark-bg-light-shadow: #33353a;
   --box-shadow: 3px 3px 6px var(--dark-bg-dark-shadow),
     -3px -3px 6px var(--dark-bg-light-shadow);
-  --box-shadow-small: 2px 2px 3px var(--dark-bg-dark-shadow),
-    -2px -2px 3px var(--dark-bg-light-shadow);
+  --box-shadow-small: 1px 1px 2px var(--dark-bg-dark-shadow),
+    -1px -1px 2px var(--dark-bg-light-shadow);
   --box-shadow-inset: inset -2px -2px 5px var(--dark-bg-light-shadow),
     inset 2px 2px 5px var(--dark-bg-dark-shadow);
   --neumorphism-border-radius: 6px;
@@ -151,4 +151,25 @@
   // blockquote
   --zebra-doc-blockquote-color: #bae6fd;
   --zebra-doc-blockquote-background: rgba(7, 89, 133, 0.25);
+
+  // docsearch
+  --docsearch-text-color: #f5f6f7;
+  --docsearch-container-background: rgba(9, 10, 17, 0.8);
+  --docsearch-modal-background: #15172a;
+  --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
+  --docsearch-searchbox-background: #090a11;
+  --docsearch-searchbox-focus-background: #000;
+  --docsearch-hit-color: #bec3c9;
+  --docsearch-hit-shadow: none;
+  --docsearch-hit-background: #090a11;
+  --docsearch-key-gradient: linear-gradient(-26.5deg, #565872, #31355b);
+  --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,
+    0 2px 2px 0 rgba(3, 4, 9, 0.3);
+  --docsearch-key-pressed-shadow: inset 0 -2px 0 0 #282d55,
+    inset 0 0 1px 1px #51577d, 0 1px 1px 0 rgba(3, 4, 9, 0.302);
+  --docsearch-footer-background: #1e2136;
+  --docsearch-footer-shadow: inset 0 1px 0 0 rgba(73, 76, 106, 0.5),
+    0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+  --docsearch-logo-color: #fff;
+  --docsearch-muted-color: #7f8497;
 }
