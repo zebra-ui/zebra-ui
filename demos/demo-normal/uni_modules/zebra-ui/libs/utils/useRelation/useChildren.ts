@@ -3,8 +3,8 @@ import {
   provide,
   reactive,
   getCurrentInstance,
-  ComponentPublicInstance,
-  ComponentInternalInstance
+  type ComponentPublicInstance,
+  type ComponentInternalInstance
 } from 'vue'
 
 export function flattenVNodes(children: any) {

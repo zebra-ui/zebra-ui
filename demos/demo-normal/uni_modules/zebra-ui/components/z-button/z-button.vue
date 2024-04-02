@@ -109,10 +109,10 @@ import {
   useComponentName
 } from '../../libs/utils'
 import {
-  ButtonSize,
-  ButtonType,
-  ButtonNativeType,
-  ButtonIconPosition
+  type ButtonSize,
+  type ButtonType,
+  type ButtonNativeType,
+  type ButtonIconPosition
 } from './types'
 import ZIcon from '../z-icon/z-icon.vue'
 import ZLoading from '../z-loading/z-loading.vue'

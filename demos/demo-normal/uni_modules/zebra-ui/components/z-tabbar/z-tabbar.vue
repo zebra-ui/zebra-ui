@@ -64,7 +64,7 @@ import {
   computed,
   onMounted,
   getCurrentInstance,
-  CSSProperties
+  type CSSProperties
 } from 'vue'
 import {
   truthProp,

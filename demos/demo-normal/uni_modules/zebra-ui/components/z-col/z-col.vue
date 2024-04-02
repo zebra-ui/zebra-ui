@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { CSSProperties, computed } from 'vue'
+import { type CSSProperties, computed } from 'vue'
 import {
   numericProp,
   createNamespace,
