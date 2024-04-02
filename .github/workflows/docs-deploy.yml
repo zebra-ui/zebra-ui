@@ -39,6 +39,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           source: 'docs/zebra-ui-docs/.output,docs/zebra-ui-docs/Dockerfile'
           target: '/www/wwwroot/zebraui-docs/'
+          rm: true
 
       - name: ssh pipelines
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
