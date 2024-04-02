@@ -6,6 +6,11 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@nuxt/content'
   ],
+  nitro: {
+    prerender: {
+      ignore: ['/h5']
+    }
+  },
   content: {
     highlight: {
       theme: 'solarized-light'
