@@ -1,3 +1,23 @@
+## [2.0.0](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.4...2.0.0) (2024-04-02)
+
+### Bug Fixes
+
+- 🧩 update nitro configuration to ignore '/h5' in prerendering ([a17e145](https://github.com/zebra-ui/zebra-ui/commit/a17e14551bed23a9ebec2e267234e2db08716c4c))
+
+### Documentation
+
+- 📚 refactor: Update `CHANGELOG.md` with `zebra-ui` `2.0` release ([32b6aa4](https://github.com/zebra-ui/zebra-ui/commit/32b6aa4f1f64a013c642d3c89c1ee8be627abc7a))
+- 📚 update box-shadow size in highlight.scss and add small box-shadow size ([5a971d2](https://github.com/zebra-ui/zebra-ui/commit/5a971d21bebd03ab1032bbd49fe6dc99056d233d))
+- 📚 update docsearch styles for improved readability and aesthetics ([fef3d89](https://github.com/zebra-ui/zebra-ui/commit/fef3d89baae2dfbb4f259fc338819bc87cbbe05f))
+- 📚 update electron-to-chromium package version to 1.4.723 in pnpm-lock.yaml ([6293892](https://github.com/zebra-ui/zebra-ui/commit/6293892ce33600c4cb45ef34d80153181b72cdcd))
+
+### Chores
+
+- 📦️ add build steps for demo-cli and copy H5 build output to zebra-ui-docs ([5f64201](https://github.com/zebra-ui/zebra-ui/commit/5f6420101cc27d7ac8e9568e7b3e327afc3dc2b6))
+- 📦️ update build and deploy process for zebra-ui-docs and demo-cli ([823e415](https://github.com/zebra-ui/zebra-ui/commit/823e415aece672b17e2028e228ee6c77cbf14b2a))
+- 📦️ update dependencies in docs-page.yml and pnpm-lock.yaml files ([8d5f5a7](https://github.com/zebra-ui/zebra-ui/commit/8d5f5a7f139e301ebb29b2a15081be75b9b67fcf))
+- 📦️ update manifest.json and config files for zebra-ui docs deployment ([78a0e17](https://github.com/zebra-ui/zebra-ui/commit/78a0e17680eaeab0593dc10a06c3d232254ce9bf))
+
 ## [2.0.0-alpha.4](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.3...2.0.0-alpha.4) (2024-04-01)
 
 ### Bug Fixes
