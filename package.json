@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "async": "node scripts/async",
+    "async-readme": "node scripts/async-readme",
     "lint:eslint": "eslint --cache --max-warnings 0  \"**/*.{vue,js,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
     "lint:styles": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",

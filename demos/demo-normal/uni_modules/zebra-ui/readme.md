@@ -1,6 +1,5 @@
 <p align="center">
-	<img alt="logo" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/logo.png" width="220"
-		style="margin-bottom: 10px;">
+	<img alt="logo" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/logo.png" width="220" style="margin-bottom: 10px;">
 </p>
 <h1 align="center">ZebraUI</h1>
 
@@ -34,9 +33,10 @@
 
 <div>
 	<img alt="wx" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/source/weixin.jpg" width="200" />
-	<img alt="h5" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/source/h5.png" width="200"
-		style="margin-left:30px;" />
+	<img alt="h5" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/source/h5.png" width="200" style="margin-left:30px;" />
 </div>
+
+## 项目截图
 
 <div style="margin-top:30px;">
 	<img alt="image" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/source/Multiple_2.png" width="100%" />
@@ -50,10 +50,8 @@
 
 以下是 ZebraUI 官方提供的一些示例项目，你可以克隆该项目，并直接拷贝代码来使用。
 
-- [demo-normal](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-normal)：此示例项目使用 `HbuilderX` 创建应用，通过
-  `uni_modules` 引入zebra-ui。
-- [demo-cli](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-cli)：此示例项目使用 `VSCode` 创建应用，通过 `pnpm`
-  引入zebra-ui。
+- [demo-normal](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-normal)：此示例项目使用 `HbuilderX` 创建应用，通过 `uni_modules` 引入zebra-ui。
+- [demo-cli](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-cli)：此示例项目使用 `VSCode` 创建应用，通过 `pnpm` 引入zebra-ui。
 
 ## 文档网站
 
@@ -79,7 +77,6 @@
 
 ## 交流群
 
-QQ群：947159437
-[点击加入](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=j0ofK9kA3Um4GXM3mdu0SNFUCOPTapGK&authKey=C%2Fr2jznrkjfCNen37FXpfR30fXpz2piJVCHkDTLHepAoq5OtZxtKXHJc%2BCZ77qFF&noverify=0&group_code=947159437)
+QQ群：947159437 [点击加入](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=j0ofK9kA3Um4GXM3mdu0SNFUCOPTapGK&authKey=C%2Fr2jznrkjfCNen37FXpfR30fXpz2piJVCHkDTLHepAoq5OtZxtKXHJc%2BCZ77qFF&noverify=0&group_code=947159437)
 
 <img alt="image" src="https://assets-1256020106.file.myqcloud.com/zebra-ui/source/zebra-qq-code.jpg" width="300px" />
