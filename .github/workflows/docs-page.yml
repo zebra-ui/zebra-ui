@@ -20,7 +20,7 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-        working-directory: docs/zebra-ui-docs
+
       - name: Build Nuxt project
         run: npx nuxt build --preset github_pages
         working-directory: docs/zebra-ui-docs

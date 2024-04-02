@@ -1,2 +1,4 @@
 packages:
   - 'src'
+  - 'docs/*'
+  - 'demos/*'

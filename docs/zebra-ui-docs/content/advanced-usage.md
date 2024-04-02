@@ -46,3 +46,7 @@ export function createApp() {
 import zButton from "@zebra-ui/uniapp/components/z-button/z-button.vue";
 </script>
 ```
+
+### 使用组件样式变量
+
+zebra-ui提供了大量的组件样式变量，通过变量可控制组件的主题，以及自定义组件的样式。
