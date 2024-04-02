@@ -1,18 +1,17 @@
 {
+  "id": "zebra-ui",
   "name": "@zebra-ui/uniapp",
-  "displayName": "zebra-ui",
-  "version": "2.0.0-alpha.1",
-  "description": "基于uniapp并实现多端兼容。",
+  "displayName": "ZebraUI2.0 使用VUE3+TS并实现多端兼容。",
+  "version": "2.0.0",
+  "description": "基于uniapp，使用vue3+ts+setup，并实现多端兼容。",
   "keywords": [
     "zebra-ui",
     "zebra",
     "uniapp",
-    "zebra-swiper"
+    "zebra-swiper",
+    "组件库"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zebra-ui/zebra-ui.git"
-  },
+  "repository": "https://github.com/zebra-ui/zebra-ui",
   "bugs": {
     "url": "https://github.com/zebra-ui/zebra-ui/issues"
   },
@@ -36,36 +35,36 @@
       "qq": ""
     },
     "declaration": {
-      "ads": "",
-      "data": "",
-      "permissions": ""
+      "ads": "无",
+      "data": "插件不采集任何数据",
+      "permissions": "无"
     },
-    "npmurl": ""
+    "npmurl": "https://www.npmjs.com/package/@zebra-ui/uniapp"
   },
   "uni_modules": {
     "dependencies": [],
     "encrypt": [],
     "platforms": {
       "cloud": {
-        "tcb": "u",
-        "aliyun": "u",
-        "alipay": "u"
+        "tcb": "y",
+        "aliyun": "y",
+        "alipay": "y"
       },
       "client": {
         "Vue": {
-          "vue2": "u",
-          "vue3": "u"
+          "vue2": "n",
+          "vue3": "y"
         },
         "App": {
-          "app-vue": "u",
-          "app-nvue": "u",
-          "app-uvue": "u"
+          "app-vue": "y",
+          "app-nvue": "n",
+          "app-uvue": "n"
         },
         "H5-mobile": {
-          "Safari": "u",
-          "Android Browser": "u",
-          "微信浏览器(Android)": "u",
-          "QQ浏览器(Android)": "u"
+          "Safari": "y",
+          "Android Browser": "y",
+          "微信浏览器(Android)": "y",
+          "QQ浏览器(Android)": "y"
         },
         "H5-pc": {
           "Chrome": "u",
@@ -75,7 +74,7 @@
           "Safari": "u"
         },
         "小程序": {
-          "微信": "u",
+          "微信": "y",
           "阿里": "u",
           "百度": "u",
           "字节跳动": "u",

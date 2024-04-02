@@ -11,27 +11,11 @@
 
 ### [Unreleased]
 
-## [2.0.0-alpha.4] - 2024-04-01
-
-## [2.0.0-alpha.3] - 2024-04-01
-
-## [2.0.0-alpha.2] - 2024-04-01
-
-## [2.0.0-alpha.1] - 2024-03-31
-
-## [2.0.0-alpha.0] - 2024-03-31
-
-`2024-03-30`
+`2024-04-02`
 
 #### 新功能 🎉
 
-- feat(All): zebra-ui组件库重构。
-
-#### 其他更改
-
-- refactor: ♻️ add zebraUI component and page code snippets, update eslint and stylelint rules by [@Ru1ers](https://github.com/Ru1ers) in [#b38aa8e](https://github.com/zebra-ui/zebra-ui/commit/b38aa8e67b9994f6152be26eac5edbc4ccf6ea45)
-
-- refactor: 重构: ♻️ project structure adjustment by [@Ru1ers](https://github.com/Ru1ers) in [#640c107](https://github.com/zebra-ui/zebra-ui/commit/640c10707a8ae2cc5f8a8fdb17cfed4e1fec3be4)
+- feat(All): `zebra-ui` `2.0` 发布，组件库使用`vue3`重构 by [@Ru1ers](https://github.com/Ru1ers)。
 
 #### 新贡献者
 
