@@ -10,6 +10,8 @@
           </span>
         </a>
 
+        <search-input :lang="locale" />
+
         <ul class="zebra-doc-header__top-nav">
           <li
             v-for="(item, index) in config.links"
@@ -102,6 +104,7 @@
 
 <script setup>
 import { getDefaultTheme, syncThemeToChild } from '../common/iframe-sync'
+import SearchInput from './SearchInput.vue'
 const route = useRoute()
 const router = useRouter()
 import { useThemeStore } from '../store/theme'
@@ -347,6 +350,12 @@ watch(
     margin-left: 8px;
     vertical-align: -4px;
     font-size: 13px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    &__subtitle {
+      display: none;
+    }
   }
 
   &__link {
