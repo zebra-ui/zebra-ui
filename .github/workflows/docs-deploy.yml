@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - docs/zebra-ui-docs/**
+      - demos/demo-cli/**
 
 jobs:
   upload:
@@ -25,7 +26,13 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        working-directory: docs/zebra-ui-docs
+
+      - name: Build H5 for demo-cli
+        run: pnpm run build:h5
+        working-directory: demos/demo-cli
+
+      - name: Copy H5 build output
+        run: cp -r demos/demo-cli/dist/build/h5 docs/zebra-ui-docs/public
 
       - name: Build Site
         run: pnpm run build
