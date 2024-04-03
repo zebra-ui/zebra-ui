@@ -9,6 +9,15 @@
 
 ## 更新内容
 
+### 2.0.1
+
+`2024-04-03`
+
+#### 新功能 🚀
+
+- feat(alipay): 兼容支付宝小程序 by [@Ru1ers](https://github.com/Ru1ers)。
+- feat(component)：`z-toast`,`z-dialog`,`z-notify`使用方法修改。([#32](https://github.com/zebra-ui/zebra-ui/pull/32))
+
 ### 2.0.0
 
 `2024-04-02`
