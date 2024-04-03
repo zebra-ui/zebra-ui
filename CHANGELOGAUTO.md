@@ -1,3 +1,21 @@
+## [2.0.1](https://github.com/zebra-ui/zebra-ui/compare/2.0.0...2.0.1) (2024-04-03)
+
+### Features
+
+- 🚀 add unplugin-auto-import to demos/demo-cli/package.json and update components ([2b7939b](https://github.com/zebra-ui/zebra-ui/commit/2b7939bf37b0825d9f2fcd652a8a96b1937be048))
+
+### Bug Fixes
+
+- 🧩 refactor vue3 components to use type annotations for better readability ([446210e](https://github.com/zebra-ui/zebra-ui/commit/446210e9ffcd4b2189db47576d160de27fcaacc2))
+
+### Build System
+
+- 🔨 add compatibility with Alipay Mini Program and update zebra-ui components ([64b8186](https://github.com/zebra-ui/zebra-ui/commit/64b8186b1f1390403d99a0ee26c3bfdbf2d3a011))
+
+### Chores
+
+- 📦️ sync README content to multiple files for consistency ([609b2c2](https://github.com/zebra-ui/zebra-ui/commit/609b2c2031378d9670a536ea0a9d16c1bbb0bba3))
+
 ## [2.0.0](https://github.com/zebra-ui/zebra-ui/compare/2.0.0-alpha.4...2.0.0) (2024-04-02)
 
 ### Bug Fixes
