@@ -1,3 +1,4 @@
+import { provide, ref } from 'vue'
 import { extend, isObject, type ComponentInstance } from '../../libs/utils'
 import type { NotifyMessage, NotifyOptions } from './types'
 
@@ -24,6 +25,7 @@ function initInstance() {
 }
 
 const getDefaultOptions = (): NotifyOptions => ({
+  show: false,
   type: 'danger',
   color: undefined,
   message: '',
@@ -64,4 +66,34 @@ export const setNotifyDefaultOptions = (options: NotifyOptions) =>
   extend(currentOptions, options)
 export const resetNotifyDefaultOptions = () => {
   currentOptions = getDefaultOptions()
+}
+
+export function useNotify(name: string = '') {
+  const componentsOptions = ref(extend({}, currentOptions))
+  const notifyProvideKey = name ? `z-notify-${name}` : 'z-notify'
+  provide(notifyProvideKey, componentsOptions)
+  const showNotify = (options: NotifyMessage | NotifyOptions) => {
+    options = extend({}, currentOptions, parseOptions(options))
+
+    componentsOptions.value = extend({}, options, {
+      show: true
+    })
+    clearTimeout(timer)
+
+    if (options.duration! > 0) {
+      timer = setTimeout(closeNotify, options.duration)
+    }
+  }
+  const closeNotify = () => {
+    componentsOptions.value = extend(
+      {},
+      {
+        show: false
+      }
+    )
+  }
+  return {
+    showNotify,
+    closeNotify
+  }
 }

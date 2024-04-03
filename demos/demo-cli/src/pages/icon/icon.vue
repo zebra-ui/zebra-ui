@@ -144,9 +144,10 @@ import { ref } from 'vue'
 // @ts-ignore
 import iconData from '../../common/js/iconfont.js'
 const tab = ref(0)
-const demoIcon = 'smile'
-const demoImage =
+const demoIcon = ref('smile')
+const demoImage = ref(
   'https://cdn.zebraui.com/zebra-ui/images/assets/demo-select.png'
+)
 const onClick = (name: string) => {
   uni.setClipboardData({
     data: name

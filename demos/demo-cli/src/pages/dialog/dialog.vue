@@ -5,18 +5,23 @@
         <z-cell
           title="提示弹窗"
           is-link
-          @click="showDialog({ title: '标题', message: '这是一个示例提示' })"
+          @click="
+            dialog.showDialog({ title: '标题', message: '这是一个示例提示' })
+          "
         />
         <z-cell
           title="提示弹窗（无标题）"
           is-link
-          @click="showDialog({ message: '这是一个无标题提示' })"
+          @click="dialog.showDialog({ message: '这是一个无标题提示' })"
         />
         <z-cell
           title="确认弹窗"
           is-link
           @click="
-            showConfirmDialog({ title: '标题', message: '这是一个示例提示' })
+            dialog.showConfirmDialog({
+              title: '标题',
+              message: '这是一个示例提示'
+            })
           "
         />
       </demo-block>
@@ -25,7 +30,7 @@
           title="提示弹窗"
           is-link
           @click="
-            showDialog({
+            dialog.showDialog({
               title: '标题',
               theme: 'round-button',
               message: '这是一个示例提示'
@@ -36,14 +41,17 @@
           title="提示弹窗（无标题）"
           is-link
           @click="
-            showDialog({ theme: 'round-button', message: '这是一个无标题提示' })
+            dialog.showDialog({
+              theme: 'round-button',
+              message: '这是一个无标题提示'
+            })
           "
         />
         <z-cell
           title="确认弹窗"
           is-link
           @click="
-            showConfirmDialog({
+            dialog.showConfirmDialog({
               title: '标题',
               theme: 'round-button',
               message: '这是一个示例提示'
@@ -69,17 +77,16 @@
         </z-dialog>
       </demo-block>
     </view>
-    <z-dialog ref="zDialog"></z-dialog>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import {
-  showDialog,
-  showConfirmDialog
-} from '@zebra-ui/uniapp/components/z-dialog/z-dialog'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const dialog = useDialog()
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const beforeClose = (action: any) =>
   new Promise((resolve) => {
     setTimeout(() => {
@@ -88,7 +95,7 @@ const beforeClose = (action: any) =>
     }, 1000)
   })
 const showDialogMethod = () => {
-  showConfirmDialog({
+  dialog.showConfirmDialog({
     title: '标题',
     message: '异步关闭示例',
     beforeClose
@@ -103,15 +110,16 @@ const columns = [
   { text: '湖州', value: 'Huzhou' }
 ]
 const showDialogEvent = () => {
-  showConfirmDialog({
-    title: '标题',
-    message: '操作事件'
-  })
+  dialog
+    .showConfirmDialog({
+      title: '标题',
+      message: '操作事件'
+    })
     .then(() => {
-      showToast('点击确认按钮')
+      toast.showToast('点击确认按钮')
     })
     .catch(() => {
-      showToast('点击取消按钮')
+      toast.showToast('点击取消按钮')
     })
 }
 </script>

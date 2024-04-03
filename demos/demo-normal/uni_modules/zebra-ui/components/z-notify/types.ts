@@ -7,6 +7,7 @@ export type NotifyType = 'primary' | 'success' | 'danger' | 'warning'
 export type NotifyPosition = 'top' | 'bottom'
 
 export type NotifyOptions = {
+  show?: boolean
   type?: NotifyType
   color?: string
   message?: NotifyMessage

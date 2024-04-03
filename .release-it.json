@@ -21,7 +21,11 @@
   "plugins": {
     "@release-it/bumper": {
       "in": "version.json",
-      "out": ["package.json", "src/package.json"]
+      "out": [
+        "package.json",
+        "src/package.json",
+        "demos/demo-normal/uni_modules/zebra-ui/package.json"
+      ]
     },
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOGAUTO.md",

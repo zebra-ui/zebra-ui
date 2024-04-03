@@ -192,7 +192,6 @@
         @cancel="onCancelArea"
       />
     </z-popup>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>

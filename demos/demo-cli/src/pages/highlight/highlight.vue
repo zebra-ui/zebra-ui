@@ -31,9 +31,10 @@
   </DemoPage>
 </template>
 <script lang="ts" setup>
-const text = 'zebra-swiper是基于uniapp开发的一款移动端轮播组件。'
-const keywords = 'zebra-swiper'
-const keywordsMore = ['zebra-swiper', 'uniapp', '移动端']
+import { ref } from 'vue'
+const text = ref('zebra-swiper是基于uniapp开发的一款移动端轮播组件。')
+const keywords = ref('zebra-swiper')
+const keywordsMore = ref(['zebra-swiper', 'uniapp', '移动端'])
 </script>
 <style lang="scss" scoped>
 .demo-highlight {

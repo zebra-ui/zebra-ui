@@ -1,6 +1,6 @@
 <template>
   <view :style="containerStyle">
-    <view :class="bem()" :style="containerStyle">
+    <view :class="bem()" :style="containerStyle" :id="componentId">
       <view :class="[bem('wrap', { fixed })]" :style="wrapStyle">
         <slot />
       </view>
@@ -23,7 +23,8 @@ import {
   raf,
   windowWidth,
   windowHeight,
-  useComponentName
+  useComponentName,
+  useId
 } from '../../libs/utils'
 
 const [name, bem] = createNamespace('sticky')
@@ -32,6 +33,8 @@ useComponentName(name)
 const emit = defineEmits(['scroll'])
 
 const instance = getCurrentInstance()
+
+const componentId = useId('z-sticky')
 
 const props = defineProps({
   zIndex: {
@@ -229,7 +232,7 @@ const observerContent = () => {
   contentObserverData.relativeToViewport({
     top: -stickyTop.value
   })
-  contentObserverData.observe('.z-sticky', (res) => {
+  contentObserverData.observe(`#${componentId}`, (res) => {
     if (props.disabled) {
       return
     }
@@ -258,7 +261,7 @@ const observerContainer = () => {
       containerObserver.relativeToViewport({
         top: _containerHeight - height.value - stickyTop.value - _relativeTop
       })
-      containerObserver.observe('.z-sticky', (res) => {
+      containerObserver.observe(`#${componentId}`, (res) => {
         if (props.disabled) {
           return
         }

@@ -52,12 +52,12 @@
         <z-uploader v-model="fileListRe" reupload max-count="2" />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const afterRead = (file: any) => {
   console.log(file)
 }
@@ -90,7 +90,7 @@ const fileListOnly = ref([
     url: 'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
     deletable: true,
     beforeDelete: () => {
-      showToast('删除前置处理')
+      toast.showToast('删除前置处理')
     }
   },
   {
@@ -109,11 +109,11 @@ const afterReadStatus = (file: any) => {
 }
 
 const onOversize = () => {
-  showToast('文件大小不能超过 500kb')
+  toast.showToast('文件大小不能超过 500kb')
 }
 const beforeRead = (file: any) => {
   if (file.type == 'image') {
-    showToast('上传图片拦截')
+    toast.showToast('上传图片拦截')
     return false
   }
   return true
@@ -121,7 +121,7 @@ const beforeRead = (file: any) => {
 const asyncBeforeRead = (file: any) =>
   new Promise((resolve, reject) => {
     if (file.type !== 'image') {
-      showToast('请上传图片格式文件')
+      toast.showToast('请上传图片格式文件')
       reject()
     } else {
       file.custom = {

@@ -45,14 +45,15 @@
         </z-search>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const value = ref('')
-const onSearch = (val: string) => showToast(val)
-const onCancel = () => showToast('取消')
-const onClickButton = () => showToast(value.value)
+const onSearch = (val: string) => toast.showToast(val)
+const onCancel = () => toast.showToast('取消')
+const onClickButton = () => toast.showToast(value.value)
 </script>

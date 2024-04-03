@@ -37,18 +37,19 @@
         </z-tab>
       </z-tabs>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const onOffsetChange = (offset: any) => {
-  showToast(`x: ${offset.x.toFixed(0)}, y: ${offset.y.toFixed(0)}`)
+  toast.showToast(`x: ${offset.x.toFixed(0)}, y: ${offset.y.toFixed(0)}`)
 }
 
 const onClick = () => {
-  showToast('点击气泡')
+  toast.showToast('点击气泡')
 }
 
 const activeName = ref(0)

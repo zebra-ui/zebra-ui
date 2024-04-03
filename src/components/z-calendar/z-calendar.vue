@@ -1,18 +1,137 @@
 <template>
-  <template v-if="props.poppable">
-    <z-popup
-      :show="props.show"
-      :custom-style="popupStyle"
-      :close-icon-style="{ top: '22rpx' }"
-      :round="props.round"
-      :position="props.position"
-      :closeable="props.showTitle || props.showSubtitle"
-      :close-on-popstate="props.closeOnPopstate"
-      :safe-area-inset-top="props.safeAreaInsetTop"
-      :close-on-click-overlay="props.closeOnClickOverlay"
-      @update:show="updateShow"
-      @close="popupClose"
-    >
+  <view>
+    <template v-if="props.poppable">
+      <z-popup
+        :show="props.show"
+        :custom-style="popupStyle"
+        :close-icon-style="{ top: '22rpx' }"
+        :round="props.round"
+        :position="props.position"
+        :closeable="props.showTitle || props.showSubtitle"
+        :close-on-popstate="props.closeOnPopstate"
+        :safe-area-inset-top="props.safeAreaInsetTop"
+        :close-on-click-overlay="props.closeOnClickOverlay"
+        @update:show="updateShow"
+        @close="popupClose"
+      >
+        <view :class="bem()" :style="customStyle">
+          <z-calendar-header
+            :date="subtitle.date"
+            :title="props.title"
+            :subtitle="subtitle.textFn()"
+            :show-title="props.showTitle"
+            :show-subtitle="props.showSubtitle"
+            :first-day-of-week="dayOffset"
+            :component-slots="instance.slots"
+            @click-subtitle="(event: any) => emit('clickSubtitle', event)"
+          >
+            <template v-if="instance.slots.title" #title>
+              <slot name="title"></slot>
+            </template>
+            <template v-if="instance.slots.subtitle" #subtitle>
+              <slot
+                name="subtitle"
+                :date="subtitle.date"
+                :text="subtitle.textFn()"
+              ></slot>
+            </template>
+          </z-calendar-header>
+          <scroll-view
+            :class="[bem('body'), `z-calendar-body${instance.uid}`]"
+            scroll-y="true"
+            :scroll-into-view="scrollTopInto"
+          >
+            <template v-for="(date, index) in months" :key="index">
+              <view
+                :class="`z-calendar-month${instance.uid}`"
+                :data-date="date"
+              >
+                <z-calendar-month
+                  :id="`month${index}`"
+                  :ref="setMonthRefs(index)"
+                  :date="date"
+                  :date-showed="false"
+                  :index="index"
+                  :current-date="currentDate"
+                  :show-month-title="index !== 0 || !props.showSubtitle"
+                  :first-day-of-week="dayOffset"
+                  @click="onClickDay"
+                  :type="props.type"
+                  :color="props.color"
+                  :min-date="props.minDate"
+                  :max-date="props.maxDate"
+                  :show-mark="props.showMark"
+                  :formatter="props.formatter"
+                  :row-height="props.rowHeight"
+                  :lazy-render="props.lazyRender"
+                  :component-slots="instance.slots as any"
+                  :show-subtitle="props.showSubtitle"
+                  :allow-same-day="props.allowSameDay"
+                  @click-disabled-date="
+                    (item: any) => emit('clickDisabledDate', item)
+                  "
+                >
+                  <template v-if="instance.slots['top-info']">
+                    <slot name="top-info"></slot>
+                  </template>
+                  <template v-if="instance.slots['bottom-info']">
+                    <slot name="bottom-info"></slot>
+                  </template>
+                  <template v-if="instance.slots['month-title']" #month-title>
+                    <slot
+                      name="month-title"
+                      :date="date"
+                      :text="formatMonthTitle(date)"
+                    ></slot>
+                  </template>
+                </z-calendar-month>
+              </view>
+            </template>
+          </scroll-view>
+          <view
+            :class="[
+              bem('footer'),
+              { 'z-safe-area-bottom': props.safeAreaInsetBottom }
+            ]"
+          >
+            <template v-if="instance.slots.footer">
+              <slot name="footer"></slot>
+            </template>
+            <template v-if="props.showConfirm">
+              <z-button
+                round
+                block
+                type="primary"
+                :color="props.color"
+                :custom-style="footerButtonStyle"
+                :disabled="buttonDisabled"
+                native-type="button"
+                @click="onConfirm"
+              >
+                <template v-if="instance.slots['confirm-text']">
+                  <slot name="confirm-text" :disabled="buttonDisabled"></slot>
+                </template>
+                <template
+                  v-else-if="
+                    buttonDisabled
+                      ? props.confirmDisabledText
+                      : props.confirmText
+                  "
+                >
+                  {{
+                    buttonDisabled
+                      ? props.confirmDisabledText
+                      : props.confirmText
+                  }}
+                </template>
+                <template v-else> 确认 </template>
+              </z-button>
+            </template>
+          </view>
+        </view>
+      </z-popup>
+    </template>
+    <template v-else>
       <view :class="bem()" :style="customStyle">
         <z-calendar-header
           :date="subtitle.date"
@@ -36,52 +155,52 @@
           </template>
         </z-calendar-header>
         <scroll-view
-          :class="bem('body')"
+          :class="[bem('body'), `z-calendar-body${instance.uid}`]"
           scroll-y="true"
           :scroll-into-view="scrollTopInto"
         >
           <template v-for="(date, index) in months" :key="index">
-            <z-calendar-month
-              :id="`month${index}`"
-              class="z-calendar-month"
-              :ref="setMonthRefs(index)"
-              :data-date="date"
-              :date-showed="false"
-              :date="date"
-              :index="index"
-              :current-date="currentDate"
-              :show-month-title="index !== 0 || !props.showSubtitle"
-              :first-day-of-week="dayOffset"
-              @click="onClickDay"
-              :type="props.type"
-              :color="props.color"
-              :min-date="props.minDate"
-              :max-date="props.maxDate"
-              :show-mark="props.showMark"
-              :formatter="props.formatter"
-              :row-height="props.rowHeight"
-              :lazy-render="props.lazyRender"
-              :component-slots="instance.slots as any"
-              :show-subtitle="props.showSubtitle"
-              :allow-same-day="props.allowSameDay"
-              @click-disabled-date="
-                (item: any) => emit('clickDisabledDate', item)
-              "
-            >
-              <template v-if="instance.slots['top-info']">
-                <slot name="top-info"></slot>
-              </template>
-              <template v-if="instance.slots['bottom-info']">
-                <slot name="bottom-info"></slot>
-              </template>
-              <template v-if="instance.slots['month-title']" #month-title>
-                <slot
-                  name="month-title"
-                  :date="date"
-                  :text="formatMonthTitle(date)"
-                ></slot>
-              </template>
-            </z-calendar-month>
+            <view :class="`z-calendar-month${instance.uid}`" :data-date="date">
+              <z-calendar-month
+                :id="`month${index}`"
+                :ref="setMonthRefs(index)"
+                :date-showed="false"
+                :date="date"
+                :index="index"
+                :current-date="currentDate"
+                :show-month-title="index !== 0 || !props.showSubtitle"
+                :first-day-of-week="dayOffset"
+                @click="onClickDay"
+                :type="props.type"
+                :color="props.color"
+                :min-date="props.minDate"
+                :max-date="props.maxDate"
+                :show-mark="props.showMark"
+                :formatter="props.formatter"
+                :row-height="props.rowHeight"
+                :lazy-render="props.lazyRender"
+                :component-slots="instance.slots as any"
+                :show-subtitle="props.showSubtitle"
+                :allow-same-day="props.allowSameDay"
+                @click-disabled-date="
+                  (item: any) => emit('clickDisabledDate', item)
+                "
+              >
+                <template v-if="instance.slots['top-info']">
+                  <slot name="top-info"></slot>
+                </template>
+                <template v-if="instance.slots['bottom-info']">
+                  <slot name="bottom-info"></slot>
+                </template>
+                <template v-if="instance.slots['month-title']" #month-title>
+                  <slot
+                    name="month-title"
+                    :date="date"
+                    :text="formatMonthTitle(date)"
+                  ></slot>
+                </template>
+              </z-calendar-month>
+            </view>
           </template>
         </scroll-view>
         <view
@@ -121,118 +240,9 @@
           </template>
         </view>
       </view>
-    </z-popup>
-  </template>
-  <template v-else>
-    <view :class="bem()" :style="customStyle">
-      <z-calendar-header
-        :date="subtitle.date"
-        :title="props.title"
-        :subtitle="subtitle.textFn()"
-        :show-title="props.showTitle"
-        :show-subtitle="props.showSubtitle"
-        :first-day-of-week="dayOffset"
-        :component-slots="instance.slots"
-        @click-subtitle="(event: any) => emit('clickSubtitle', event)"
-      >
-        <template v-if="instance.slots.title" #title>
-          <slot name="title"></slot>
-        </template>
-        <template v-if="instance.slots.subtitle" #subtitle>
-          <slot
-            name="subtitle"
-            :date="subtitle.date"
-            :text="subtitle.textFn()"
-          ></slot>
-        </template>
-      </z-calendar-header>
-      <scroll-view
-        :class="bem('body')"
-        scroll-y="true"
-        :scroll-into-view="scrollTopInto"
-      >
-        <template v-for="(date, index) in months" :key="index">
-          <z-calendar-month
-            :id="`month${index}`"
-            class="z-calendar-month"
-            :ref="setMonthRefs(index)"
-            :data-date="date"
-            :date-showed="false"
-            :date="date"
-            :index="index"
-            :current-date="currentDate"
-            :show-month-title="index !== 0 || !props.showSubtitle"
-            :first-day-of-week="dayOffset"
-            @click="onClickDay"
-            :type="props.type"
-            :color="props.color"
-            :min-date="props.minDate"
-            :max-date="props.maxDate"
-            :show-mark="props.showMark"
-            :formatter="props.formatter"
-            :row-height="props.rowHeight"
-            :lazy-render="props.lazyRender"
-            :component-slots="instance.slots as any"
-            :show-subtitle="props.showSubtitle"
-            :allow-same-day="props.allowSameDay"
-            @click-disabled-date="
-              (item: any) => emit('clickDisabledDate', item)
-            "
-          >
-            <template v-if="instance.slots['top-info']">
-              <slot name="top-info"></slot>
-            </template>
-            <template v-if="instance.slots['bottom-info']">
-              <slot name="bottom-info"></slot>
-            </template>
-            <template v-if="instance.slots['month-title']" #month-title>
-              <slot
-                name="month-title"
-                :date="date"
-                :text="formatMonthTitle(date)"
-              ></slot>
-            </template>
-          </z-calendar-month>
-        </template>
-      </scroll-view>
-      <view
-        :class="[
-          bem('footer'),
-          { 'z-safe-area-bottom': props.safeAreaInsetBottom }
-        ]"
-      >
-        <template v-if="instance.slots.footer">
-          <slot name="footer"></slot>
-        </template>
-        <template v-if="props.showConfirm">
-          <z-button
-            round
-            block
-            type="primary"
-            :color="props.color"
-            :custom-style="footerButtonStyle"
-            :disabled="buttonDisabled"
-            native-type="button"
-            @click="onConfirm"
-          >
-            <template v-if="instance.slots['confirm-text']">
-              <slot name="confirm-text" :disabled="buttonDisabled"></slot>
-            </template>
-            <template
-              v-else-if="
-                buttonDisabled ? props.confirmDisabledText : props.confirmText
-              "
-            >
-              {{
-                buttonDisabled ? props.confirmDisabledText : props.confirmText
-              }}
-            </template>
-            <template v-else> 确认 </template>
-          </z-button>
-        </template>
-      </view>
-    </view>
-  </template>
+    </template>
+    <z-toast name="z-calendar" />
+  </view>
 </template>
 <script lang="ts" setup>
 import {
@@ -268,12 +278,15 @@ import {
   formatMonthTitle
 } from './utils'
 import { PopupPosition } from '../z-popup/types'
-import { showToast } from '../z-toast/z-toast'
+import { useToast } from '../z-toast/z-toast'
 import zCalendarMonth from './z-calendar-month.vue'
 import zCalendarHeader from './z-calendar-header.vue'
 import zPopup from '../z-popup/z-popup.vue'
 import zButton from '../z-button/z-button.vue'
+import zToast from '../z-toast/z-toast.vue'
 import type { CalendarType, CalendarExpose, CalendarDayItem } from './types'
+const toastCall = useToast('z-calendar')
+
 const props = defineProps({
   show: Boolean,
   type: makeStringProp<CalendarType>('single'),
@@ -460,7 +473,7 @@ const buttonDisabled = computed(() => {
 })
 
 const getSelectedDate = () => currentDate.value
-let contentObserver = ref()
+const contentObserver = ref()
 const onScroll = () => {
   nextTick(() => {
     if (contentObserver.value != null) {
@@ -468,31 +481,36 @@ const onScroll = () => {
     }
     const contentObserverData = uni.createIntersectionObserver(instance, {
       thresholds: [0, 0.1, 0.9, 1],
-      observeAll: true
+      observeAll: true,
+      // @ts-ignore
+      dataset: true
     })
     contentObserver.value = contentObserverData
-    contentObserver.value.relativeTo('.z-calendar__body')
-    contentObserver.value.observe('.z-calendar-month', (res: any) => {
-      const { boundingClientRect } = res
-      const { relativeRect } = res
-      const { date } = res.dataset
-      if (
-        Math.floor(boundingClientRect.top) <=
-        Math.floor(relativeRect.top) + 2
-      ) {
-        if (!res.dataset.showed) {
-          res.dataset.showed = true
-          emit('monthShow', {
-            date: date,
-            title: formatMonthTitle(date)
-          })
-        }
-        subtitle.value = {
-          textFn: () => formatMonthTitle(date),
-          date: date
+    contentObserver.value.relativeTo(`.z-calendar-body${instance.uid}`)
+    contentObserver.value.observe(
+      `.z-calendar-month${instance.uid}`,
+      (res: any) => {
+        const { boundingClientRect } = res
+        const { relativeRect } = res
+        const { date } = res.dataset
+        if (
+          Math.floor(boundingClientRect.top) <=
+          Math.floor(relativeRect.top) + 2
+        ) {
+          if (!res.dataset.showed) {
+            res.dataset.showed = true
+            emit('monthShow', {
+              date: date,
+              title: formatMonthTitle(date)
+            })
+          }
+          subtitle.value = {
+            textFn: () => formatMonthTitle(date),
+            date: date
+          }
         }
       }
-    })
+    )
   })
 }
 
@@ -544,7 +562,7 @@ const checkRange = (date: [Date, Date]) => {
 
   if (maxRange && calcDateNum(date) > +maxRange) {
     if (showRangePrompt) {
-      showToast(rangePrompt || `最多选择 ${maxRange} 天`)
+      toastCall.showToast(rangePrompt || `最多选择 ${maxRange} 天`)
     }
     emit('overRange')
     return false
@@ -660,7 +678,7 @@ const onClickDay = (item: CalendarDayItem) => {
       const [unselectedDate] = dates.splice(selectedIndex, 1)
       emit('unselect', cloneDate(unselectedDate))
     } else if (props.maxRange && dates.length >= +props.maxRange) {
-      showToast(props.rangePrompt || `最多选择 ${props.maxRange} 天`)
+      toastCall.showToast(props.rangePrompt || `最多选择 ${props.maxRange} 天`)
     } else {
       select([...dates, date])
     }

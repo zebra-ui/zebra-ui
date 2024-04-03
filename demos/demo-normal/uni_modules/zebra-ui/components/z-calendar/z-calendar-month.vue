@@ -69,7 +69,6 @@ import {
 } from '../../libs/utils'
 import { getMonthEndDay } from '../z-date-picker/utils'
 import {
-  t,
   bem,
   compareDay,
   getPrevDay,
@@ -225,10 +224,10 @@ const getBottomInfo = (dayType: CalendarDayType) => {
   // @ts-ignore
   if (props.type === 'range') {
     if (dayType === 'start' || dayType === 'end') {
-      return t(dayType)
+      return dayType === 'start' ? '开始' : '结束'
     }
     if (dayType === 'start-end') {
-      return `${t('start')}/${t('end')}`
+      return `开始/结束`
     }
   }
 }

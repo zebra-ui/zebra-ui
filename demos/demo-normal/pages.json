@@ -3,9 +3,10 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "zebra-ui",
         "navigationStyle": "custom",
-        "enablePullDownRefresh": false
+        "mp-alipay": {
+          "navigationBarTitleText": ""
+        }
       }
     },
     {
@@ -480,9 +481,15 @@
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "ZebraUI",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "mp-alipay": {
+      "allowsBounceVertical": "NO",
+      "transparentTitle": "always",
+      "defaultTitle": "",
+      "navigationBarTitleText": ""
+    }
   },
   "uniIdRouter": {}
 }

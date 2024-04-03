@@ -129,12 +129,13 @@
         </z-popover>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const actions = ref([
   { text: '选项一' },
   { text: '选项二' },
@@ -184,7 +185,7 @@ const onPickerChange = (option: any) => {
   })
 }
 
-const onSelect = (action: { text: string }) => showToast(action.text)
+const onSelect = (action: { text: string }) => toast.showToast(action.text)
 </script>
 <style lang="scss" scoped>
 .demo-popover {

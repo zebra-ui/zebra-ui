@@ -80,7 +80,7 @@ const makeSvgToBlobUrl = (image: string = '') => {
   if (props.content) {
     ctx.fillText(props.content, 0, props.height / 2)
   }
-  ctx.draw(false, () =>
+  ctx.draw(false, () => {
     uni.canvasToTempFilePath(
       {
         canvasId: id,
@@ -94,9 +94,11 @@ const makeSvgToBlobUrl = (image: string = '') => {
           console.warn(err)
         }
       },
+      // #ifdef MP-WEIXIN
       instance
+      // #endif
     )
-  )
+  })
 }
 
 const svgWidth = computed(() => {

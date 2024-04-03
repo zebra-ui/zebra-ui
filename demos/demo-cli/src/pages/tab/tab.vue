@@ -156,21 +156,22 @@
           </z-tab>
         </z-tabs>
       </demo-block>
-      <z-toast ref="zToast"></z-toast>
     </view>
   </DemoPage>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const active = ref(0)
 const activeScroll = ref(0)
 const activeScrollspy = ref(0)
 const activeDisabled = ref(0)
 const activeBefore = ref(0)
 const activeName = ref('name1')
-const onClickTab = ({ title }: any) => showToast(title)
+const onClickTab = ({ title }: any) => toast.showToast(title)
 const beforeChange = (index: any) => {
   if (index === 1) {
     return false

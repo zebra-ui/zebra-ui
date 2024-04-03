@@ -38,16 +38,17 @@
         <z-rate v-model="value" @change="onChange" />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const value = ref(3)
 const valueHalf = ref(2.5)
 const valueCount = ref(3)
 const valueClear = ref(3)
 const valueReadonly = ref(3.3)
-const onChange = (value: string) => showToast('当前值：' + value)
+const onChange = (value: string) => toast.showToast('当前值：' + value)
 </script>

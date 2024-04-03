@@ -79,14 +79,15 @@
   </DemoPage>
 </template>
 <script lang="ts" setup>
-const imageUrl = 'https://cdn.zebraui.com/zebra-ui/images/demo.jpg'
-const imageMode = [
+import { ref } from 'vue'
+const imageUrl = ref('https://cdn.zebraui.com/zebra-ui/images/demo.jpg')
+const imageMode = ref([
   'scaleToFill',
   'aspectFit',
   'aspectFill',
   'widthFix',
   'heightFix'
-]
+])
 const imageType = [
   'top',
   'bottom',

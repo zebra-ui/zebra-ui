@@ -29,24 +29,24 @@
         </z-notify>
       </demo-block>
     </view>
-    <z-notify ref="zNotify" custom-navbar></z-notify>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showNotify } from '../../uni_modules/zebra-ui'
+import { useNotify } from '../../uni_modules/zebra-ui'
+const notify = useNotify()
 const show = ref(false)
 const showBasicNotify = () => {
-  showNotify('通知内容')
+  notify.showNotify('通知内容')
 }
 const showType = (type: any) => {
-  showNotify({
+  notify.showNotify({
     message: '通知内容',
     type
   })
 }
 const showCustomColor = () => {
-  showNotify({
+  notify.showNotify({
     color: '#ad0000',
     message: '自定义颜色',
     background: '#ffe1e1'
@@ -54,14 +54,14 @@ const showCustomColor = () => {
 }
 
 const showCustomDuration = () => {
-  showNotify({
+  notify.showNotify({
     message: '自定义时长',
     duration: 1000
   })
 }
 
 const showCustomPosition = () => {
-  showNotify({
+  notify.showNotify({
     message: '自定义位置',
     position: 'bottom'
   })

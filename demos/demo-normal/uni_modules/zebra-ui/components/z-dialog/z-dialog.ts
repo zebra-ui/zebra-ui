@@ -50,7 +50,8 @@ function initInstance(ref = 'zDialog') {
 
 export function useDialog(name: string = '') {
   const componentsOptions = ref(extend({}, DEFAULT_OPTIONS))
-  provide(`z-dialog-${name}`, componentsOptions)
+  const dialogProvideKey = name ? `z-dialog-${name}` : 'z-dialog'
+  provide(dialogProvideKey, componentsOptions)
   const showDialog = (
     options: DialogOptions
   ): Promise<DialogAction | undefined> => {
@@ -70,8 +71,25 @@ export function useDialog(name: string = '') {
       )
     })
   }
+  const setDialogDefaultOptions = (options: DialogOptions) => {
+    componentsOptions.value = extend(currentOptions, options)
+  }
+  const resetDialogDefaultOptions = () => {
+    componentsOptions.value = extend({}, DEFAULT_OPTIONS)
+  }
+  const showConfirmDialog = (options: DialogOptions) =>
+    showDialog(extend({ showCancelButton: true }, options))
+  const closeDialog = () => {
+    componentsOptions.value = extend({
+      show: false
+    })
+  }
   return {
-    showDialog
+    showDialog,
+    setDialogDefaultOptions,
+    resetDialogDefaultOptions,
+    showConfirmDialog,
+    closeDialog
   }
 }
 export function showDialog(

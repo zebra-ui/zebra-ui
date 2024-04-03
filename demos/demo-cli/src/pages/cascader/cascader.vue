@@ -123,15 +123,13 @@
         </z-popup>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import {
-  showLoadingToast,
-  closeToast
-} from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 import { useCascaderAreaData } from '../../common/js/area'
 const show = ref(false)
 const showColor = ref(false)
@@ -279,13 +277,13 @@ const onChangeAsync = ({ value }: any) => {
     optionsAsync.value[0].children.length === 0
   ) {
     // 模拟数据请求
-    showLoadingToast('加载中...')
+    toast.showLoadingToast('加载中...')
     setTimeout(() => {
       optionsAsync.value[0].children = [
         { text: '杭州市', value: '330100' },
         { text: '宁波市', value: '330200' }
       ]
-      closeToast()
+      toast.closeToast()
     }, 1000)
   }
 }

@@ -2,34 +2,44 @@
   <DemoPage title="Toast">
     <view class="demo-toast">
       <demo-block title="基础用法">
-        <z-cell title="文字提示" is-link @click="showToast('文字提示')" />
+        <z-cell title="文字提示" is-link @click="toast.showToast('文字提示')" />
         <z-cell
           title="加载提示"
           is-link
-          @click="showLoadingToast({ message: '加载中...', forbidClick: true })"
+          @click="
+            toast.showLoadingToast({ message: '加载中...', forbidClick: true })
+          "
         />
         <z-cell
           title="成功提示"
           is-link
-          @click="showSuccessToast('成功文案')"
+          @click="toast.showSuccessToast('成功文案')"
         />
-        <z-cell title="失败提示" is-link @click="showFailToast('失败文案')" />
+        <z-cell
+          title="失败提示"
+          is-link
+          @click="toast.showFailToast('失败文案')"
+        />
       </demo-block>
       <demo-block title="自定义图标">
         <z-cell
           title="自定义图标"
           is-link
           @click="
-            showToast({ message: '自定义图标', icon: 'search', duration: 0 })
+            toast.showToast({
+              message: '自定义图标',
+              icon: 'search'
+            })
           "
         />
         <z-cell
           title="自定义图片"
           is-link
           @click="
-            showToast({
+            toast.showToast({
               message: '自定义图片',
-              icon: 'https://cdn.zebraui.com/zebra-ui/images/assets/demo-select.png'
+              icon: 'https://cdn.zebraui.com/zebra-ui/images/assets/demo-select.png',
+              duration: 0
             })
           "
         />
@@ -37,7 +47,7 @@
           title="自定义加载图标"
           is-link
           @click="
-            showLoadingToast({
+            toast.showLoadingToast({
               message: '加载中...',
               forbidClick: true,
               loadingType: 'spinner'
@@ -49,12 +59,12 @@
         <z-cell
           title="顶部展示"
           is-link
-          @click="showToast({ message: '顶部展示', position: 'top' })"
+          @click="toast.showToast({ message: '顶部展示', position: 'top' })"
         />
         <z-cell
           title="底部展示"
           is-link
-          @click="showToast({ message: '底部展示', position: 'bottom' })"
+          @click="toast.showToast({ message: '底部展示', position: 'bottom' })"
         />
       </demo-block>
       <demo-block title="文字换行方式">
@@ -62,7 +72,7 @@
           title="换行时截断单词"
           is-link
           @click="
-            showToast({
+            toast.showToast({
               message:
                 'This message will contain a incomprehensibilities long word.',
               wordBreak: 'break-all'
@@ -73,7 +83,7 @@
           title="换行时不截断单词"
           is-link
           @click="
-            showToast({
+            toast.showToast({
               message:
                 'This message will contain a incomprehensibilities long word.',
               wordBreak: 'break-word'
@@ -86,7 +96,7 @@
       </demo-block>
       <demo-block title="使用组件">
         <z-cell title="使用组件" is-link @click="show = true" />
-        <z-toast v-model:show="show" :duration="0">
+        <z-toast use-component v-model:show="show" :duration="0">
           <template #message>
             <view class="toast-custom">
               <z-icon name="error" color="var(--z-orange)"></z-icon>
@@ -102,34 +112,28 @@
         </z-toast>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import {
-  showToast,
-  showLoadingToast,
-  showSuccessToast,
-  showFailToast,
-  closeToast
-} from '@zebra-ui/uniapp'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const showToastTrends = () => {
-  const toast = showLoadingToast({
+  const toastData = toast.showLoadingToast({
     duration: 0,
     forbidClick: true,
     message: '倒计时 3 秒'
   })
-
   let second = 3
   const timer = setInterval(() => {
     second--
     if (second) {
-      toast!.state.message = `倒计时 ${second} 秒`
+      toastData!.message.value = `倒计时 ${second} 秒`
     } else {
       clearInterval(timer)
-      closeToast()
+      toast.closeToast()
     }
   }, 1000)
 }

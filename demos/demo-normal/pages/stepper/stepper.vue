@@ -37,25 +37,22 @@
         />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import {
-  closeToast,
-  showLoadingToast
-} from '../../uni_modules/zebra-ui/components/z-toast/z-toast'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const value = ref(1)
 const valueMax = ref(5)
 const valueInteger = ref(1)
 const valueDecimal = ref(1)
 const beforeChange = () => {
-  showLoadingToast({ forbidClick: true })
+  toast.showLoadingToast({ forbidClick: true })
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      closeToast()
+      toast.closeToast()
       resolve(true)
     }, 1000)
   })

@@ -28,7 +28,12 @@
       <z-loading :wrapper-style="loadingStyle" />
     </template>
     <slot v-if="showSlots('columns-top')" name="columns-top"></slot>
-    <view :class="bem('columns')" :style="columnsStyle" @touchmove.stop.prevent>
+    <view
+      :class="bem('columns')"
+      :style="columnsStyle"
+      @touchmove.stop.prevent="noop"
+      disable-scroll="true"
+    >
       <template
         v-for="(options, columnIndex) in currentColumns"
         :key="columnIndex"
@@ -305,7 +310,9 @@ const confirm = () => {
 }
 
 const cancel = () => emit('cancel', getEventParams())
-
+const noop = () => {
+  return false
+}
 watch(
   currentColumns,
   (columns) => {

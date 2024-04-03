@@ -10,7 +10,9 @@
     <view class="demo-page" :style="pageStyle" @click="pageClick">
       <slot></slot>
     </view>
-    <z-dialog name="page"></z-dialog>
+    <z-dialog></z-dialog>
+    <z-toast></z-toast>
+    <z-notify custom-navbar></z-notify>
   </z-config-provider>
 </template>
 

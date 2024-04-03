@@ -1,15 +1,13 @@
 <template>
   <view :class="bem()">
     <z-popup
-      :show="show || state.show"
-      :overlay="overlay || state.overlay"
+      :show="getProps('show')"
+      :overlay="getProps('overlay')"
       :transition="transition"
-      :overlay-back-groud="
-        props.type == 'loading' || state.type == 'loading' ? false : true
-      "
+      :overlay-back-groud="getProps('type') ? false : true"
       :overlay-style="overlayStyle"
-      :close-on-click-overlay="closeOnClickOverlay || state.closeOnClickOverlay"
-      :z-index="zIndex"
+      :close-on-click-overlay="getProps('closeOnClickOverlay')"
+      :z-index="getProps('zIndex')"
       :custom-style="styles"
       @click="onClick"
       @closed="clearTimer"
@@ -17,29 +15,26 @@
     >
       <template
         v-if="
-          icon ||
-          state.icon ||
-          type === 'success' ||
-          type === 'fail' ||
-          state.type === 'success' ||
-          state.type === 'fail'
+          getProps('icon') ||
+          getProps('type') === 'success' ||
+          getProps('type') === 'fail'
         "
       >
         <z-icon
-          :name="icon || state.icon || iconTypeName"
-          :size="iconSize || state.iconSize || 'var(--z-toast-icon-size)'"
-          :class-prefix="iconPrefix || state.iconPrefix"
+          :name="getProps('icon') || iconTypeName"
+          :size="getProps('iconSize') || 'var(--z-toast-icon-size)'"
+          :class-prefix="getProps('iconPrefix')"
           :custom-style="{ 'line-height': '1' }"
         />
       </template>
-      <template v-else-if="type === 'loading' || state.type === 'loading'">
+      <template v-else-if="getProps('type') === 'loading'">
         <z-loading
           :custom-style="{
             padding: 'var(--z-padding-base)',
             color: 'var(--z-toast-loading-icon-color)'
           }"
-          :size="iconSize || state.iconSize"
-          :type="loadingType || state.loadingType"
+          :size="getProps('iconSize')"
+          :type="getProps('loadingType')"
         />
       </template>
       <template v-if="instance.slots.message">
@@ -48,13 +43,10 @@
         </view>
       </template>
       <template
-        v-else-if="
-          (isDef(message) || isDef(state.message)) &&
-          (message !== '' || state.message !== '')
-        "
+        v-else-if="isDef(getProps('message')) && getProps('message') !== ''"
       >
         <view :class="bem('text')" :style="toastTextStyle">{{
-          message || state.message
+          getProps('message')
         }}</view>
       </template>
     </z-popup>
@@ -114,6 +106,7 @@ const props = defineProps({
   closeOnClickOverlay: Boolean,
   zIndex: numericProp,
   customStyle: Object,
+  useComponent: Boolean,
   name: String
 })
 
@@ -125,13 +118,21 @@ const state = reactive<{
   overlay: false
 })
 
+const getProps = (name: string) => {
+  if (props.useComponent) {
+    // @ts-ignore
+    return props[name]
+  } else {
+    return state[name]
+  }
+}
+
 const emit = defineEmits(['update:show'])
 let timer: ReturnType<typeof setTimeout>
 let clickable = false
 
 const toggleClickable = () => {
-  const newValue =
-    (props.show && props.forbidClick) || (state.show && state.forbidClick)
+  const newValue = getProps('show') && getProps('forbidClick')
   if (clickable !== newValue) {
     clickable = newValue
     state.overlay = true
@@ -140,11 +141,11 @@ const toggleClickable = () => {
 
 const iconTypeName = computed(() => {
   //@ts-ignore
-  if (props.type === 'success' || state.type === 'success') {
+  if (getProps('type') === 'success') {
     return 'check-circle'
   }
   //@ts-ignore
-  else if (props.type === 'fail' || state.type === 'fail') {
+  else if (getProps('type') === 'fail') {
     return 'warning-circle'
   } else {
     return ''
@@ -191,48 +192,42 @@ const styles = computed(() => {
   let style = {}
   let typeStyle = {}
   //@ts-ignore
-  if (props.position == 'top' || state.position == 'top') {
+  if (getProps('position') == 'top') {
     style = {
       top: 'var(--z-toast-position-top-distance)'
     }
   }
   //@ts-ignore
-  else if (props.position == 'bottom' || state.position == 'bottom') {
+  else if (getProps('position') == 'bottom') {
     style = {
       top: 'auto',
       bottom: 'var(--z-toast-position-bottom-distance)'
     }
   }
   //@ts-ignore
-  else if (props.position == 'middle' || state.position == 'middle') {
+  else if (getProps('position') == 'middle') {
     style = {}
   } else {
     style = {}
   }
   //@ts-ignore
-  if (props.wordBreak === 'normal' || state.wordBreak === 'normal') {
+  if (getProps('wordBreak') === 'normal') {
     normalStyle['word-break'] = 'normal'
     normalStyle['word-wrap'] = 'normal'
   }
   //@ts-ignore
-  else if (
-    props.wordBreak === 'break-word' ||
-    state.wordBreak === 'break-word'
-  ) {
+  else if (getProps('wordBreak') === 'break-word') {
     normalStyle['word-break'] = 'normal'
     normalStyle['word-wrap'] = 'break-word'
   }
   //@ts-ignore
-  else if (props.wordBreak === 'break-all' || state.wordBreak === 'break-all') {
+  else if (getProps('wordBreak') === 'break-all') {
     normalStyle['word-break'] = 'break-all'
   }
 
-  if (!props.icon && !state.icon) {
+  if (!getProps('icon')) {
     //@ts-ignore
-    if (
-      (props.type == 'text' || props.type == 'html') &&
-      (state.type == 'text' || state.type == 'html')
-    ) {
+    if (getProps('type') == 'text' || getProps('type') == 'html') {
       typeStyle = {
         width: 'fit-content',
         minWidth: 'var(--z-toast-text-min-width)',
@@ -270,8 +265,7 @@ const styles = computed(() => {
     ...style,
     ...normalStyle,
     ...typeStyle,
-    ...props.customStyle,
-    ...state.customStyle
+    ...getProps('customStyle')
   }
 })
 
@@ -286,29 +280,21 @@ const open = (propsData: Record<string, any>) => {
 
 const close = () => toggle(false)
 
-watch(() => [props.show, props.forbidClick], toggleClickable)
-watch(() => [state.show, state.forbidClick], toggleClickable)
+watch(() => [getProps('show'), getProps('forbidClick')], toggleClickable)
 
 watch(
-  () => [props.show, props.type, props.message, props.duration],
+  () => [
+    getProps('show'),
+    getProps('type'),
+    getProps('message'),
+    getProps('duration')
+  ],
   () => {
     clearTimer()
-    if (props.show && props.duration > 0) {
+    if (getProps('show') && getProps('duration') > 0) {
       timer = setTimeout(() => {
         updateShow(false)
-      }, props.duration)
-    }
-  }
-)
-
-watch(
-  () => [state.show, state.type, state.message, state.duration],
-  () => {
-    clearTimer()
-    if (state.show && state.duration > 0) {
-      timer = setTimeout(() => {
-        updateShow(false)
-      }, state.duration)
+      }, getProps('duration'))
     }
   }
 )
@@ -323,7 +309,9 @@ defineExpose({
   state
 })
 
-const injectOptions = inject(`z-toast-${props.name}`, ref({}))
+const toastInjectKey = props.name ? `z-toast-${props.name}` : 'z-toast'
+
+const injectOptions = inject(toastInjectKey, ref({}))
 
 watch(
   () => injectOptions.value,
