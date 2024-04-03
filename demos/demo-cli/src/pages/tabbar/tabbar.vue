@@ -85,12 +85,13 @@
         </z-tabbar>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const active = ref(0)
 const active2 = ref(0)
 const active3 = ref(0)
@@ -107,7 +108,7 @@ const icon = {
 }
 
 const onChange = (index: number) => {
-  showToast(`标签 ${index + 1}`)
+  toast.showToast(`标签 ${index + 1}`)
 }
 </script>
 <style lang="scss" scoped>

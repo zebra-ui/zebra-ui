@@ -5,22 +5,32 @@
         <z-cell
           is-link
           title="选择单个日期"
-          :value="formatFullDate(state.date.selectSingle)"
-          @click="show('single', 'selectSingle')"
+          :value="dateOne"
+          @click="showSelectOne = true"
         />
+        <z-calendar v-model:show="showSelectOne" @confirm="onConfirmOne" />
 
         <z-cell
           is-link
           title="选择多个日期"
-          :value="formatMultiple(state.date.selectMultiple)"
-          @click="show('multiple', 'selectMultiple')"
+          :value="dateMore"
+          @click="showSelectMore = true"
         />
-
+        <z-calendar
+          v-model:show="showSelectMore"
+          type="multiple"
+          @confirm="onConfirmMore"
+        />
         <z-cell
           is-link
           title="选择日期区间"
-          :value="formatRange(state.date.selectRange)"
-          @click="show('range', 'selectRange')"
+          :value="dateRange"
+          @click="showSelectRange = true"
+        />
+        <z-calendar
+          v-model:show="showSelectRange"
+          type="range"
+          @confirm="onConfirmRange"
         />
       </demo-block>
 
@@ -28,15 +38,26 @@
         <z-cell
           is-link
           title="选择单个日期"
-          :value="formatFullDate(state.date.quickSelect1)"
-          @click="show('single', 'quickSelect1')"
+          :value="dateQuick1"
+          @click="showQuick1 = true"
+        />
+        <z-calendar
+          v-model:show="showQuick1"
+          @confirm="onConfirmQuick1"
+          :show-confirm="false"
         />
 
         <z-cell
           is-link
           title="选择日期区间"
-          :value="formatRange(state.date.quickSelect2)"
-          @click="show('range', 'quickSelect2')"
+          :value="dateQuick2"
+          @click="showQuick2 = true"
+        />
+        <z-calendar
+          v-model:show="showQuick2"
+          @confirm="onConfirmQuick2"
+          type="range"
+          :show-confirm="false"
         />
       </demo-block>
 
@@ -44,49 +65,92 @@
         <z-cell
           is-link
           title="自定义颜色"
-          :value="formatRange(state.date.customColor)"
-          @click="show('range', 'customColor')"
+          :value="dateColor"
+          @click="showColor = true"
+        />
+        <z-calendar
+          v-model:show="showColor"
+          type="range"
+          color="#ee0a24"
+          @confirm="onConfirmColor"
         />
 
         <z-cell
           is-link
           title="自定义日期范围"
-          :value="formatFullDate(state.date.customRange)"
-          @click="show('single', 'customRange')"
+          :value="dateCustomRange"
+          @click="showCustomRange = true"
+        />
+        <z-calendar
+          v-model:show="showCustomRange"
+          :min-date="minDate"
+          :max-date="maxDate"
+          @confirm="onConfirmCustomRange"
         />
 
         <z-cell
           is-link
           title="自定义按钮文字"
-          :value="formatRange(state.date.customConfirm)"
-          @click="show('range', 'customConfirm')"
+          :value="dateCustomText"
+          @click="showCustomText = true"
+        />
+        <z-calendar
+          v-model:show="showCustomText"
+          type="range"
+          confirm-text="完成"
+          confirm-disabled-text="请选择结束时间"
+          @confirm="onConfirmCustomText"
         />
 
         <z-cell
           is-link
           title="自定义日期文案"
-          :value="formatRange(state.date.customDayText)"
-          @click="show('range', 'customDayText')"
+          :value="dateCustomDayText"
+          @click="showCustomDayText = true"
+        />
+        <z-calendar
+          v-model:show="showCustomDayText"
+          type="range"
+          :formatter="formatter"
+          @confirm="onConfirmCustomDayText"
         />
 
         <z-cell
           is-link
           title="自定义弹出位置"
-          :value="formatFullDate(state.date.customPosition)"
-          @click="show('single', 'customPosition')"
+          :value="dateCustomPosition"
+          @click="showCustomPosition = true"
+        />
+        <z-calendar
+          v-model:show="showCustomPosition"
+          :round="false"
+          position="right"
+          @confirm="onConfirmCustomPosition"
         />
 
         <z-cell
           is-link
           title="日期区间最大范围"
-          :value="formatRange(state.date.maxRange)"
-          @click="show('range', 'maxRange')"
+          :value="dateMaxRange"
+          @click="showMaxRange = true"
+        />
+        <z-calendar
+          v-model:show="showMaxRange"
+          type="range"
+          :max-range="3"
+          @confirm="onConfirmMaxRange"
         />
 
         <z-cell
           is-link
           title="自定义周起始日"
-          @click="show('single', 'firstDayOfWeek')"
+          :value="dateFirstDayOfWeek"
+          @click="showFirstDayOfWeek = true"
+        />
+        <z-calendar
+          v-model:show="showFirstDayOfWeek"
+          first-day-of-week="1"
+          @confirm="onConfirmFirstDayOfWeek"
         />
       </demo-block>
 
@@ -98,77 +162,74 @@
           :custom-style="{ height: '500px' }"
         />
       </demo-block>
-
-      <z-calendar
-        v-model:show="state.showCalendar"
-        :type="state.type"
-        :color="state.color"
-        :round="state.round"
-        :position="state.position"
-        :min-date="state.minDate"
-        :max-date="state.maxDate"
-        :max-range="state.maxRange"
-        :formatter="state.formatter"
-        :show-confirm="state.showConfirm"
-        :confirm-text="state.confirmText"
-        :first-day-of-week="state.firstDayOfWeek"
-        :confirm-disabled-text="state.confirmDisabledText"
-        @confirm="onConfirm"
-      />
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
-import { reactive } from 'vue'
-const state = reactive<Record<string, any>>({
-  date: {
-    maxRange: [],
-    selectSingle: null,
-    selectRange: [],
-    selectMultiple: [],
-    quickSelect1: null,
-    quickSelect2: [],
-    customColor: [],
-    customConfirm: [],
-    customRange: null,
-    customDayText: [],
-    customPosition: null
-  },
-  type: 'single',
-  round: true,
-  color: undefined,
-  minDate: undefined,
-  maxDate: undefined,
-  maxRange: undefined,
-  position: undefined,
-  formatter: undefined,
-  showConfirm: false,
-  showCalendar: false,
-  confirmText: undefined,
-  confirmDisabledText: undefined,
-  firstDayOfWeek: 0
-})
+import { ref } from 'vue'
+const dateOne = ref('')
+const showSelectOne = ref(false)
+const dateMore = ref('')
+const showSelectMore = ref(false)
+const dateRange = ref('')
+const showSelectRange = ref(false)
 
-const resetSettings = () => {
-  state.round = true
-  state.color = undefined
-  state.minDate = undefined
-  state.maxDate = undefined
-  state.maxRange = undefined
-  state.position = undefined
-  state.formatter = undefined
-  state.showConfirm = true
-  state.confirmText = undefined
-  state.confirmDisabledText = undefined
-  state.firstDayOfWeek = 0
+const dateQuick1 = ref('')
+const showQuick1 = ref(false)
+const onConfirmQuick1 = (value: any) => {
+  showQuick1.value = false
+  dateQuick1.value = formatDate(value)
 }
 
-const dayFormatter = (day: any) => {
-  if (!day.date) {
-    return day
-  }
+const dateQuick2 = ref('')
+const showQuick2 = ref(false)
+const onConfirmQuick2 = (values: any) => {
+  const [start, end] = values
+  showQuick2.value = false
+  dateQuick2.value = `${formatDate(start)} - ${formatDate(end)}`
+}
 
+const dateColor = ref('')
+const showColor = ref(false)
+const onConfirmColor = (values: any) => {
+  const [start, end] = values
+  showColor.value = false
+  dateColor.value = `${formatDate(start)} - ${formatDate(end)}`
+}
+
+const formatDate = (date: any) => `${date.getMonth() + 1}/${date.getDate()}`
+const onConfirmOne = (value: any) => {
+  showSelectOne.value = false
+  dateOne.value = formatDate(value)
+}
+const onConfirmMore = (dates: any) => {
+  showSelectMore.value = false
+  dateMore.value = `选择了 ${dates.length} 个日期`
+}
+const onConfirmRange = (values: any) => {
+  const [start, end] = values
+  showSelectRange.value = false
+  dateRange.value = `${formatDate(start)} - ${formatDate(end)}`
+}
+
+const minDate = ref(new Date(2010, 0, 1))
+const maxDate = ref(new Date(2010, 0, 31))
+const dateCustomRange = ref('')
+const showCustomRange = ref(false)
+const onConfirmCustomRange = (value: any) => {
+  showCustomRange.value = false
+  dateCustomRange.value = formatDate(value)
+}
+
+const dateCustomText = ref('')
+const showCustomText = ref(false)
+const onConfirmCustomText = (values: any) => {
+  const [start, end] = values
+  showCustomText.value = false
+  dateCustomText.value = `${formatDate(start)} - ${formatDate(end)}`
+}
+
+const formatter = (day: any) => {
   const month = day.date.getMonth() + 1
   const date = day.date.getDate()
 
@@ -183,81 +244,40 @@ const dayFormatter = (day: any) => {
   }
 
   if (day.type === 'start') {
-    day.bottomInfo = '入店'
+    day.bottomInfo = '入住'
   } else if (day.type === 'end') {
     day.bottomInfo = '离店'
   }
 
   return day
 }
-
-const show = (type: string, id: string) => {
-  resetSettings()
-  state.id = id
-  state.type = type
-  state.showCalendar = true
-
-  switch (id) {
-    case 'quickSelect1':
-    case 'quickSelect2':
-      state.showConfirm = false
-      break
-    case 'customColor':
-      state.color = '#ee0a24'
-      break
-    case 'customConfirm':
-      state.confirmText = '完成'
-      state.confirmDisabledText = '请选择结束时间'
-      break
-    case 'customRange':
-      state.minDate = new Date(2010, 0, 1)
-      state.maxDate = new Date(2010, 0, 31)
-      break
-    case 'customDayText':
-      state.minDate = new Date(2010, 4, 1)
-      state.maxDate = new Date(2010, 4, 31)
-      state.formatter = dayFormatter
-      break
-    case 'customPosition':
-      state.round = false
-      state.position = 'right'
-      break
-    case 'maxRange':
-      state.maxRange = 3
-      break
-    case 'firstDayOfWeek':
-      state.firstDayOfWeek = 1
-      break
-  }
+const dateCustomDayText = ref('')
+const showCustomDayText = ref(false)
+const onConfirmCustomDayText = (values: any) => {
+  const [start, end] = values
+  showCustomDayText.value = false
+  dateCustomDayText.value = `${formatDate(start)} - ${formatDate(end)}`
 }
 
-const formatDate = (date: Date) => {
-  if (date) {
-    return `${date.getMonth() + 1}/${date.getDate()}`
-  }
+const dateCustomPosition = ref('')
+const showCustomPosition = ref(false)
+const onConfirmCustomPosition = (value: any) => {
+  showCustomPosition.value = false
+  dateCustomPosition.value = formatDate(value)
 }
 
-const formatFullDate = (date: Date) => {
-  if (date) {
-    return `${date.getFullYear()}/${formatDate(date)}`
-  }
+const dateMaxRange = ref('')
+const showMaxRange = ref(false)
+const onConfirmMaxRange = (values: any) => {
+  const [start, end] = values
+  showMaxRange.value = false
+  dateMaxRange.value = `${formatDate(start)} - ${formatDate(end)}`
 }
 
-const formatMultiple = (dates: Date[]) => {
-  if (dates.length) {
-    return `选择了 ${dates.length} 个日期`
-  }
-}
-
-const formatRange = (dateRange: Date[]) => {
-  if (dateRange.length) {
-    const [start, end] = dateRange
-    return `${formatDate(start)} - ${formatDate(end)}`
-  }
-}
-
-const onConfirm = (date: Date | Date[]) => {
-  state.showCalendar = false
-  state.date[state.id] = date
+const dateFirstDayOfWeek = ref('')
+const showFirstDayOfWeek = ref(false)
+const onConfirmFirstDayOfWeek = (value: any) => {
+  showFirstDayOfWeek.value = false
+  dateFirstDayOfWeek.value = formatDate(value)
 }
 </script>

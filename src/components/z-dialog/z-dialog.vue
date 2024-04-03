@@ -341,7 +341,9 @@ defineExpose({
   state
 })
 
-const injectOptions = inject(`z-dialog-${props.name}`, ref({}))
+const dialogInjectKey = props.name ? `z-dialog-${props.name}` : 'z-dialog'
+
+const injectOptions = inject(dialogInjectKey, ref({}))
 
 watch(
   () => injectOptions.value,

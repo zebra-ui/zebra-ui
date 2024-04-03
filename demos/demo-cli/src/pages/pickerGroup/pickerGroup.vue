@@ -145,12 +145,13 @@
         </z-picker-group>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const currentDate = ref(['2022', '06', '01'])
 const currentTime = ref(['12', '00'])
 const minDate = new Date(2020, 0, 1)
@@ -158,33 +159,35 @@ const maxDate = new Date(2025, 5, 1)
 const activeTab = ref(0)
 const activeTabNext = ref(0)
 const onConfirm = () => {
-  showToast(`${currentDate.value.join('/')} ${currentTime.value.join(':')}`)
+  toast.showToast(
+    `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+  )
 }
 
 const onCancel = () => {
-  showToast('cancel')
+  toast.showToast('cancel')
 }
 
 const startDate = ref(['2022', '06', '01'])
 const endDate = ref(['2023', '06', '01'])
 
 const onConfirmDateMax = () => {
-  showToast(`${startDate.value.join('/')} - ${endDate.value.join('/')}`)
+  toast.showToast(`${startDate.value.join('/')} - ${endDate.value.join('/')}`)
 }
 
 const onCancelDateMax = () => {
-  showToast('cancel')
+  toast.showToast('cancel')
 }
 
 const startTime = ref(['12', '00'])
 const endTime = ref(['12', '00'])
 
 const onConfirmTimeMax = () => {
-  showToast(`${startTime.value.join(':')} - ${endTime.value.join(':')}`)
+  toast.showToast(`${startTime.value.join(':')} - ${endTime.value.join(':')}`)
 }
 
 const onCancelTimeMax = () => {
-  showToast('cancel')
+  toast.showToast('cancel')
 }
 const setActiveTab = () => {
   activeTab.value = activeTab.value ? 0 : 1

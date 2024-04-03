@@ -361,6 +361,7 @@ export default {
     font-weight: var(--z-circle-text-font-weight);
     line-height: var(--z-circle-text-line-height);
     color: var(--z-circle-text-color);
+    background-color: transparent;
     transform: translateY(-50%);
   }
 }

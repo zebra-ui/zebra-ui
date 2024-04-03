@@ -51,12 +51,13 @@
         />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const columns = [
   { text: '杭州', value: 'Hangzhou' },
   { text: '宁波', value: 'Ningbo' },
@@ -167,12 +168,12 @@ const loading = ref(true)
 
 const selectedValues = ref(['Wenzhou'])
 const onConfirm = ({ selectedValues }: any) => {
-  showToast(`当前值: ${selectedValues.join(',')}`)
+  toast.showToast(`当前值: ${selectedValues.join(',')}`)
 }
 const onChange = ({ selectedValues }: any) => {
-  showToast(`当前值: ${selectedValues.join(',')}`)
+  toast.showToast(`当前值: ${selectedValues.join(',')}`)
 }
-const onCancel = () => showToast('取消')
+const onCancel = () => toast.showToast('取消')
 
 const fieldValue = ref('')
 const showPicker = ref(false)

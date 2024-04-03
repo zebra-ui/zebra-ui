@@ -10,7 +10,21 @@
     >
       <view :class="bem('head')" :style="getHeadStyle()">
         <template v-if="instance.slots[state.status]">
-          <slot :name="state.status" :distance="state.distance"></slot>
+          <template v-if="instance.slots.normal && state.status == 'normal'">
+            <slot name="normal" :distance="state.distance"></slot>
+          </template>
+          <template v-if="instance.slots.loading && state.status == 'loading'">
+            <slot name="loading" :distance="state.distance"></slot>
+          </template>
+          <template v-if="instance.slots.loosing && state.status == 'loosing'">
+            <slot name="loosing" :distance="state.distance"></slot>
+          </template>
+          <template v-if="instance.slots.pulling && state.status == 'pulling'">
+            <slot name="pulling" :distance="state.distance"></slot>
+          </template>
+          <template v-if="instance.slots.success && state.status == 'success'">
+            <slot name="success" :distance="state.distance"></slot>
+          </template>
         </template>
         <template v-else>
           <template v-if="TEXT_STATUS.includes(state.status)">

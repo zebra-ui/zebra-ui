@@ -41,12 +41,12 @@
         />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const image = ref('')
 const width = ref('')
 const height = ref('')
@@ -79,5 +79,5 @@ const onSubmitBackground = (data: any) => {
   widthBackground.value = data.width
   heightBackground.value = data.height
 }
-const onClear = () => showToast('clear')
+const onClear = () => toast.showToast('clear')
 </script>

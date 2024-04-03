@@ -13,7 +13,7 @@
           left-text="返回"
           right-text="按钮"
           left-arrow
-          @click-right="showToast('按钮')"
+          @click-right="toast.showToast('按钮')"
         />
       </demo-block>
       <demo-block title="使用插槽">
@@ -34,10 +34,11 @@
         />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 
 <script setup lang="ts">
-import { showToast } from '@zebra-ui/uniapp'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 </script>

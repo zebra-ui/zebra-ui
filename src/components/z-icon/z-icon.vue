@@ -24,7 +24,12 @@
       @touchstart.passive="onTouchstart"
     >
       <slot></slot>
-      <image v-if="isImageIcon" :class="bem('image')" :src="props.name" />
+      <image
+        v-if="isImageIcon"
+        :class="bem('image')"
+        :src="props.name"
+        :style="imageStyle"
+      />
     </view>
   </z-badge>
 </template>
@@ -86,6 +91,28 @@ const isImageIcon = computed(() => {
   return isImage(props.name)
 })
 
+const imageStyle = computed(() => {
+  if (isImageIcon.value) {
+    if (props.size) {
+      return {
+        width: addUnit(props.size),
+        height: addUnit(props.size)
+      }
+    } else if (props.customStyle?.fontSize) {
+      return {
+        width: props.customStyle.fontSize,
+        height: props.customStyle.fontSize
+      }
+    } else {
+      return {
+        width: '1em',
+        height: '1em'
+      }
+    }
+  }
+  return {}
+})
+
 const onClick = (event: any) => {
   emit('click', event)
 }
@@ -105,12 +132,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '../z-style/iconfont.css';
-
-.z-icon {
-  &__image {
-    width: 1em;
-    height: 1em;
-    object-fit: contain;
-  }
-}
 </style>

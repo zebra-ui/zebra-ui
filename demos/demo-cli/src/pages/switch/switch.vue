@@ -44,20 +44,23 @@
         </z-cell>
       </demo-block>
     </view>
-    <z-dialog ref="zDialog"></z-dialog>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showConfirmDialog } from '@zebra-ui/uniapp/components/z-dialog/z-dialog'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const dialog = useDialog()
 const checked = ref(true)
 const onUpdateValue = (newValue: any) => {
-  showConfirmDialog({
-    title: '提醒',
-    message: '是否切换开关？'
-  }).then(() => {
-    checked.value = newValue
-  })
+  dialog
+    .showConfirmDialog({
+      title: '提醒',
+      message: '是否切换开关？'
+    })
+    .then(() => {
+      checked.value = newValue
+    })
 }
 </script>
 <style lang="scss" scoped>

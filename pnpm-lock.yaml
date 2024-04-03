@@ -180,6 +180,9 @@ importers:
       typescript:
         specifier: ^4.9.4
         version: 4.9.5
+      unplugin-auto-import:
+        specifier: ^0.17.5
+        version: 0.17.5
       vite:
         specifier: 4.3.5
         version: 4.3.5(@types/node@20.11.30)(sass@1.72.0)(terser@5.30.1)
@@ -16141,6 +16144,30 @@ packages:
       unplugin: 1.10.1
     transitivePeerDependencies:
       - rollup
+
+  /unplugin-auto-import@0.17.5:
+    resolution: {integrity: sha512-fHNDkDSxv3PGagX1wmKBYBkgaM4AKAgZmdJw/bxjhNljx9KSXSgHpGfX0MwUrq9qw6q1bhHIZVWyOwoY2koo4w==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@nuxt/kit': ^3.2.2
+      '@vueuse/core': '*'
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+      '@vueuse/core':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.7.7
+      '@rollup/pluginutils': 5.1.0(rollup@4.13.2)
+      fast-glob: 3.3.2
+      local-pkg: 0.5.0
+      magic-string: 0.30.8
+      minimatch: 9.0.3
+      unimport: 3.7.1(rollup@4.13.2)
+      unplugin: 1.10.1
+    transitivePeerDependencies:
+      - rollup
+    dev: true
 
   /unplugin-vue-router@0.7.0(vue-router@4.3.0)(vue@3.4.21):
     resolution: {integrity: sha512-ddRreGq0t5vlSB7OMy4e4cfU1w2AwBQCwmvW3oP/0IHQiokzbx4hd3TpwBu3eIAFVuhX2cwNQwp1U32UybTVCw==}

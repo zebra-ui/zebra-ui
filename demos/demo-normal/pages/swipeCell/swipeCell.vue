@@ -43,13 +43,12 @@
         </z-swipe-cell>
       </demo-block>
     </view>
-    <z-dialog ref="zDialog"></z-dialog>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-// @ts-ignore
-import { showConfirmDialog } from '../../uni_modules/zebra-ui'
+import { useDialog } from '../../uni_modules/zebra-ui'
+const dialog = useDialog()
 const cover = ref(
   'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg'
 )
@@ -61,9 +60,10 @@ const beforeClose = ({ position }: { position: string }) => {
       return true
     case 'right':
       return new Promise<boolean>((resolve) => {
-        showConfirmDialog({
-          title: '确定删除吗'
-        })
+        dialog
+          .showConfirmDialog({
+            title: '确定删除吗'
+          })
           .then(() => resolve(true))
           .catch(() => resolve(false))
       })

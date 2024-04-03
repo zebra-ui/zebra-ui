@@ -41,12 +41,12 @@
     <z-action-sheet v-model:show="showTitle" title="标题">
       <view class="demo-action-sheet-content">内容</view>
     </z-action-sheet>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const showBasic = ref(false)
 const showCancel = ref(false)
 const showTitle = ref(false)
@@ -73,10 +73,10 @@ const actionsWithDescription = computed(() => [
 
 const onSelect = (item: any) => {
   showBasic.value = false
-  showToast(item.name)
+  toast.showToast(item.name)
 }
 
-const onCancel = () => showToast('取消')
+const onCancel = () => toast.showToast('取消')
 </script>
 <style lang="scss" scoped>
 .demo-action-sheet {

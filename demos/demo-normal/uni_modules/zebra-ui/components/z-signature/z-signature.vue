@@ -31,7 +31,7 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { computed, onMounted, getCurrentInstance } from 'vue'
+import { computed, onMounted, getCurrentInstance, ref } from 'vue'
 import {
   makeNumberProp,
   makeStringProp,
@@ -78,6 +78,8 @@ let canvasWidth = 0
 let canvasHeight = 0
 let canvasRect: DOMRect
 
+const uniPlatform = ref(uni.getSystemInfoSync().uniPlatform)
+
 const touchStart = (event: TouchEvent) => {
   if (!ctx.value) {
     return false
@@ -89,8 +91,15 @@ const touchStart = (event: TouchEvent) => {
   getRect(instance, `#${id}`).then((res: any) => {
     canvasRect = res
     const touch = event.touches[0]
-    const mouseX = touch.clientX - (canvasRect?.left || 0)
-    const mouseY = touch.clientY - (canvasRect?.top || 0)
+    let mouseX = touch.clientX - (canvasRect?.left || 0)
+    let mouseY = touch.clientY - (canvasRect?.top || 0)
+    if (uniPlatform.value == 'mp-alipay') {
+      // @ts-ignore
+      mouseX = touch.x
+      // @ts-ignore
+      mouseY = touch.y
+    }
+
     ctx.value && ctx.value.moveTo(mouseX, mouseY)
   })
 

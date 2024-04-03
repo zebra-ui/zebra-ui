@@ -83,12 +83,12 @@
         />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '../../uni_modules/zebra-ui'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const show = ref(false)
 const showRight = ref(false)
 const showCard = ref(false)
@@ -97,6 +97,6 @@ const showMore = ref(false)
 const showNumber = ref(false)
 const showValue = ref(false)
 const valueModel = ref('')
-const onInput = (value: string) => showToast(value)
-const onDelete = () => showToast('删除')
+const onInput = (value: string) => toast.showToast(value)
+const onDelete = () => toast.showToast('删除')
 </script>

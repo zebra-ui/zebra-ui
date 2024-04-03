@@ -65,19 +65,20 @@
         </view>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const value = ref(50)
 const valueMax = ref(0)
 const valueStep = ref(50)
 const valueRange = ref([10, 50])
 const value1 = ref(50)
 const value2 = ref([10, 50])
-const onChange = (value: string) => showToast('当前值：' + value)
+const onChange = (value: string) => toast.showToast('当前值：' + value)
 </script>
 <style lang="scss" scoped>
 .demo-slider {

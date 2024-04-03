@@ -87,19 +87,20 @@
           position="bottom"
           closeable
           :custom-style="{ height: '30%' }"
-          @open="showToast('open')"
-          @opened="showToast('opened')"
-          @close="showToast('close')"
-          @closed="showToast('closed')"
+          @open="toast.showToast('open')"
+          @opened="toast.showToast('opened')"
+          @close="toast.showToast('close')"
+          @closed="toast.showToast('closed')"
         ></z-popup>
       </demo-block>
-      <z-toast ref="zToast"></z-toast>
     </view>
   </DemoPage>
 </template>
 
 <script lang="ts" setup>
-import { showToast } from '@zebra-ui/uniapp'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 import { ref } from 'vue'
 const show = ref(false)
 const showTop = ref(false)
@@ -115,10 +116,10 @@ const showEvent = ref(false)
 const showEventHide = ref(false)
 
 const onClickOverlay = () => {
-  showToast('click-overlay')
+  toast.showToast('click-overlay')
 }
 const onClickCloseIcon = () => {
-  showToast('click-close-icon')
+  toast.showToast('click-close-icon')
 }
 </script>
 

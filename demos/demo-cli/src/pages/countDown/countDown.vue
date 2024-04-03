@@ -40,13 +40,13 @@
         </z-grid>
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
 // @ts-ignore
-import { showToast } from '@zebra-ui/uniapp'
+// eslint-disable-next-line no-undef
+const toast = useToast()
 const time = ref(30 * 60 * 60 * 1000)
 const countDown = ref()
 
@@ -59,7 +59,7 @@ const pause = () => {
 const reset = () => {
   countDown.value?.reset()
 }
-const onFinish = () => showToast('倒计时结束')
+const onFinish = () => toast.showToast('倒计时结束')
 </script>
 <style lang="scss" scoped>
 .demo-count-down {

@@ -38,13 +38,13 @@
         />
       </demo-block>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 // @ts-ignore
-import { showToast } from '../../uni_modules/zebra-ui'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const showBasic = ref(false)
 const showWithDesc = ref(false)
 const showMultiLine = ref(false)
@@ -102,7 +102,7 @@ const optionsWithDesc = computed(() => [
 ])
 
 const onSelect = (option: any) => {
-  showToast(option.name)
+  toast.showToast(option.name)
   showBasic.value = false
   showWithDesc.value = false
   showMultiLine.value = false

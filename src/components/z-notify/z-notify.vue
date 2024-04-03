@@ -1,5 +1,5 @@
 <template>
-  <view :class="bem()">
+  <view>
     <z-popup
       :show="getProps('show')"
       :z-index="getProps('zIndex')"
@@ -37,7 +37,7 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { reactive, computed, getCurrentInstance } from 'vue'
+import { reactive, computed, getCurrentInstance, inject, watch, ref } from 'vue'
 import {
   extend,
   numericProp,
@@ -49,8 +49,8 @@ import {
 import { popupSharedProps } from '../z-popup/shared'
 import type { NotifyType, NotifyPosition } from './types'
 import zPopup from '../z-popup/z-popup.vue'
-const [name, bem] = createNamespace('notify')
-useComponentName(name)
+const [componentName, bem] = createNamespace('notify')
+useComponentName(componentName)
 const props = defineProps(
   extend({}, popupSharedProps, {
     type: makeStringProp<NotifyType>('danger'),
@@ -61,7 +61,8 @@ const props = defineProps(
     background: String,
     lockScroll: Boolean,
     useComponent: Boolean,
-    customNavbar: Boolean
+    customNavbar: Boolean,
+    name: String
   })
 )
 const emit = defineEmits(['update:show'])
@@ -101,6 +102,17 @@ defineExpose({
   toggle,
   state
 })
+
+const notifyInjectKey = props.name ? `z-notify-${props.name}` : 'z-notify'
+
+const injectOptions = inject(notifyInjectKey, ref({}))
+
+watch(
+  () => injectOptions.value,
+  (value) => {
+    extend(state, value, { transitionAppear: true })
+  }
+)
 </script>
 <script lang="ts">
 export default {

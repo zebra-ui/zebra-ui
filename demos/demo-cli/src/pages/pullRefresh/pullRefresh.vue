@@ -68,12 +68,13 @@
         </z-tab>
       </z-tabs>
     </view>
-    <z-toast ref="zToast"></z-toast>
   </DemoPage>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { showToast } from '@zebra-ui/uniapp/components/z-toast/z-toast'
+// @ts-ignore
+// eslint-disable-next-line no-undef
+const toast = useToast()
 // @ts-ignore
 import { onPageScroll } from '@dcloudio/uni-app'
 const count = ref(0)
@@ -95,7 +96,7 @@ onPageScroll((event: any) => {
 const onRefresh = (isShowToast: boolean) => {
   setTimeout(() => {
     if (isShowToast) {
-      showToast('刷新成功')
+      toast.showToast('刷新成功')
     }
     loading.value = false
     count.value++

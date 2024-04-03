@@ -1,3 +1,4 @@
+import { ref, provide, watch } from 'vue'
 import { extend, isObject } from '../../libs/utils'
 import type { ToastType, ToastOptions, ToastWrapperInstance } from './types'
 
@@ -83,11 +84,6 @@ export const closeToast = (all?: boolean) => {
     }
   }
 }
-export function setToastDefaultOptions(options: ToastOptions): void
-export function setToastDefaultOptions(
-  type: ToastType,
-  options: ToastOptions
-): void
 export function setToastDefaultOptions(
   type: ToastType | ToastOptions,
   options?: ToastOptions
@@ -108,4 +104,67 @@ export const resetToastDefaultOptions = (type?: ToastType) => {
 }
 export const allowMultipleToast = (value = true) => {
   allowMultiple = value
+}
+
+export function useToast(name: string = '') {
+  const componentsOptions = ref(extend({}, defaultOptions))
+  const toastProvideKey = name ? `z-toast-${name}` : 'z-toast'
+  provide(toastProvideKey, componentsOptions)
+  const message = ref('')
+  const showToast = (options: string | ToastOptions = {}) => {
+    const parsedOptions = parseOptions(options)
+    componentsOptions.value = extend(
+      {},
+      currentOptions,
+      defaultOptionsMap.get(parsedOptions.type || currentOptions.type!),
+      parsedOptions,
+      {
+        show: true
+      }
+    )
+    return { message }
+  }
+  watch(message, (val: any) => {
+    componentsOptions.value = extend({}, componentsOptions.value, {
+      message: val
+    })
+  })
+  const showLoadingToast = (options: string | ToastOptions) =>
+    showToast(extend({ type: 'loading' }, parseOptions(options)))
+  const showSuccessToast = (options: string | ToastOptions) =>
+    showToast(extend({ type: 'success' }, parseOptions(options)))
+  const showFailToast = (options: string | ToastOptions) =>
+    showToast(extend({ type: 'fail' }, parseOptions(options)))
+  const closeToast = () => {
+    componentsOptions.value = extend({
+      show: false
+    })
+  }
+  const setToastDefaultOptions = (
+    type: ToastType | ToastOptions,
+    options?: ToastOptions
+  ) => {
+    if (typeof type === 'string') {
+      defaultOptionsMap.set(type, options!)
+    } else {
+      extend(currentOptions, type)
+    }
+  }
+  const resetToastDefaultOptions = (type?: ToastType) => {
+    if (typeof type === 'string') {
+      defaultOptionsMap.delete(type)
+    } else {
+      currentOptions = extend({}, defaultOptions)
+      defaultOptionsMap.clear()
+    }
+  }
+  return {
+    showToast,
+    showLoadingToast,
+    showSuccessToast,
+    showFailToast,
+    closeToast,
+    setToastDefaultOptions,
+    resetToastDefaultOptions
+  }
 }
