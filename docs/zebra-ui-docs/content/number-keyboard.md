@@ -162,7 +162,7 @@ const value = ref('');
 | show-delete-key | 是否展示删除图标 | _boolean_ | `true` |
 | blur-on-close | 是否在点击关闭按钮时触发 blur 事件 | _boolean_ | `true` |
 | hide-on-click-outside | 是否在点击外部时收起键盘 | _boolean_ | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/adzced-usage) | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启底部安全区适配 | _boolean_ | `true` |
 | random-key-order | 是否将通过随机顺序展示按键 | _boolean_ | `false` |
 
 ### Events
