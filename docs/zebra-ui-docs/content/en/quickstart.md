@@ -1,35 +1,54 @@
-# Quick Start
+# Get started quickly
 
-### Introduction
+### introduce
 
-In this chapter, you will learn about the installation method and basic usage of ZebraUI.
+Through this chapter, you can learn about the installation method and basic usage of `ZebraUI`.
 
-## Installation
+## Install
 
 ### Install via npm
 
 When using ZebraUI in an existing project, you can install it via `npm`:
 
 ```bash
-npm i @zebra-ui
+npm i @zebra-ui/uniapp
 ```
 
-可以通过 `pnpm` 进行安装：
+It can also be installed via `pnpm`:
 
 ```bash
-# 通过 pnpm 安装
-pnpm add @zebra-ui
+# Install via pnpm
+pnpm add @zebra-ui/uniapp
 ```
 
-### 通过 uni_modules 引入
+After that, use the `easycom` method recommended by `uniapp` to import it.
 
-如果使用的IDE为HbuilderX，则可以通过uniapp的插件市场进行项目导入。
+```json
+// pages.json
+{
+   "easycom": {
+     "custom": {
+       "^z-(.*)": "@zebra-ui/uniapp/components/z-$1/z-$1.vue"
+     }
+   },
+   "pages": [...]
+}
+```
 
-`uniapp`提供了`uni_modules`引入，使用此方法不需要再单独对组件库进行引入。
+### Install via uni_modules
 
-### 引入样式
+[zebra-ui](https://ext.dcloud.net.cn/plugin?id=17407) is already in uniapp’s [plug-in market](https://ext.dcloud.net.cn/plugin?id=17407 )release.
 
-zebra-ui的组件依赖于自身的样式文件，所以你需要在APP.vue中引入。
+If the `IDE` used is `HbuilderX`, you can import the project through uniapp's [Plug-in Market] (https://ext.dcloud.net.cn/plugin?id=17407).
+
+`uniapp` provides `uni_modules` import. Using this method does not require the import of the component library separately.
+
+##Introduce styles
+
+
+### uni_modules method
+
+The components of zebra-ui rely on its own style files, so you need to introduce them in APP.vue.
 
 ```vue
 <!-- APP.vue -->
@@ -38,12 +57,24 @@ zebra-ui的组件依赖于自身的样式文件，所以你需要在APP.vue中�
 </style>
 ```
 
-### 示例项目
+### npm method
 
-以下是 ZebraUI 官方提供的一些示例项目，你可以克隆该项目，并直接拷贝代码来使用。
+Packages installed through dependencies also need to import styles.
 
-- [demo-normal](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-normal)：此示例项目使用 `HbuilderX` 创建应用，通过 `uni_modules` 引入zebra-ui。
+```vue
+<!-- APP.vue -->
+<style lang="scss">
+@import '@zebra-ui/uniapp/index';
+</style>
+```
 
-### 使用提示
+### Sample project
 
-- npm和uni_modules方式不要同时使用，否则会造成组件引入混乱，从而导致冲突。
+The following are some sample projects officially provided by ZebraUI. You can clone the project and directly copy the code to use.
+
+- [demo-normal](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-normal): This sample project uses `HbuilderX` to create an application and introduces zebra through `uni_modules` -ui.
+- [demo-cli](https://github.com/zebra-ui/zebra-ui/tree/master/demos/demo-cli): This sample project uses `VSCode` to create an application and introduces zebra through `pnpm` -ui.
+
+### Use suggestions
+
+- Do not use npm and uni_modules at the same time, otherwise it will cause confusion in the components and lead to conflicts.

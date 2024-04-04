@@ -16,7 +16,8 @@
     "release-pre": "release-it --release-version",
     "release-beta": "release-it --preRelease=beta",
     "release-alpha": "release-it --preRelease=alpha",
-    "auto-changelog": "auto-changelog"
+    "auto-changelog": "auto-changelog",
+    "docs": "pnpm --dir ./docs/zebra-ui-docs dev"
   },
   "keywords": [],
   "author": "",
