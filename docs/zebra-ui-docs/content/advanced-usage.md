@@ -50,3 +50,80 @@ import zButton from "@zebra-ui/uniapp/components/z-button/z-button.vue";
 ### 使用组件样式变量
 
 zebra-ui提供了大量的组件样式变量，通过变量可控制组件的主题，以及自定义组件的样式。
+
+使用示例
+
+```vue
+<style lang="scss" scoped>
+.demo-rolling-text {
+  .my-rolling-text {
+    --z-rolling-text-background: #1989fa;
+    --z-rolling-text-color: white;
+    --z-rolling-text-font-size: 48rpx;
+    --z-rolling-text-gap: 12rpx;
+    --z-rolling-text-item-border-radius: 10rpx;
+    --z-rolling-text-item-width: 80rpx;
+  }
+}
+</style>
+```
+以上样式通过在页面中声明zebra-ui的样式变量，对默认的变量执行覆盖，从而实现自定义样式。
+
+当然，也可以通过[z-config-provider](/config-provider)组件自定义样式。
+
+### 自动引入组件API
+
+zebra支持使用`unplugin-auto-import`插件对api实现自动引入。
+
+```bash
+pnpm install -D unplugin-auto-import
+```
+
+安装后在`vite.config.ts`文件引入插件。
+
+```ts
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+import AutoImport from 'unplugin-auto-import/vite'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    uni(),
+    AutoImport({
+      imports: [
+        {
+          '@zebra-ui/uniapp': ['useDialog', 'useToast', 'useNotify']
+        }
+      ]
+    })
+  ]
+})
+```
+
+未使用插件前：
+
+```vue
+<script lang="ts" setup>
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
+toast.showToast('文字提示')
+</script>
+```
+
+使用插件后：
+
+```vue
+<script lang="ts" setup>
+const toast = useToast()
+toast.showToast('文字提示')
+</script>
+```
+
+无需引入，直接声明后使用。
+
+支持的组件：
+- [z-toast](/toast) 轻提示
+- [z-dialog](/dialog) 弹出框
+- [z-notify](/notify) 消息提示
+

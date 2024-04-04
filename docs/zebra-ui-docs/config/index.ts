@@ -11,6 +11,7 @@ export default {
     },
     simulator: {
       url: '/h5'
+      // url: 'https://zebraui.com/h5#/'
     },
     locales: {
       zh: {
@@ -25,7 +26,7 @@ export default {
           },
           {
             logo: 'uni',
-            url: 'https://ext.dcloud.net.cn/'
+            url: 'https://ext.dcloud.net.cn/plugin?id=17407'
           },
           {
             logo: 'github',
@@ -366,7 +367,7 @@ export default {
           },
           {
             logo: 'uni',
-            url: 'https://ext.dcloud.net.cn/'
+            url: 'https://ext.dcloud.net.cn/plugin?id=17407'
           },
           {
             logo: 'github',
