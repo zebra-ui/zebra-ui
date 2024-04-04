@@ -120,6 +120,10 @@ export default {
             title: '表单组件',
             items: [
               {
+                path: 'area',
+                title: 'Area 省市区选择'
+              },
+              {
                 path: 'calendar',
                 title: 'Calendar 日历'
               },
@@ -460,6 +464,10 @@ export default {
           {
             title: 'Form Components',
             items: [
+              {
+                path: 'area',
+                title: 'Area'
+              },
               {
                 path: 'calendar',
                 title: 'Calendar'
