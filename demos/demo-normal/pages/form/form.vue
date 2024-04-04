@@ -197,7 +197,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { areaList } from '../../common/js/area'
-import { showLoadingToast, closeToast } from '../../uni_modules/zebra-ui'
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
 const formBasic = ref()
 const formRule = ref()
 const formItem = ref()
@@ -241,10 +242,10 @@ const validator = (val: any) => /1\d{10}/.test(val)
 const validatorMessage = (val: any) => `${val} 不合法，请重新输入`
 const asyncValidator = (val: any) =>
   new Promise((resolve) => {
-    showLoadingToast('验证中...')
+    toast.showLoadingToast('验证中...')
 
     setTimeout(() => {
-      closeToast()
+      toast.closeToast()
       resolve(val === '1234')
     }, 1000)
   })

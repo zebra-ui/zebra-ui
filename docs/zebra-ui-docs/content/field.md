@@ -1,1 +1,355 @@
-# 文档待完善
+# Field 输入框
+
+### 介绍
+
+用户可以在文本框内输入或编辑文字。
+
+## 代码演示
+
+### 基础用法
+
+可以通过 `v-model` 双向绑定输入框的值，通过 `placeholder` 设置占位提示文字。
+
+```html
+ <z-field v-model="value" label="文本" placeholder="请输入文本" />
+```
+
+```js
+import { ref } from 'vue'
+const value = ref('')
+```
+
+### 自定义类型
+
+根据 `type` 属性定义不同类型的输入框，默认值为 `text`。
+
+```html
+  <!-- 输入任意文本 -->
+  <z-field v-model="text" label="文本" />
+  <!-- 输入手机号，调起手机号键盘 -->
+  <z-field v-model="tel" type="tel" label="手机号" />
+  <!-- 允许输入正整数，调起纯数字键盘 -->
+  <z-field v-model="digit" type="digit" label="整数" />
+  <!-- 允许输入数字，调起带符号的纯数字键盘 -->
+  <z-field v-model="number" type="number" label="数字" />
+  <!-- 输入密码 -->
+  <z-field v-model="password" type="password" label="密码" />
+```
+
+### 禁用输入框
+
+通过 `readonly` 将输入框设置为只读状态，通过 `disabled` 将输入框设置为禁用状态。
+
+```html
+  <z-field label="文本" model-value="输入框只读" readonly />
+  <z-field label="文本" model-value="输入框已禁用" disabled />
+```
+
+### 显示图标
+
+通过 `left-icon` 和 `right-icon` 配置输入框两侧的图标，通过设置 `clearable` 在输入过程中展示清除图标。
+
+```html
+<z-cell-group inset>
+  <z-field
+    v-model="value1"
+    label="文本"
+    left-icon="detail"
+    right-icon="info-circle"
+    placeholder="显示图标"
+  />
+  <z-field
+    v-model="value2"
+    clearable
+    label="文本"
+    left-icon="safetycertificate"
+    placeholder="显示清除图标"
+  />
+</z-cell-group>
+```
+
+### 必填星号
+
+设置 `required` 属性来展示必填星号。
+
+```html
+  <z-field
+    v-model="username"
+    required
+    label="用户名"
+    placeholder="请输入用户名"
+  />
+  <z-field
+    v-model="phone"
+    required
+    label="手机号"
+    placeholder="请输入手机号"
+  />
+```
+
+请注意 `required` 属性只用于控制样式展示，在进行表单校验时，需要使用 `rule.required` 选项来控制校验逻辑。
+
+### 自动展示星号
+
+你可以在 Form 组件上设置 `required="auto"`，此时 Form 里的所有 Field 会自动根据 `rule.required` 来判断是否需要展示星号。
+
+```html
+<z-form required="auto">
+  <z-field
+    v-model="username"
+    :rules="[{ required: true }]"
+    label="用户名"
+    placeholder="请输入用户名"
+  />
+  <z-field
+    v-model="phone"
+    :rules="[{ required: false }]"
+    label="手机号"
+    placeholder="请输入手机号"
+  />
+</z-form>
+```
+
+### 错误提示
+
+设置 `required` 属性表示这是一个必填项，可以配合 `error` 或 `error-message` 属性显示对应的错误提示。
+
+```html
+  <z-field
+    v-model="username"
+    error
+    label="用户名"
+    placeholder="请输入用户名"
+  />
+  <z-field
+    v-model="phone"
+    label="手机号"
+    placeholder="请输入手机号"
+    error-message="手机号格式错误"
+  />
+```
+
+### 插入按钮
+
+通过 button 插槽可以在输入框尾部插入按钮。
+
+```html
+  <z-field
+    v-model="sms"
+    center
+    clearable
+    label="短信验证码"
+    placeholder="请输入短信验证码"
+  >
+    <template #button>
+      <z-button size="small" type="primary">发送验证码</z-button>
+    </template>
+  </z-field>
+```
+
+### 格式化输入内容
+
+通过 `formatter` 属性可以对输入的内容进行格式化，通过 `format-trigger` 属性可以指定执行格式化的时机，默认在输入时进行格式化。
+
+```html
+  <z-field
+    v-model="value1"
+    label="文本"
+    :formatter="formatter"
+    placeholder="在输入时执行格式化"
+  />
+  <z-field
+    v-model="value2"
+    label="文本"
+    :formatter="formatter"
+    format-trigger="onBlur"
+    placeholder="在失焦时执行格式化"
+  />
+```
+
+```js
+// 过滤输入的数字
+const formatter = (value) => value.replace(/\d/g, '');
+```
+
+### 高度自适应
+
+对于 textarea，可以通过 `autosize` 属性设置高度自适应。
+
+```html
+  <z-field
+    v-model="message"
+    rows="1"
+    autosize
+    label="留言"
+    type="textarea"
+    placeholder="请输入留言"
+  />
+```
+
+### 显示字数统计
+
+设置 `maxlength` 和 `show-word-limit` 属性后会在底部显示字数统计。
+
+```html
+  <z-field
+    v-model="message"
+    rows="2"
+    autosize
+    label="留言"
+    type="textarea"
+    maxlength="50"
+    placeholder="请输入留言"
+    show-word-limit
+  />
+```
+
+### 输入框内容对齐
+
+通过 `input-align` 属性可以设置输入框内容的对齐方式，可选值为 `center`、`right`。
+
+```html
+  <z-field
+    v-model="value"
+    label="文本"
+    placeholder="输入框内容右对齐"
+    input-align="right"
+  />
+```
+
+### 输入框文本位置
+
+通过 `label-align` 属性可以设置输入框文本的位置，可选值为 `center`、`right`、`top`。
+
+```html
+  <z-field
+    v-model="value"
+    label="文本"
+    placeholder="顶部对齐"
+    label-align="top"
+  />
+  <z-field
+    v-model="value2"
+    label="文本"
+    placeholder="左对齐"
+    label-align="left"
+  />
+  <z-field
+    v-model="value3"
+    label="文本"
+    placeholder="居中对齐"
+    label-align="center"
+  />
+  <z-field
+    v-model="value4"
+    label="文本"
+    placeholder="右对齐"
+    label-align="right"
+  />
+```
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| v-model | 当前输入的值 | _number \| string_ | - |
+| label | 输入框左侧文本 | _string_ | - |
+| name | 名称，作为提交表单时的标识符 | _string_ | - |
+| type | 输入框类型，同uniapp的input组件 | _FieldType_ | `text` |
+| size | 大小，可选值为 `large` `normal` | _string_ | - |
+| maxlength | 输入的最大字符数 | _number \| string_ | - |
+| placeholder | 输入框占位提示文字 | _string_ | - |
+| border | 是否显示内边框 | _boolean_ | `true` |
+| disabled | 是否禁用输入框 | _boolean_ | `false` |
+| readonly | 是否为只读状态，只读状态下无法输入内容 | _boolean_ | `false` |
+| colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
+| required | 是否显示表单必填星号 | _boolean \| 'auto'_ | `null` |
+| center | 是否使内容垂直居中 | _boolean_ | `false` |
+| clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `false` |
+| clear-icon | 清除图标名称或图片链接，等同于 Icon 组件的 [name 属性](/icon#props) | _string_ | `close-circle-fill` |
+| clear-trigger | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _FieldClearTrigger_ | `focus` |
+| clickable | 是否开启点击反馈 | _boolean_ | `false` |
+| is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
+| show-word-limit | 是否显示字数统计，需要设置 `maxlength` 属性 | _boolean_ | `false` |
+| error | 是否将输入内容标红 | _boolean_ | `false` |
+| error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _FieldTextAlign_ | `left` |
+| formatter | 输入内容格式化函数 | _(val: string) => string_ | - |
+| format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _FieldFormatTrigger_ | `onChange` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
+| label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
+| label-width | 左侧文本宽度，默认单位为 `px` | _number \| string_ | `6.2em` |
+| label-align | 左侧文本对齐方式，可选值为 `center` `right` `top` | _FieldTextAlign_ | `left` |
+| input-align | 输入框对齐方式，可选值为 `center` `right` | _FieldTextAlign_ | `left` |
+| autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| FieldAutosizeConfig_ | `false` |
+| left-icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](/icon#props) | _string_ | - |
+| right-icon | 右侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](/icon#props) | _string_ | - |
+| icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](/icon#props) | _string_ | `z-icon` |
+| rules | 表单校验规则，详见 [Form 组件](/form) | _FieldRule[]_ | - |
+| custom-style | 自定义样式 | _object_ | - |
+
+### Events
+
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| update:model-value | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
+| focus | 输入框获得焦点时触发 | _event: Event_ |
+| blur | 输入框失去焦点时触发 | _event: Event_ |
+| clear | 点击清除按钮时触发 | _event: MouseEvent_ |
+| click | 点击组件时触发 | _event: MouseEvent_ |
+| click-input | 点击输入区域时触发 | _event: MouseEvent_ |
+| click-left-icon | 点击左侧图标时触发 | _event: MouseEvent_ |
+| click-right-icon | 点击右侧图标时触发 | _event: MouseEvent_ |
+| start-validate | 开始表单校验时触发 | - |
+| end-validate | 结束表单校验时触发 | _{ status: string, message: string }_ |
+
+### 方法
+
+通过 ref 可以获取到 Field 实例并调用实例方法。
+
+| 方法名 | 说明           | 参数 | 返回值 |
+| ------ | -------------- | ---- | ------ |
+| focus  | 获取输入框焦点 | -    | -      |
+| blur   | 取消输入框焦点 | -    | -      |
+
+### Slots
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| label | 自定义输入框左侧文本 | - |
+| input | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 | - |
+| left-icon | 自定义输入框头部图标 | - |
+| right-icon | 自定义输入框尾部图标 | - |
+| button | 自定义输入框尾部按钮 | - |
+| error-message | 自定义底部错误提示文案 | _{ message: string }_ |
+| extra | 自定义输入框最右侧的额外内容 | - |
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/config-provider)。
+
+| 名称                                  | 默认值                    | 描述 |
+| ------------------------------------- | ------------------------- | ---- |
+| --z-field-label-width               | _6.2em_                   | -    |
+| --z-field-label-color               | _var(--z-text-color)_   | -    |
+| --z-field-label-margin-right        | _var(--z-padding-sm)_   | -    |
+| --z-field-input-text-color          | _var(--z-text-color)_   | -    |
+| --z-field-input-error-text-color    | _var(--z-danger-color)_ | -    |
+| --z-field-input-disabled-text-color | _var(--z-text-color-3)_ | -    |
+| --z-field-placeholder-text-color    | _var(--z-text-color-3)_ | -    |
+| --z-field-icon-size                 | _36rpx_                    | -    |
+| --z-field-clear-icon-size           | _36rpx_                    | -    |
+| --z-field-clear-icon-color          | _var(--z-gray-5)_       | -    |
+| --z-field-right-icon-color          | _var(--z-gray-6)_       | -    |
+| --z-field-error-message-color       | _var(--z-danger-color)_ | -    |
+| --z-field-error-message-font-size   | _24rpx_                    | -    |
+| --z-field-text-area-min-height      | _120rpx_                    | -    |
+| --z-field-word-limit-color          | _var(--z-gray-7)_       | -    |
+| --z-field-word-limit-font-size      | _var(--z-font-size-sm)_ | -    |
+| --z-field-word-limit-line-height    | _32rpx_                    | -    |
+| --z-field-disabled-text-color       | _var(--z-text-color-3)_ | -    |
+| --z-field-required-mark-color       | _var(--z-red)_          | -    |
