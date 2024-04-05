@@ -162,7 +162,7 @@ const value = ref('');
 | show-delete-key | Whether to display the delete icon | _boolean_ | `true` |
 | blur-on-close | Whether to trigger the blur event when the close button is clicked | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide the keyboard when clicking outside | _boolean_ | `true` |
-| safe-area-inset-bottom | Whether to enable [Bottom Safe Area Adaptation](/adzced-usage) | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable Bottom Safe Area Adaptation | _boolean_ | `true` |
 | random-key-order | Whether keys will be displayed in random order | _boolean_ | `false` |
 
 ### Events

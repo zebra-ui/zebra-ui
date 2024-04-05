@@ -209,6 +209,12 @@ watch(
     store.setDocsTheme(newVal)
     document?.documentElement?.classList.remove(`zebra-doc-theme-${oldVal}`)
     document?.documentElement?.classList.add(`zebra-doc-theme-${newVal}`)
+    document?.documentElement?.classList.remove(
+      `${oldVal == 'light-n' ? 'light' : 'dark'}`
+    )
+    document?.documentElement?.classList.add(
+      `${newVal == 'light-n' ? 'light' : 'dark'}`
+    )
     syncThemeToChild(newVal)
   },
   { immediate: true }
