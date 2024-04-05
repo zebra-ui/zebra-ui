@@ -13,7 +13,10 @@ export default defineNuxtConfig({
   },
   content: {
     highlight: {
-      theme: 'solarized-light'
+      theme: {
+        default: 'min-light',
+        dark: 'min-dark'
+      }
     }
   }
 })

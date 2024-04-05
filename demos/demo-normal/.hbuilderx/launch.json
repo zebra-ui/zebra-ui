@@ -10,6 +10,12 @@
       "default": {
         "launchtype": "local"
       },
+      "mp-baidu": {
+        "launchtype": "local"
+      },
+      "mp-toutiao": {
+        "launchtype": "local"
+      },
       "mp-weixin": {
         "launchtype": "local"
       },
