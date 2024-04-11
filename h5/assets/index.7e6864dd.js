@@ -1,0 +1,1 @@
+import{T as a,l as e}from"./index-2c23bc16.js";const l=Symbol("z-field");function o(o){const t=a(l,null);t&&!t.customValue.value&&(t.customValue.value=o,e(o,(()=>{t.resetValidation(),t.validateWithTrigger("onChange")})))}export{l as C,o as u};
