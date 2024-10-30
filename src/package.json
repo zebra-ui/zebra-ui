@@ -1,7 +1,7 @@
 {
   "id": "zebra-ui",
   "name": "@zebra-ui/uniapp",
-  "displayName": "ZebraUI2.0 使用VUE3+TS并实现多端兼容。",
+  "displayName": "zebra-ui 组件库，使用vue3+ts并实现多端兼容",
   "version": "2.0.1",
   "description": "基于uniapp，使用vue3+ts+setup，并实现多端兼容。",
   "keywords": [
@@ -67,15 +67,15 @@
           "QQ浏览器(Android)": "y"
         },
         "H5-pc": {
-          "Chrome": "u",
-          "IE": "u",
-          "Edge": "u",
-          "Firefox": "u",
-          "Safari": "u"
+          "Chrome": "y",
+          "IE": "y",
+          "Edge": "y",
+          "Firefox": "y",
+          "Safari": "y"
         },
         "小程序": {
           "微信": "y",
-          "阿里": "u",
+          "阿里": "y",
           "百度": "u",
           "字节跳动": "u",
           "QQ": "u",

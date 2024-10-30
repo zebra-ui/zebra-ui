@@ -242,12 +242,6 @@ export default {
     font-size: var(--z-search-action-font-size);
     line-height: var(--z-search-input-height);
     color: var(--z-search-action-text-color);
-    cursor: pointer;
-    user-select: none;
-
-    &:active {
-      background-color: var(--z-active-color);
-    }
   }
 }
 </style>
