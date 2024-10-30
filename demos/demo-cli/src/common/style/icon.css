@@ -2,11 +2,11 @@
   font-family: 'zebra-icon';
   /* Project id 4475347 */
   src:
-    url('https://at.alicdn.com/t/c/font_4475347_8vf1nif45lx.woff2?t=1710943881998')
+    url('https://at.alicdn.com/t/c/font_4475347_qkwg80ere6.woff2?t=1730301398425')
       format('woff2'),
-    url('https://at.alicdn.com/t/c/font_4475347_8vf1nif45lx?t=1710943881998')
+    url('https://at.alicdn.com/t/c/font_4475347_qkwg80ere6?t=1730301398425')
       format('woff'),
-    url('https://at.alicdn.com/t/c/font_4475347_8vf1nif45lx?t=1710943881998')
+    url('https://at.alicdn.com/t/c/font_4475347_qkwg80ere6?t=1730301398425')
       format('truetype');
 }
 
@@ -16,6 +16,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.zebra-icon-treeSelect:before {
+  content: '\e7d1';
+}
+
+.zebra-icon-sidebar:before {
+  content: '\e6d4';
 }
 
 .zebra-icon-show-a:before {

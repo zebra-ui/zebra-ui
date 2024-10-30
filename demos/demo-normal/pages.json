@@ -477,6 +477,20 @@
         "navigationBarTitleText": "Style",
         "navigationStyle": "custom"
       }
+    },
+    {
+      "path": "pages/sidebar/sidebar",
+      "style": {
+        "navigationBarTitleText": "Sidebar",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/treeSelect/treeSelect",
+      "style": {
+        "navigationBarTitleText": "TreeSelect",
+        "navigationStyle": "custom"
+      }
     }
   ],
   "globalStyle": {
