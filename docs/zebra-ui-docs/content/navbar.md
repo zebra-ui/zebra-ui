@@ -86,6 +86,7 @@ const toast = useToast()
 | z-index | 导航栏 z-index | _number \| string_ | `1` |
 | safe-area-inset-top | 是否开启顶部安全区适配 | _boolean_ | `false` |
 | clickable | 是否开启两侧按钮的点击反馈 | _boolean_ | `true` |
+| autoBack | 点击后是否自动返回上一页 | _boolean_ | `true` |
 
 ### Slots
 
