@@ -156,6 +156,28 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
+### 关闭后的回调函数
+
+通过 `onClose` 属性，可以指定 `toast` 在关闭后执行的回调函数。
+
+```html
+<z-cell title="关闭后的回调函数" is-link @click="toastOnClose()" />
+```
+
+```js
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
+
+const toastOnClose = ()=>{
+	toast.showToast({
+		message:"文字提示",
+		onClose: () => {
+			toast.showToast("执行onClose回调函数")
+		}
+	})
+}
+```
+
 ### 修改默认配置
 
 通过 `setToastDefaultOptions` 函数可以全局修改 `showToast` 等方法的默认配置。
@@ -249,14 +271,15 @@ zebra 中导出了以下 Toast 相关的辅助函数：
 | closeOnClick | 是否在点击后关闭 | _boolean_ | `false` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
 | loadingType | [加载图标类型](/loading), 可选值为 `spinner` | _string_ | `circular` |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `2000` |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `1000` |
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
 | transition | 动画类名，等价于 [transition](/transition) 的`name`属性 | _string_ | `fade` |
 | z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
-| onOpened | 完全展示后的回调函数 | _Function_ | - |
+| useComponent | 是否以组件形式使用 | _boolean_ | `false` |
+| name | 当页面存在多个 `toast` 时，可传入此参数作为唯一标识。同时useToast()中也需要传入相同的值。 | _string_ | `''` |
 
 ### Props
 
@@ -276,7 +299,7 @@ zebra 中导出了以下 Toast 相关的辅助函数：
 | close-on-click | 是否在点击后关闭 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
 | loading-type | [加载图标类型](/loading), 可选值为 `spinner` | _string_ | `circular` |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `2000` |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `1000` |
 | class-name | 自定义类名 | _string \| Array \| object_ | - |
 | overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlay-style | 自定义遮罩层样式 | _object_ | - |
