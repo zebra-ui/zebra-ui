@@ -33,7 +33,7 @@ jobs:
         run: cp -r demos/demo-cli/dist/build/h5 docs/zebra-ui-docs/.output/public
 
       - name: Deploy for Github 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
           folder: docs/zebra-ui-docs/.output/public

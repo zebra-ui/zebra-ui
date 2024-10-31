@@ -221,8 +221,6 @@ export default {
     badge: 3,
     // 是否在导航名称右上角显示小红点
     dot: true,
-    // 导航节点额外类名
-    className: 'my-class',
     // 该导航下所有的可选项
     children: [
       {
