@@ -343,8 +343,12 @@ export default {
                 title: 'Grid 宫格'
               },
               {
-                path: 'nav-bar',
+                path: 'navbar',
                 title: 'NavBar 导航栏'
+              },
+              {
+                path: 'sidebar',
+                title: 'Sidebar 侧边导航'
               },
               {
                 path: 'tab',
@@ -353,6 +357,10 @@ export default {
               {
                 path: 'tabbar',
                 title: 'Tabbar 标签栏'
+              },
+              {
+                path: 'tree-select',
+                title: 'TreeSelect 分类选择'
               }
             ]
           }
@@ -688,8 +696,12 @@ export default {
                 title: 'Grid'
               },
               {
-                path: 'nav-bar',
+                path: 'navbar',
                 title: 'NavBar'
+              },
+              {
+                path: 'sidebar',
+                title: 'Sidebar'
               },
               {
                 path: 'tab',
@@ -698,6 +710,10 @@ export default {
               {
                 path: 'tabbar',
                 title: 'Tabbar'
+              },
+              {
+                path: 'tree-select',
+                title: 'TreeSelect'
               }
             ]
           }

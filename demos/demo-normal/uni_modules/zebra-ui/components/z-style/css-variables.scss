@@ -509,4 +509,25 @@ page {
   --z-uploader-mask-background: rgb(50 50 51 / 88%);
   --z-uploader-loading-icon-color: var(--z-white);
   --z-uploader-disabled-opacity: var(--z-disabled-opacity);
+
+  // sidebar
+  --z-sidebar-font-size: var(--z-font-size-md);
+  --z-sidebar-line-height: var(--z-line-height-md);
+  --z-sidebar-text-color: var(--z-text-color);
+  --z-sidebar-disabled-text-color: var(--z-text-color-3);
+  --z-sidebar-padding: 40rpx var(--z-padding-sm);
+  --z-sidebar-active-color: var(--z-active-color);
+  --z-sidebar-background: var(--z-background);
+  --z-sidebar-selected-font-weight: var(--z-font-bold);
+  --z-sidebar-selected-text-color: var(--z-text-color);
+  --z-sidebar-selected-border-color: var(--z-primary-color);
+  --z-sidebar-selected-background: var(--z-background-2);
+
+  // tree select
+  --z-tree-select-font-size: var(--z-font-size-md);
+  --z-tree-select-nav-background: var(--z-background);
+  --z-tree-select-content-background: var(--z-background-2);
+  --z-tree-select-item-active-color: var(--z-primary-color);
+  --z-tree-select-item-disabled-color: var(--z-gray-5);
+  --z-tree-select-item-color: var(--z-text-color);
 }

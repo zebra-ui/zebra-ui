@@ -343,6 +343,11 @@ export default [
         image: 'navbar'
       },
       {
+        path: '/sidebar',
+        title: 'Sidebar 侧边导航',
+        image: 'sidebar'
+      },
+      {
         path: '/tab',
         title: 'Tab 标签页',
         image: 'tab'
@@ -351,6 +356,11 @@ export default [
         path: '/tabbar',
         title: 'Tabbar 标签栏',
         image: 'tabbar'
+      },
+      {
+        path: '/treeSelect',
+        title: 'TreeSelect 分类选择',
+        image: 'treeSelect'
       }
     ]
   }
