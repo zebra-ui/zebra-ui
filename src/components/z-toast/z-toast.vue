@@ -94,7 +94,7 @@ const props = defineProps({
   overlay: Boolean,
   message: numericProp,
   iconSize: numericProp,
-  duration: makeNumberProp(2000),
+  duration: makeNumberProp(1000),
   position: makeStringProp<ToastPosition>('middle'),
   wordBreak: String as PropType<ToastWordBreak>,
   iconPrefix: String,
@@ -295,6 +295,9 @@ watch(
       timer = setTimeout(() => {
         updateShow(false)
       }, getProps('duration'))
+    }
+    if (!getProps('show') && getProps('onClose')) {
+      getProps('onClose')()
     }
   }
 )

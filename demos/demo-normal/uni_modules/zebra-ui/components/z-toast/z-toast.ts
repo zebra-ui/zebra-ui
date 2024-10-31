@@ -9,7 +9,7 @@ const defaultOptions: ToastOptions = {
   overlay: false,
   onClose: undefined,
   onOpened: undefined,
-  duration: 2000,
+  duration: 1000,
   iconSize: undefined,
   iconPrefix: undefined,
   position: 'middle',

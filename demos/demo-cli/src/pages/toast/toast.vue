@@ -38,8 +38,7 @@
           @click="
             toast.showToast({
               message: '自定义图片',
-              icon: 'https://cdn.zebraui.com/zebra-ui/images/assets/demo-select.png',
-              duration: 0
+              icon: 'https://cdn.zebraui.com/zebra-ui/images/assets/demo-select.png'
             })
           "
         />
@@ -94,6 +93,9 @@
       <demo-block title="动态更新提示">
         <z-cell title="动态更新提示" is-link @click="showToastTrends()" />
       </demo-block>
+      <demo-block title="关闭后的回调函数">
+        <z-cell title="关闭后的回调函数" is-link @click="toastOnClose()" />
+      </demo-block>
       <demo-block title="使用组件">
         <z-cell title="使用组件" is-link @click="show = true" />
         <z-toast use-component v-model:show="show" :duration="0">
@@ -136,6 +138,15 @@ const showToastTrends = () => {
       toast.closeToast()
     }
   }, 1000)
+}
+
+const toastOnClose = () => {
+  toast.showToast({
+    message: '文字提示',
+    onClose: () => {
+      toast.showToast('执行onClose回调函数')
+    }
+  })
 }
 
 const show = ref(false)

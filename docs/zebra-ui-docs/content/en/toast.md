@@ -156,6 +156,28 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
+### Callback function after closing
+
+Using the `onClose` attribute, you can specify the callback function that `toast` executes after closing.
+
+```html
+<z-cell title="Callback function after closing" is-link @click="toastOnClose()" />
+```
+
+```js
+import { useToast } from '../../uni_modules/zebra-ui'
+const toast = useToast()
+
+const toastOnClose = ()=>{
+toast.showToast({
+message:"Text prompt",
+onClose: () => {
+toast.showToast("Execute onClose callback function")
+}
+})
+}
+```
+
 ### Modify default configuration
 
 The default configuration of `showToast` and other methods can be globally modified through the `setToastDefaultOptions` function.
@@ -249,7 +271,7 @@ When calling `showToast` and other methods, the following options are supported:
 | closeOnClick | Whether to close after clicking | _boolean_ | `false` |
 | closeOnClickOverlay | Whether to close the mask layer after clicking | _boolean_ | `false` |
 | loadingType | [Loading icon type](/loading), optional value is `spinner` | _string_ | `circular` |
-| duration | display duration (ms), when the value is 0, the toast will not disappear | _number_ | `2000` |
+| duration | display duration (ms), when the value is 0, the toast will not disappear | _number_ | `1000` |
 | className | Custom class name | _string \| Array \| object_ | - |
 | overlayClass | Custom mask layer class name | _string \| Array \| object_ | - |
 | overlayStyle | Custom mask layer style | _object_ | - |
@@ -276,12 +298,14 @@ When calling `Toast` through a component, the following Props are supported:
 | close-on-click | Whether to close after click | _boolean_ | `false` |
 | close-on-click-overlay | Whether to close the overlay after clicking it | _boolean_ | `false` |
 | loading-type | [Loading icon type](/loading), optional value is `spinner` | _string_ | `circular` |
-| duration | display duration (ms), when the value is 0, the toast will not disappear | _number_ | `2000` |
+| duration | display duration (ms), when the value is 0, the toast will not disappear | _number_ | `1000` |
 | class-name | Custom class name | _string \| Array \| object_ | - |
 | overlay-class | Custom mask layer class name | _string \| Array \| object_ | - |
 | overlay-style | Custom mask layer style | _object_ | - |
 | transition | animation class name, equivalent to the `name` attribute of [transition](/transition) | _string_ | `fade` |
 | z-index | Set the component's z-index level to a fixed value | _number \| string_ | `2000+` |
+| useComponent | Whether to use in the form of a component | _boolean_ | `false` | 
+| name | When there are multiple `toast`s on the page, this parameter can be passed in as a unique identifier. At the same time, the same value needs to be passed into useToast(). | _ string_ | `''` | 
 
 ### Events
 
