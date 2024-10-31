@@ -86,6 +86,7 @@ Disable buttons on both sides via the `left-disabled` or `right-disabled` proper
 | z-index | Navigation bar z-index | _number \| string_ | `1` |
 | safe-area-inset-top | Whether to enable top safe area adaptation | _boolean_ | `false` |
 | clickable | Whether to enable click feedback for buttons on both sides | _boolean_ | `true` |
+| autoBack | Whether to automatically return to the previous page after clicking | _boolean_ | `true` | 
 
 ### Slots
 
