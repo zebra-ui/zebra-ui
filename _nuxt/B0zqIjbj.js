@@ -1,0 +1,1 @@
+import{_ as s,o,c as t,r as c}from"./B5Qn1AbO.js";const r={},a={class:"zebra-docs-tips"};function n(e,_){return o(),t("div",a,[c(e.$slots,"default")])}const l=s(r,[["render",n]]);export{l as default};
