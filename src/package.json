@@ -2,7 +2,7 @@
   "id": "zebra-ui",
   "name": "@zebra-ui/uniapp",
   "displayName": "zebra-ui 组件库，使用vue3+ts并实现多端兼容",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "基于uniapp，使用vue3+ts+setup，并实现多端兼容。",
   "keywords": [
     "zebra-ui",
